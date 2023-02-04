@@ -19,7 +19,7 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
-    from .models import User, register
+    from .models import User, Tech_register,Non_register
     
     with app.app_context():
         db.create_all()
