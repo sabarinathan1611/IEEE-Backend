@@ -11,7 +11,7 @@ class Tech_register(db.Model):
     dept=db.Column(db.String(100))
     
     ieee=db.Column(db.String(10))
-    i3emid=Column(db.String(10))
+    i3emid= db.Column(db.String(100))
     
     event=db.Column(db.String(100))
     teamname=db.Column(db.String(500))
@@ -19,7 +19,7 @@ class Tech_register(db.Model):
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     
 
-class Non_register ():
+class Non_register (db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name=db.Column(db.String(100))
     email = db.Column(db.String(150))
@@ -27,7 +27,7 @@ class Non_register ():
     dept=db.Column(db.String(100))
     
     ieee=db.Column(db.String(10))
-    i3emid=Column(db.String(10))
+    i3emid=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
     teamname=db.Column(db.String(500))

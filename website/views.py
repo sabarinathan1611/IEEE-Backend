@@ -18,6 +18,10 @@ def admin():
         return redirect(url_for('auth.login'))
     return render_template("admin.html")
 
-@views.route('/register',methods=['GET','POST'])
-def register():
+@views.route('/tec-register',methods=['GET','POST'])
+def tech_register():
+        return render_template('register.html')
+    
+@views.route('/non-tec-register',methods=['GET','POST'])
+def nontech_register():
         return render_template('register.html')
