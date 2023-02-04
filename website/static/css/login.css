@@ -67,6 +67,13 @@ form button {
     background: #94d2bdb3;
     font-size: 15px;
 }
+.close {
+    background: transparent;
+    width: 20px;
+    display: block;
+    height: 20px;
+    border: none;
+}
 @media(max-width:390px){
     .formu {
         width: 19rem;

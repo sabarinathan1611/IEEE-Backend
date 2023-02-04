@@ -1,23 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
+ 
   }
 
   .register {
     width: 100%;
-    /* height: 100vh; */
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #847171;
-  }
+    background: linear-gradient(296deg, #dabe84, #000149);
+}
 
   .register .form-container {
     width: 300px;
     /* height: 100vh; */
     /* background: #847171; */
-    background: #1a1818;
+    background: #1c2726b0;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -35,6 +38,7 @@
     display: flex;
     flex-direction: column;
     text-transform: capitalize;
+    font-family: 'Kanit', sans-serif;
     gap: 5px;
   }
 
@@ -60,6 +64,7 @@ left: 56%;
 
   .member-id input[type="text"] {
     margin-left: 50px;
+    color:#fff;
   }
 
   button[type="submit"] {
@@ -108,6 +113,7 @@ left: 56%;
     background: transparent;
     border-bottom: 1px solid #f0f8ff;
     text-align: center;
+    color: #fff;
     /* background: #000; */
   }
 
@@ -124,6 +130,7 @@ left: 56%;
     outline: none;
     background: transparent;
     border-bottom: 1px solid #f0f8ff;
+    color: #fff;
     text-align: center;
   }
 
@@ -152,6 +159,7 @@ left: 56%;
 
   .ieeemember input[type="radio"] {
     margin: 15px;
+
   }
 
   .ieeemember .member-id {
@@ -182,6 +190,7 @@ left: 56%;
     border-bottom: 1px solid #f0f8ff;
     text-align: center;
     outline: none;
+    color: #fff;
   }
 
   .events {
@@ -204,8 +213,9 @@ left: 56%;
   }
 
   button[type="submit"] {
-    padding: 5px;
-    border-radius: 5px;
-    background: #f48787;
+    padding: 9px;
+    border-radius: 25px;
+    background: #00000091;
     color: #f0f8ff;
-  }
+    border: none;
+}

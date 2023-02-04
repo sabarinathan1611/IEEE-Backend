@@ -11,10 +11,10 @@
     <div class="register">
       <div class="form-container">
         <div class="event-heading"><h1>TECHNICAL</h1></div>
-        <form action="#">
+        <form method="post" action="{{url_for('auth.registerdb')}}">
           <div class="name">
             <label for="#">name:</label>
-            <input type="text" id="name" placeholder="enter name..!" />
+            <input type="text" id="name" name="name" placeholder="enter name..!" />
           </div>
           <div class="rollno">
             <label for="#">rollno:</label>
@@ -83,7 +83,7 @@
             </select>
             <div class="team" id="team">
               <label for="#">team name:</label>
-              <input type="text" id="team-name" />
+              <input type="text" name="teamName" id="team-name" />
               <br />
               <label for="#">team members name:</label>
               <textarea

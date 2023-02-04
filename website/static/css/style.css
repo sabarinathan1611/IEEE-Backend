@@ -303,7 +303,7 @@ li a.active{
 .section1{
     width: 100%;
     height: 100vh;
-    background-image: url(/static/images/college-image.jpg);
+    background-image: url(/images/college-image.jpg);
     background-size: 100% 100%;
 }
 
@@ -791,7 +791,6 @@ li a.active{
   tr td {
     padding-top: 20px;
   }
-  
 @media (max-width:1319px){
     .logo img {
         width: 78px;
@@ -1032,7 +1031,7 @@ li a.active{
     .section1 {
         width: 100%;
         height: 100vh;
-
+        background-image: url(/images/college-image.jpg);
         background-size: 100% 100%;
         background-position: center;
         background-size: cover;
@@ -1177,6 +1176,34 @@ li a {
   border-radius: 50%;
   margin: 5px;
 }
+.down {
+	position: relative;
+	background-color: #eb5e28;
+	width: 100px;
+	height: 30px;
+	padding: 5px 15px;
+	color: #f8f6f7;
+	text-transform: capitalize;
+	border-radius: 5px;
+	text-decoration: none;
+	top: 200px;
+	left: 100px;
+}
+.reg {
+	position: relative;
+	background-color: #eb5e28;
+	width: 100px;
+	height: 30px;
+	margin: 10px;
+	padding: 5px 15px;
+	color: #f8f6f7;
+	text-transform: capitalize;
+	border-radius: 5px;
+	text-decoration: none;
+	top: 200px;
+	left: 150px;
+}
+
 
 }
 
@@ -1265,6 +1292,33 @@ li a {
     padding: 11px;
     border-radius: 50%;
     margin: 5px;
+  }
+  .down {
+    position: relative;
+    background-color: #eb5e28;
+    width: 100px;
+    height: 30px;
+    padding: 5px 15px;
+    color: #f8f6f7;
+    text-transform: capitalize;
+    border-radius: 5px;
+    text-decoration: none;
+    top: 200px;
+    left: 100px;
+  }
+  .reg {
+    position: relative;
+    background-color: #eb5e28;
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    padding: 5px 15px;
+    color: #f8f6f7;
+    text-transform: capitalize;
+    border-radius: 5px;
+    text-decoration: none;
+    top: 200px;
+    left: 150px;
   }
   
 }
@@ -1429,6 +1483,38 @@ li a {
   border-radius: 50%;
   margin: 5px;
 }
+
+.down {
+  position: relative;
+  background-color: #eb5e28;
+  width: 100px;
+  height: 30px;
+  padding: 5px 15px;
+  color: #f8f6f7;
+  text-transform: capitalize;
+  border-radius: 5px;
+  text-decoration: none;
+  top: 157px;
+  font-size: 10px;
+  left: 20px;
+}
+
+.reg {
+  position: relative;
+  background-color: #eb5e28;
+  width: 100px;
+  height: 30px;
+  margin: 10px;
+  padding: 5px 15px;
+  color: #f8f6f7;
+  text-transform: capitalize;
+  border-radius: 5px;
+  text-decoration: none;
+  top: 159px;
+  left: 20px;
+  font-size: 10px;
+}
+
 }
 @media(max-width:320px){
     .college-name h1 {
@@ -1641,6 +1727,33 @@ li a {
   text-decoration: none;
   text-transform: capitalize;
 }
+.reg {
+	position: relative;
+	background-color: #eb5e28;
+	width: 100px;
+	height: 30px;
+	margin: 10px;
+	padding: 5px 15px;
+	color: #f8f6f7;
+	text-transform: capitalize;
+	border-radius: 5px;
+	text-decoration: none;
+	top: 200px;
+	left: -63px;
+}
 
-
+.down {
+  position: relative;
+  background-color: #eb5e28;
+  width: 100px;
+  height: 30px;
+  padding: 5px 15px;
+  color: #f8f6f7;
+  text-transform: capitalize;
+  border-radius: 5px;
+  text-decoration: none;
+  top: 157px;
+  font-size: 10px;
+  left: 20px;
+}
 }
