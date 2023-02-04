@@ -791,6 +791,7 @@ li a.active{
   tr td {
     padding-top: 20px;
   }
+  
 @media (max-width:1319px){
     .logo img {
         width: 78px;

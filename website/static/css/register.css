@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .register {
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #847171;
+  }
+
+  .register .form-container {
+    width: 300px;
+    /* height: 100vh; */
+    /* background: #847171; */
+    background: #1a1818;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-radius: 10px;
+  }
+
+  .register .form-container form {
+    width: 280px;
+    margin: 0px 10px;
+    /* height: 90vh; */
+    color: #f0f8ff;
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+    gap: 5px;
+  }
+
+  /* span {
+position: relative;
+left: 56%;
+/* margin-top: -29px; */
+  /* top: -16px;
+} */
+
+  .member-id {
+    transition: 0.4s;
+    scale: 0;
+  }
+
+  .team {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: 0.4s;
+    scale: 0;
+  }
+
+  .member-id input[type="text"] {
+    margin-left: 50px;
+  }
+
+  button[type="submit"] {
+    margin: 10px;
+  }
+
+  H1 {
+    font-size: 20px;
+    position: absolute;
+    color: #f0f8ff;
+    padding: 0px 0px;
+    /* background: #f0f8ff; */
+    width: 0px;
+    font-family: cursive;
+    /* text-align: center; */
+    /* border-bottom: 2px solid #f90101; */
+    animation: write 5s linear infinite;
+    margin-left: -50px;
+    margin-top: 10px;
+    overflow: hidden;
+    border-right: 1px solid #f48787;
+  }
+
+  @keyframes write {
+    0% {
+      width: 0px;
+    }
+    50% {
+      width: 129px;
+    }
+  }
+
+  .name {
+    /* background: #40e0d0; */
+    /* height: 30px; */
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .name input[type="text"] {
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid #f0f8ff;
+    text-align: center;
+    /* background: #000; */
+  }
+
+  .rollno {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rollno input[type="text"] {
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid #f0f8ff;
+    text-align: center;
+  }
+
+  .department {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .department select {
+    background: transparent;
+    color: #f0f8ff;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .department select option {
+    background: #1a1818;
+    text-transform: capitalize;
+  }
+
+  .ieeemember {
+    padding: 5px;
+  }
+
+  .ieeemember input[type="radio"] {
+    margin: 15px;
+  }
+
+  .ieeemember .member-id {
+    padding: 10px 0px;
+  }
+
+  .ieeemember .member-id input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-left: 0px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #f0f8ff;
+    text-align: center;
+    outline: none;
+  }
+
+  .email {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .email input[type="email"] {
+    padding: 5px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #f0f8ff;
+    text-align: center;
+    outline: none;
+  }
+
+  .events {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .events select {
+    background: transparent;
+    padding: 5px;
+    color: #f0f8ff;
+    text-align: center;
+  }
+
+  .events select option {
+    background: #1a1818;
+    text-transform: capitalize;
+  }
+
+  button[type="submit"] {
+    padding: 5px;
+    border-radius: 5px;
+    background: #f48787;
+    color: #f0f8ff;
+  }
