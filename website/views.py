@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify,redirect, url_for
 from flask_login import login_required, current_user
+from . import exl
 
 
 views = Blueprint('views', __name__)
@@ -12,7 +13,7 @@ def home():
 @login_required
 def admin():
     if (current_user.admin==True):
-        flash("Welcome Admin")
+        pass
     else:
      
         return redirect(url_for('auth.login'))
