@@ -42,7 +42,7 @@ def send_email():
     smtp = smtplib.SMTP('smtp.gmail.com', 587)
     smtp.ehlo()
     smtp.starttls()
-    smtp.login('ieee.event2023@gmail.com', 'wtmllyovvmsjydhy')
+    smtp.login('ieee.event2023@gmail.com', 'pass')
     smtp.sendmail('ieee.event2023@gmail.com', ['sabarinathan.project@gmail.com'], msg.as_string())
     smtp.quit()
 
