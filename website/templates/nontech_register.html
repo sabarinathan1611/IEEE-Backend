@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register-form</title>
+    <link rel="stylesheet" href="/static/css/register.css">
+  </head>
+  <body>
+    <div class="register">
+      <div class="form-container">
+        <div class="event-heading"><h1>NON TECHNICAL</h1></div>
+        <form method="post" action="{{url_for('auth.registerdb1')}}">
+          <div class="name">
+            <label for="#">name:</label>
+            <input type="text" id="name" name="name" placeholder="enter name..!" />
+          </div>
+          <div class="rollno">
+            <label for="#">rollno:</label>
+            <input
+              type="text"
+              id="rollno"
+              name="rollno"
+              placeholder="2021pecit001"
+            />
+          </div>
+          <div class="department">
+            <label for="dept">department:</label>
+            <select name="dept" id="dept" class="dept">
+              <option value="no">select dept</option>
+              <option value="it">IT</option>
+              <option value="cse">CSE</option>
+              <option value="cce">CCE</option>
+              <option value="ai&ds">AI&DS</option>
+            </select>
+          </div>
+          <br />
+          <div class="ieeemember">
+            <label for="#">are you an IEEE member ? </label>
+            <br />
+            <input
+              type="radio"
+              name="ieee"
+              id="ieee"
+              value="yes"
+              onclick="mem() "
+            /><span>yes</span>
+            <input
+              type="radio"
+              name="ieee"
+              id="ieee"
+              value="no"
+              onclick="nonmem()"
+            /><span>no</span>
+            <br />
+            <div class="member-id" id="member-id">
+              <input
+                type="text"
+                name="memberid"
+                id="memberid"
+                placeholder="evter your member id"
+              />
+            </div>
+          </div>
+          <div class="email">
+            <label for="#">email:</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="example@gmail.com"
+            />
+          </div>
+          <div class="events">
+            <label for="#">event:</label>
+            <select name="event" id="event">
+              <option value="no">select event</option>
+              <option value="debugging">debugging</option>
+              <option value="code-combact">code combact</option>
+              <option value="hack-crack">hack crack</option>
+              <option value="express-on">express on</option>
+            </select>
+            <div class="team" id="team">
+              <label for="#">team name:</label>
+              <input type="text" name="teamName" id="team-name" />
+              <br />
+              <label for="#">team members name:</label>
+              <textarea
+                name="team-members"
+                id="team-members"
+                cols="30"
+                rows="7"
+              >
+              </textarea>
+            </div>
+          </div>
+          <button type="submit">submit</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      const event1 = document.querySelector("#event");
+
+      event1.addEventListener("input", function () {
+        var op = document.getElementById("event").value;
+
+        if (op === "express-on") {
+          document.getElementById("team").style.scale = 1;
+          document.getElementById("team-name").value = "";
+        } else {
+          document.getElementById("team").style.scale = 0;
+        }
+      });
+
+      function mem() {
+        document.getElementById("member-id").style.scale = 1;
+        console.log("member");
+        confirm("you should bring your member id copy with you for the event");
+      }
+
+      function nonmem() {
+        document.getElementById("member-id").style.scale = 0;
+        console.log("non-member");
+      }
+
+      const submit = document.querySelector("button");
+      console.log(submit);
+
+      submit.addEventListener("click", function () {
+        var name = document.getElementById("name").value;
+        console.log(name);
+
+        alert(
+          "Thank you " + name + ". Your queries has been submitted sucessfully"
+        );
+      });
+    </script>
+  </body>
+</html>

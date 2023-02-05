@@ -37,6 +37,6 @@ class Non_register (db.Model):
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     admin = db.Column(db.Boolean, default=False)
-    username = db.Column(db.String(150))
+    username = db.Column(db.String(150),default=False)
     password = db.Column(db.String(150))
    
