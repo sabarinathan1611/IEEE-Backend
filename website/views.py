@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify,redirect, url_for
 from flask_login import login_required, current_user
-from . import exl
+# from .exl import ecxle
 from .models import Tech_register,Non_register
 
 views = Blueprint('views', __name__)
@@ -35,5 +35,10 @@ def tech_register():
 def nontech_register():
         return render_template('nontech_register.html')
     
-# @view.rout('/create-ecxle')
-# def
+# @views.route('/create-ecxle',methods=['GET','POST'])
+# def createxl():
+#     xl=ecxle
+    
+#     xl.techRegister()
+    
+    

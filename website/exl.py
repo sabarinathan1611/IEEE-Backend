@@ -1,8 +1,8 @@
 import sqlite3
 import pandas as pd
-class exl():
+class ecxle():
     def techRegister():
-        conn = sqlite3.connect("database.db")
+        conn = sqlite3.connect("../database.db")
 
 
         df = pd.read_sql_query("SELECT * FROM tech_register", conn)
@@ -16,7 +16,7 @@ class exl():
 
 
     def nontechRegister():
-        conn = sqlite3.connect("database.db")
+        conn = sqlite3.connect("/website/database.db")
 
 
         df = pd.read_sql_query("SELECT * FROM non_register", conn)

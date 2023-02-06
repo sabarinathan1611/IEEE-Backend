@@ -19,12 +19,13 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 <table class="table table-dark table-striped">
     <tr>
       <th>id</th>
-      <th>name</th>
+      <th>Name</th>
       <th>Email</th>
-      <th>rollno</th>
+      <th>Rollno</th>
       <th>dept</th>
-      <th>ieee</th>
-      <th>i3emid</th>
+      <th>Event</th>
+      <th>Ieee</th>
+      <th>Ieee member ID</th>
       <th>teamname</th>
       <th>team_members</th>
       <th>date</th>
@@ -37,6 +38,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
       <td>{{tech.email}}</td>
       <td>{{tech.rollno}}</td>
       <td>{{tech.dept}}</td>
+      <td>{{tech.event}}</td>
       <td>{{tech.ieee}}</td>
       <td>{{tech.i3emid}}</td>
       <td>{{tech.teamname}}</td>
@@ -55,15 +57,16 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
     <table class="table table-dark table-striped">
         <tr>
           <th>id</th>
-          <th>name</th>
+          <th>Name</th>
           <th>Email</th>
-          <th>rollno</th>
+          <th>Rollno</th>
           <th>dept</th>
-          <th>ieee</th>
-          <th>i3emid</th>
-          <th>teamname</th>
-          <th>team_members</th>
-          <th>date</th>
+          <th>Event</th>
+          <th>Ieee</th>
+          <th>Ieee member ID</th>
+          <th>Teamname</th>
+          <th>Team_members</th>
+          <th>Date</th>
         </tr>
         {% for non_tech in non_tech %}
       
@@ -73,6 +76,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
           <td>{{non_tech.email}}</td>
           <td>{{non_tech.rollno}}</td>
           <td>{{non_tech.dept}}</td>
+          <td>{{non_tech.event}}</td>
           <td>{{non_tech.ieee}}</td>
           <td>{{non_tech.i3emid}}</td>
           <td>{{non_tech.teamname}}</td>
