@@ -8,7 +8,7 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_USERNAME'] = 'ieee.event2023@gmail.com'
-app.config['MAIL_PASSWORD'] = 'pass'
+app.config['MAIL_PASSWORD'] = 'wtmllyovvmsjydhy'
 
 mail = Mail(app)
 
@@ -28,4 +28,7 @@ def send_email():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
+    
+
 
