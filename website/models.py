@@ -33,10 +33,12 @@ class Non_register (db.Model):
     teamname=db.Column(db.String(500))
     team_members=db.Column(db.String(500))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
-    
+
+
+        
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     admin = db.Column(db.Boolean, default=False)
-    username = db.Column(db.String(150),default=False)
-    password = db.Column(db.String(150))
+    username = db.Column(db.String(150),default="admin")
+    password = db.Column(db.String(150),default="sha256$a2A5mXJp7wP9RYnF$84b8d61903826f9f2248533d2e9c73d452bc59222253d03afc1f0206a79b7271")
    
