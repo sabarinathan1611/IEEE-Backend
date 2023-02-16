@@ -7,7 +7,7 @@ class Tech_register(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name=db.Column(db.String(100))
     email = db.Column(db.String(150))
-    rollno=db.Column(db.String(100))
+    rollno=db.Column(db.String(100),unique=True)
     dept=db.Column(db.String(100))
     
     ieee=db.Column(db.String(10))
@@ -23,7 +23,7 @@ class Non_register (db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name=db.Column(db.String(100))
     email = db.Column(db.String(150))
-    rollno=db.Column(db.String(100))
+    rollno=db.Column(db.String(100),unique=True)
     dept=db.Column(db.String(100))
     
     ieee=db.Column(db.String(10))

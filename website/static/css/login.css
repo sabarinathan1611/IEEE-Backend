@@ -68,11 +68,11 @@ form button {
     font-size: 15px;
 }
 .close {
-    background: transparent;
-    width: 20px;
-    display: block;
-    height: 20px;
+    background: transparent;    
     border: none;
+}
+div#msgg {
+z-index: 100;
 }
 @media(max-width:390px){
     .formu {

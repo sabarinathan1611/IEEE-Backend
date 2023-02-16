@@ -1,49 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/login.css">
-    <title>Admin login</title>
-</head>
-<body>
-   
-    <div class="container">
-        <div class="msg">
-            {% with messages = get_flashed_messages(with_categories=true) %} {% if
-                messages %} {% for category, message in messages %} {% if category ==
-                'error' %}
-                <div class="alert alert-danger alter-dismissable fade show" role="alert">
-                  {{ message }}
-                  <!-- <button type="button" id="closu" onclick="off()" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                  </button> -->
-                </div>
-                {% else %}
-                <div class="alert alert-success alter-dismissable fade show" role="alert">
-                  {{ message }}
-                  <!-- <button type="button" id="closu" onclick="off()" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                  </button> -->
-                </div>
-                {% endif %} {% endfor %} {% endif %} {% endwith %}
-            </div>
-        <div class="formu">
-            <form method="post">
-                <label for="username">username</label>
-            <input name="username" type="text">
-            <label for="pass">Password</label>
-            <input  name="pass" type="password">
-            <button>Login</button>
-            </form>
-        </div>
+{% extends "base.html" %} {% block title %} LOGIN {% endblock %}
+{%block link%}
+<link rel="stylesheet" href="/static/css/login.css">{%endblock%}
+{%block content%}
+
+
+<div class="container">
+  <div id="msgg" class="msg">
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %} {% if category ==
+    'error' %}
+    <div class="alert alert-danger alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" id="closu" onclick="off()" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-    <script>
-      let but = document.getElementById("closu");
-      function off(){
-        but.style.display="none"
-      }
-    </script>
-</body>
-</html>
+    {% else %}
+    <div class="alert alert-success alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" id="closu" onclick="off()" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+  </div>
+  <div class="formu">
+    <form method="post">
+      <label for="username">username</label>
+      <input name="username" type="text">
+      <label for="pass">Password</label>
+      <input name="pass" type="password">
+      <button>Login</button>
+    </form>
+  </div>
+ 
+</div>
+
+<script>
+  let but = document.getElementById("closu");
+  let msgg = document.getElementById("msgg")
+  function off() {
+    msgg.style.display = "none";
+  }
+</script>
+
+{%endblock%}

@@ -6,7 +6,15 @@
    
  
   }
-
+  .close {
+    background: transparent;    
+    border: none;
+    color: #fff;
+}
+div#msgg {
+  color: #fff;
+z-index: 100;
+}
   .register {
     width: 100%;
     height: 100vh;

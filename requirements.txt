@@ -1,4 +1,3 @@
 flask
 Flask-SQLAlchemy
-flask-login
 flask_login

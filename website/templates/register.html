@@ -10,11 +10,30 @@
   <body>
     <div class="register">
       <div class="form-container">
+        <div id="msgg" class="msg">
+          {% with messages = get_flashed_messages(with_categories=true) %} {% if
+          messages %} {% for category, message in messages %} {% if category ==
+          'error' %}
+          <div class="alert alert-danger alter-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" id="closu" onclick="off()" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% else %}
+          <div class="alert alert-success alter-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" id="closu" onclick="off()" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% endif %} {% endfor %} {% endif %} {% endwith %}
+        </div>
         <div class="event-heading"><h1>TECHNICAL</h1></div>
         <form method="post" action="{{url_for('auth.registerdb')}}">
           <div class="name">
             <label for="#">name:</label>
-            <input type="text" id="name" name="name" placeholder="enter name..!" />
+            <input type="text" id="name" name="name" placeholder="enter name..!"   />
           </div>
           <div class="rollno">
             <label for="#">rollno:</label>
@@ -127,14 +146,15 @@
       const submit = document.querySelector("button");
       console.log(submit);
 
-      submit.addEventListener("click", function () {
-        var name = document.getElementById("name").value;
-        console.log(name);
-
-        alert(
-          "Thank you " + name + ". Your queries has been submitted sucessfully"
-        );
-      });
+      
+    
+    </script>
+    <script>
+      let but = document.getElementById("closu");
+      let msgg = document.getElementById("msgg")
+      function off() {
+        msgg.style.display = "none";
+      }
     </script>
   </body>
 </html>

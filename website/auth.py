@@ -50,19 +50,20 @@ def registerdb():
         teamName=request.form.get('teamName')
         
         team_members=request.form.get('team-members')
-        eemail=Tech_register.query.filter_by(email=email).first()
+        
+        roll=Tech_register.query.filter_by(rollno=rollno).first()
 
-        if eemail is None :
+        if roll is None :
             
             new_reg=Tech_register(name=name,rollno=rollno,dept=dept,ieee=ieee,i3emid=i3emid,email=email,event=event,teamname=teamName,team_members=team_members)
             db.session.add(new_reg)
             db.session.commit()
-            message="Tank your register {}".format(event)
+            message="Subject:Welcome \n\nTku f4 register {}".format(event)
             send_mail( email= email,body=message)
             
-        elif eemail.event == event :
+        else:
             flash("You already registered for this event")
-            return redirect(url_for('views.home'))
+            return redirect(url_for('views.tech_register'))
     return redirect(url_for('views.home'))
 
 #non tech register
@@ -89,25 +90,19 @@ def registerdb1():
         
         team_members=request.form.get('team-members')
         
-        eemail=Non_register.query.filter_by(email=email).first()
-        print(eemail,rollno)
-        if eemail is None:
+        roll=Non_register.query.filter_by(rollno=rollno).first()
+       
+        if roll is None:
             
             new_reg=Non_register(name=name,rollno=rollno,dept=dept,ieee=ieee,i3emid=i3emid,email=email,event=event,teamname=teamName,team_members=team_members)
             db.session.add(new_reg)
             db.session.commit()
-            message="Tank your register {}".format(event)
+            message="Subject:Welcome \n\nTku f4 register {}".format(event)
             send_mail( email= email,body=message)
-        elif eemail.event == event :
+        else:
             flash("You already registered for this event")
-            return redirect(url_for('views.home'))
-        
-     
-
-        
-        
-        
-        print("1.name:",name,'\n',"2.rollno",rollno,'\n',"3.dept",dept,'\n',"4.ieee",ieee,'\n',"5.i3emid",i3emid,'\n',"6.email",email,'/n',"7.event",event,'\n',"8.team_members",team_members,'\n',"9.teamName",teamName)
+            return redirect(url_for('views.tech_register'))
+       # print("1.name:",name,'\n',"2.rollno",rollno,'\n',"3.dept",dept,'\n',"4.ieee",ieee,'\n',"5.i3emid",i3emid,'\n',"6.email",email,'/n',"7.event",event,'\n',"8.team_members",team_members,'\n',"9.teamName",teamName)
     return redirect(url_for('views.home'))
 
 
@@ -127,6 +122,7 @@ def login():
                 flash('Logged in successfully!', category='success')
                 login_user(user, remember=True)
                 print("111")
+                
                 return redirect(url_for('views.admin'))
             else:
                 flash('Incorrect password, try again.', category='error')
