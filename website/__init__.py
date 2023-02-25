@@ -13,7 +13,10 @@ DB_NAME = "database.db"
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}'.format(DB_NAME)
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS']= False
+
+
     
     db.init_app(app)
     
@@ -21,7 +24,7 @@ def create_app():
     app.config['MAIL_PORT'] = 465
     app.config['MAIL_USE_SSL'] = True
     app.config['MAIL_USERNAME'] = 'ieee.event2023@gmail.com'
-    app.config['MAIL_PASSWORD'] = ''
+    app.config['MAIL_PASSWORD'] = 'vwdvpyknrjgqqhzc'
 
     from .views import views
     from .auth import auth

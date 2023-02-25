@@ -4,6 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from . import db   ##means from __init__.py import db
 import smtplib
 from flask_login import login_user, login_required, logout_user, current_user
+
 def create_admin():
             user=User.query.filter_by(id=1).first()
             if not user:
@@ -15,7 +16,7 @@ def create_admin():
 def send_mail(email,body):
     sender_email = "ieee.event2023@gmail.com"
     receiver_email = email
-    password = "ijoqagkzrabpshsa"
+    password = "password"
     message =body
     print("wefdwefugyuhg")
     
@@ -58,7 +59,16 @@ def registerdb():
             new_reg=Tech_register(name=name,rollno=rollno,dept=dept,ieee=ieee,i3emid=i3emid,email=email,event=event,teamname=teamName,team_members=team_members)
             db.session.add(new_reg)
             db.session.commit()
-            message="Subject:Welcome \n\nTku f4 register {}".format(event)
+            message="""Subject:Welcome to the IEEE Event \n\n
+                        Welcome and thank you for registering for the IEEE Event {}. We're looking forward to an exciting and informative event.
+
+                    We hope to provide you with resources and information to further your knowledge and interests in the field of IEEE.
+
+                    Do not hesitate to reach out to us if you have any questions along the way!
+            
+                    Sincerely,
+                    The IEEE Team
+                    """.format(event)
             send_mail( email= email,body=message)
             
         else:
@@ -97,7 +107,16 @@ def registerdb1():
             new_reg=Non_register(name=name,rollno=rollno,dept=dept,ieee=ieee,i3emid=i3emid,email=email,event=event,teamname=teamName,team_members=team_members)
             db.session.add(new_reg)
             db.session.commit()
-            message="Subject:Welcome \n\nTku f4 register {}".format(event)
+            message="""Subject:Welcome to the IEEE Event \n\n
+                        Welcome and thank you for registering for the IEEE Event {}. We're looking forward to an exciting and informative event.
+
+                    We hope to provide you with resources and information to further your knowledge and interests in the field of IEEE.
+
+                    Do not hesitate to reach out to us if you have any questions along the way!
+            
+                    Sincerely,
+                    The IEEE Team
+                    """.format(event)
             send_mail( email= email,body=message)
         else:
             flash("You already registered for this event")
@@ -147,3 +166,4 @@ def logout():
 def newadmin():
     create_admin()
     return redirect(url_for('auth.login')) 
+

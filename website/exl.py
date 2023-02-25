@@ -1,8 +1,17 @@
 import sqlite3
 import pandas as pd
+import os
+
+
+
 class ecxle():
     def techRegister():
-        conn = sqlite3.connect("../database.db")
+        # Get all files in the /test directory
+        files = os.listdir('/website')
+
+        # Filter them by the file type
+        python_files = [f for f in files if f.endswith('.db')]
+        conn = sqlite3.connect(python_files)
 
 
         df = pd.read_sql_query("SELECT * FROM tech_register", conn)
@@ -26,5 +35,5 @@ class ecxle():
 
 
         conn.close()
-
-
+e=ecxle()
+e.techRegister()

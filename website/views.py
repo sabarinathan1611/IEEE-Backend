@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify,redirect, url_for
 from flask_login import login_required, current_user
-# from .exl import ecxle
+from .auth import send_mail
 from .models import Tech_register,Non_register
 
 views = Blueprint('views', __name__)
@@ -35,10 +35,23 @@ def tech_register():
 def nontech_register():
         return render_template('nontech_register.html')
     
-# @views.route('/create-ecxle',methods=['GET','POST'])
-# def createxl():
-#     xl=ecxle
-    
-#     xl.techRegister()
-    
-    
+@views.route('/contact',methods=['POST','GET'])
+def connect():
+    if request.method=='POST':
+        
+        name = request.form.get('name')
+        number = request.form.get('number')
+        mail=request.form.get('mail')
+        subject=request.form.get('subject')
+        message=request.form.get('message')
+        
+        email=['vsabarinathan1611@gmail.com','sabarinathan.project@gmail.com']
+        body= """Subject:Querry:{} \n\n 
+        Name:{},
+        Number:{},
+        Email:{},
+        Message:{},
+        """.format(subject,name,number,mail,message)
+        send_mail(email, body)
+    return redirect(url_for('views.home'))
+        
