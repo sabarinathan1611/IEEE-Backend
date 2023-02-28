@@ -8,6 +8,11 @@
 
 body {
     background: linear-gradient(273deg, #fdf0d5ba, #003049c4);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
 }
 a{
     width: 35px;
@@ -27,3 +32,45 @@ h1{
     height: 35px;
     /* align-items: center; */
 }
+.top {
+    width: 29%;
+    color: #fff;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    background: #000;
+    border-radius: 15px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+  }
+  th {
+    background-color: #4caf50;
+    color: white;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .filter-input {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  select {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }

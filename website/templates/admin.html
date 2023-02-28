@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Admin</title>
     <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -12,64 +12,76 @@
 integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-<h1>Admin page</h1>
-<a class="btn btn-warning" href="{{url_for('auth.logout')}}">Logout</a>
-<div class="techtable">
-    <h1>Tech Event</h1>
-<table class="table table-dark table-striped">
-    <tr>
-      <th>id</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Rollno</th>
-      <th>dept</th>
-      <th>Event</th>
-      <th>Ieee</th>
-      <th>Ieee member ID</th>
-      <th>teamname</th>
-      <th>team_members</th>
-      <th>date</th>
-    </tr>
-    {% for tech in tech %}
+  <h1>Admin page</h1>
+<div class="top">
+   <legend>Delete Database Data</legend>
+  <form method="post" action="{{url_for('views.delete')}}">
+    <label for="password">Master Password</label>
+    <input name="pass" type="password">
+    <button class="btn btn-warning" type="submit">Delete</button>
+  </form>
   
-    <tr>
-      <td>{{tech.id}}</td>
-      <td>{{tech.name}}</td>
-      <td>{{tech.email}}</td>
-      <td>{{tech.rollno}}</td>
-      <td>{{tech.dept}}</td>
-      <td>{{tech.event}}</td>
-      <td>{{tech.ieee}}</td>
-      <td>{{tech.i3emid}}</td>
-      <td>{{tech.teamname}}</td>
-      <td>{{tech.team_members}}</td>
-      <td>{{tech.date}}</td> 
-      
-       
-    
-    </tr>
-  
-    {%endfor%}
-  </table>
 </div>
-<div class="non-tech">
-    <h1>NON-Tech Event</h1>
-    <table class="table table-dark table-striped">
+
+
+<a class="btn btn-warning" href="{{url_for('auth.logout')}}">Logout</a>
+
+
+<div class="table table-dark table-striped">
+    <h1>Tech Event</h1>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Rollno</th>
+        <th>Department</th>
+        <th>Event</th>
+        <th>IEEE</th>
+        <th>IEEE member ID</th>
+        <th>Teamname</th>
+        <th>Team Members</th>
+        <th>Date</th>
+      </tr>
+      </thead>
+      <tbody>
+        {% for tech in tech %}
         <tr>
-          <th>id</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Rollno</th>
-          <th>dept</th>
-          <th>Event</th>
-          <th>Ieee</th>
-          <th>Ieee member ID</th>
-          <th>Teamname</th>
-          <th>Team_members</th>
-          <th>Date</th>
+          <td>{{tech.id}}</td>
+          <td>{{tech.name}}</td>
+          <td>{{tech.email}}</td>
+          <td>{{tech.rollno}}</td>
+          <td>{{tech.dept}}</td>
+          <td>{{tech.event}}</td>
+          <td>{{tech.ieee}}</td>
+          <td>{{tech.i3emid}}</td>
+          <td>{{tech.teamname}}</td>
+          <td>{{tech.team_members}}</td>
+          <td>{{tech.date}}</td> 
         </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+</div> 
+<div class="table table-dark table-striped">
+    <h1>NON-Tech Event</h1>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Rollno</th>
+        <th>Department</th>
+        <th>Event</th>
+        <th>IEEE</th>
+        <th>IEEE member ID</th>
+        <th>Teamname</th>
+        <th>Team Members</th>
+        <th>Date</th>
+      </tr>
+      </thead>
+      <tbody>
         {% for non_tech in non_tech %}
-      
         <tr>
           <td>{{non_tech.id}}</td>
           <td>{{non_tech.name}}</td>
@@ -82,13 +94,10 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
           <td>{{non_tech.teamname}}</td>
           <td>{{non_tech.team_members}}</td>
           <td>{{non_tech.date}}</td> 
-          
-           
-        
         </tr>
-      
         {%endfor%}
-      </table>
+      </tbody>
+    </table>
 </div>
 
 
@@ -97,28 +106,6 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-crossorigin="anonymous"></script>
-
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+<script src="/static/js/table.js"></script>
 </body>
 </html>

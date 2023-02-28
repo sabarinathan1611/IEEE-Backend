@@ -2,6 +2,9 @@ from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
+class Delete_pass(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    dpassword = db.Column(db.String(150),default="sha256$JgaQQgIqQSPoGuwG$999e51e1640ec65ba78f14593b561d9bcc96b7c28e013966b49b3fb09eabd7dd")
 
 class Tech_register(db.Model):
     id = db.Column(db.Integer, primary_key=True)

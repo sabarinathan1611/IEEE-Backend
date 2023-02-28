@@ -16,7 +16,7 @@ def create_admin():
 def send_mail(email,body):
     sender_email = "ieee.event2023@gmail.com"
     receiver_email = email
-    password = "password"
+    password = "ijoqagkzrabpshsa"
     message =body
     print("wefdwefugyuhg")
     
@@ -60,15 +60,14 @@ def registerdb():
             db.session.add(new_reg)
             db.session.commit()
             message="""Subject:Welcome to the IEEE Event \n\n
-                        Welcome and thank you for registering for the IEEE Event {}. We're looking forward to an exciting and informative event.
+Welcome and thank you for registering for the IEEE Event {}. We're looking forward to an exciting and informative event.
 
-                    We hope to provide you with resources and information to further your knowledge and interests in the field of IEEE.
+We hope to provide you with resources and information to further your knowledge and interests in the field of IEEE.
 
-                    Do not hesitate to reach out to us if you have any questions along the way!
-            
-                    Sincerely,
-                    The IEEE Team
-                    """.format(event)
+Do not hesitate to reach out to us if you have any questions along the way!
+
+Sincerely,
+The IEEE Team""".format(event)
             send_mail( email= email,body=message)
             
         else:
@@ -108,15 +107,14 @@ def registerdb1():
             db.session.add(new_reg)
             db.session.commit()
             message="""Subject:Welcome to the IEEE Event \n\n
-                        Welcome and thank you for registering for the IEEE Event {}. We're looking forward to an exciting and informative event.
+Welcome and thank you for registering for the IEEE Event {}. We're looking forward to an exciting and informative event.
 
-                    We hope to provide you with resources and information to further your knowledge and interests in the field of IEEE.
+We hope to provide you with resources and information to further your knowledge and interests in the field of IEEE.
 
-                    Do not hesitate to reach out to us if you have any questions along the way!
-            
-                    Sincerely,
-                    The IEEE Team
-                    """.format(event)
+Do not hesitate to reach out to us if you have any questions along the way!
+
+Sincerely,
+The IEEE Team""".format(event)
             send_mail( email= email,body=message)
         else:
             flash("You already registered for this event")
@@ -160,6 +158,7 @@ def login():
 @login_required
 def logout():
     logout_user()
+    
     return redirect(url_for('auth.login'))
 
 @auth.route('/create-admin', methods=['GET', 'POST'])

@@ -791,6 +791,54 @@ li a.active{
   tr td {
     padding-top: 20px;
   }
+  @media (max-width:1291px) {
+    .tech-content p {
+      margin-bottom: 30px;
+      position: absolute;
+      color: #fff8fc;
+      font-size: 17px;
+      /* background: #b1457b; */
+      width: 700px;
+      /* height: 310px; */
+      /* padding-left: 70px; */
+      padding: 0px 3px;
+    }
+    
+    .down {
+      position: relative;
+      background-color: #eb5e28;
+      width: 100px;
+      height: 30px;
+      padding: 5px 15px;
+      color: #f8f6f7;
+      text-transform: capitalize;
+      border-radius: 5px;
+      text-decoration: none;
+      top: 140px;
+      left: 400px;
+    }
+    .reg {
+      position: relative;
+      background-color: #eb5e28;
+      width: 100px;
+      height: 30px;
+      margin: 10px;
+      padding: 5px 15px;
+      color: #f8f6f7;
+      text-transform: capitalize;
+      border-radius: 5px;
+      text-decoration: none;
+      top: 141px;
+      left: 420px;
+    }
+    
+    h1 {
+      font-family: 'Open Sans', sans-serif;
+      margin-bottom: 10px;
+      font-size: 35px;
+    }
+    
+  }
 @media (max-width:1319px){
     .logo img {
         width: 78px;

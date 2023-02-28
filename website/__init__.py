@@ -24,7 +24,7 @@ def create_app():
     app.config['MAIL_PORT'] = 465
     app.config['MAIL_USE_SSL'] = True
     app.config['MAIL_USERNAME'] = 'ieee.event2023@gmail.com'
-    app.config['MAIL_PASSWORD'] = 'vwdvpyknrjgqqhzc'
+    app.config['MAIL_PASSWORD'] = ''
 
     from .views import views
     from .auth import auth
@@ -32,7 +32,7 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
     
-    from .models import User, Tech_register,Non_register
+    from .models import User, Tech_register,Non_register,Delete_pass
     
     
     with app.app_context():
