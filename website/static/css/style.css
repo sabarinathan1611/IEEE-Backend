@@ -781,6 +781,7 @@ li a.active{
     padding: 40px;
     background-color: #1c00b5;
     color: #fff;
+    font-size: 16px;
   }
   table {
     width: 50%;
@@ -1562,6 +1563,18 @@ li a {
   left: 20px;
   font-size: 10px;
 }
+.contact-right {
+	flex-basis: 40%;
+	padding: 40px;
+	background-color: #1c00b5;
+	color: #fff;
+	font-size: 12px;
+}
+h1 {
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 10px;
+	font-size: 16px !important;
+}
 
 }
 @media(max-width:320px){
@@ -1630,12 +1643,12 @@ li a {
   flex-basis: 60%;
   padding: 46px 6px;
 }
-.contact-right {
+/* .contact-right {
   flex-basis: 40%;
   padding: 10px;
   background-color: #1c00b5;
   color: #fff;
-}
+} */
 .buttons {
   left: 0px;
   /* width: 45px; */
@@ -1803,5 +1816,17 @@ li a {
   top: 157px;
   font-size: 10px;
   left: 20px;
+}
+.contact-right {
+	flex-basis: 40%;
+	padding: 40px;
+	background-color: #1c00b5;
+	color: #fff;
+	font-size: 12px;
+}
+h1 {
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 10px;
+	font-size: 16px !important;
 }
 }

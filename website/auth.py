@@ -159,7 +159,7 @@ def login():
 def logout():
     logout_user()
     
-    return redirect(url_for('auth.login'))
+    return redirect(url_for('views.home'))
 
 @auth.route('/create-admin', methods=['GET', 'POST'])
 def newadmin():
