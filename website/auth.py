@@ -6,17 +6,19 @@ import smtplib
 from flask_login import login_user, login_required, logout_user, current_user
 
 def create_admin():
+            print("password:",generate_password_hash("onepiece", method='sha256'))
             user=User.query.filter_by(id=1).first()
             if not user:
                 new_user = User(admin=True)
                 db.session.add(new_user)
                 db.session.commit()
                 print('Created Admin!')
+                
 
 def send_mail(email,body):
     sender_email = "ieee.event2023@gmail.com"
     receiver_email = email
-    password = "ijoqagkzrabpshsa"
+    password = "nsaguwquzcxpoxpz"
     message =body
     print("wefdwefugyuhg")
     
@@ -130,11 +132,13 @@ def login():
         userName = request.form.get('username')
         password = request.form.get('pass')
 
-    
+
         user = User.query.filter_by(id=1).first()
-        print("password:",generate_password_hash("admin", method='sha256'))
+        print(user.username)
         
-        if user:
+        if user.username == userName:
+            
+            
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
                 login_user(user, remember=True)
@@ -144,11 +148,11 @@ def login():
             else:
                 flash('Incorrect password, try again.', category='error')
         else:
-                passs="admin"
-                new_user = User(username="admin",password=generate_password_hash(passs, method='sha256'),admin=True)
-                db.session.add(new_user)
-                db.session.commit()
-                flash('Email does not exist.', category='error')
+                # passs="admin"
+                # new_user = User(username="admin",password=generate_password_hash(passs, method='sha256'),admin=True)
+                # db.session.add(new_user)
+                # db.session.commit()
+                flash('Username does not exist.', category='error')
 
 
     return render_template("login.html", user=current_user)

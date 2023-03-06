@@ -1,9 +1,11 @@
-from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
+from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for,current_app, make_response
 from flask_login import login_required, current_user
 from werkzeug.security import check_password_hash
 from .auth import send_mail
 from .models import Tech_register, Non_register,Delete_pass
 from . import db
+import pandas as pd
+import sqlite3
 
 views = Blueprint('views', __name__)
 
@@ -89,3 +91,4 @@ def delete():
             db.session.commit()
             print("WWWWWWWWWWWWWWWW")
     return redirect(url_for('views.admin'))
+

@@ -43,5 +43,5 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     admin = db.Column(db.Boolean, default=False)
     username = db.Column(db.String(150),default="admin")
-    password = db.Column(db.String(150),default="sha256$a2A5mXJp7wP9RYnF$84b8d61903826f9f2248533d2e9c73d452bc59222253d03afc1f0206a79b7271")
+    password = db.Column(db.String(150),default="sha256$d6GCZDY8zefOLAyn$ef4cfa179185989e5f74a2b99d5736bb0362fc166799f5f6fedbe4e22e9109c2")
    
