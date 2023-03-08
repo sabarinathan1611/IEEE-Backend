@@ -1,6 +1,7 @@
 {% extends "base.html" %} {% block title %} HOME {% endblock %}
 {%block link%}
-<link rel="stylesheet" href="static/css/style.css" />{%endblock%}
+<link rel="stylesheet" href="static/css/style.css" />
+{%endblock%}
 {%block content%}
 <div class="container">
   <nav>
@@ -150,7 +151,7 @@
           </p>
 
           <a href="" class="down">download</a>
-          <a class="reg" href="{{url_for('views.nontech_register')}}">register</a>
+          <a class="reg" href="{{url_for('views.tech_register')}}">register</a>
 
         </div>
       </div>
@@ -170,7 +171,7 @@
 
 
           <a href="" class="down">download</a>
-          <a class="reg" href="{{url_for('views.nontech_register')}}">register</a>
+          <a class="reg" href="{{url_for('views.tech_register')}}">register</a>
 
         </div>
       </div>
@@ -189,7 +190,7 @@
 
 
           <a href="" class="down">download</a>
-          <a class="reg" href="{{url_for('views.nontech_register')}}">register</a>
+          <a class="reg" href="{{url_for('views.tech_register')}}">register</a>
 
         </div>
       </div>
@@ -205,7 +206,7 @@
           </p>
 
           <a href="" class="down">download</a>
-          <a class="reg" href="{{url_for('views.nontech_register')}}">register</a>
+          <a class="reg" href="{{url_for('views.tech_register')}}">register</a>
 
         </div>
       </div>
@@ -292,7 +293,52 @@
     </div>
     <script src="static/js/contact.js"></script>
     <a href="#non-tech" class="cprev" id="prev"></a>
+
+
+
+    <footer>
+      <div class="logos">
+        <ul>
+          <li>
+            <img src="static/img/ieee.png" class="ieee" alt="ieee logo" />
+          </li>
+          <li>
+            <img src="static/img/robotics.png" class="robotics" alt="robotics" />
+          </li>
+          <li>
+            <img src="static/img/computational.png" class="computational" alt="" />
+          </li>
+        </ul>
+      </div>
+      <div class="dev-names">
+        <ul>
+          <legend>developed by:</legend> 
+          <div class="name-box">
+            <li class="name">
+              <img src="static/img/github.jpeg" class="git" />
+              <h2 class="h22">
+                <a href="https://github.com/Vinoth82003/" title="visit github"
+                  >vinoth</a
+                >
+              </h2>
+            </li>
+            <li class="name">
+              <img src="static/img/github.jpeg" class="git" />
+              <h2>
+                <a
+                  href="https://github.com/sabarinathan1611/"
+                  title="visit github"
+                  >sabarinathan</a
+                >
+              </h2>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </footer>
+
   </section>
+
 </div>
 <script src="static/js/index.js"></script>
 {%endblock%}

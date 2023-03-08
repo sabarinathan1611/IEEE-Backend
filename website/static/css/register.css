@@ -78,7 +78,9 @@ left: 56%;
   button[type="submit"] {
     margin: 10px;
   }
-
+  strong {
+    color: #ffff;
+}
   H1 {
     font-size: 20px;
     position: absolute;

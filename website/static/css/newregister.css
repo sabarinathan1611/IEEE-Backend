@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+section {
+  width: 100%;
+  background: #1029;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+fieldset {
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+
+.farme {
+  width: 200px;
+  height: 150px;
+  background: #000;
+}
+
+form {
+  width: 300px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 5px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#tech{
+  display: none;
+}
+
+#nontech{
+  display: none;
+}

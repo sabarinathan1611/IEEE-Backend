@@ -17,6 +17,7 @@ class Tech_register(db.Model):
     i3emid= db.Column(db.String(100))
     
     event=db.Column(db.String(100))
+    teamid=db.Column(db.Integer)
     teamname=db.Column(db.String(500))
     team_members=db.Column(db.String(500))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
@@ -33,6 +34,7 @@ class Non_register (db.Model):
     i3emid=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
+    teamid=db.Column(db.Integer)
     teamname=db.Column(db.String(500))
     team_members=db.Column(db.String(500))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
