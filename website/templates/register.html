@@ -41,11 +41,11 @@
         </div>
         <div class="rollno">
           <label for="#">rollno:</label>
-          <input type="text" id="rollno" name="rollno" placeholder="2021pecit001" required/>
+          <input type="text" id="rollno" name="rollno" placeholder="2021pecit001" required />
         </div>
         <div class="department">
           <label for="dept">department:</label>
-          <select name="dept" id="dept" class="dept" >
+          <select name="dept" id="dept" class="dept">
             <option value="no">select dept</option>
             <option value="it">IT</option>
             <option value="cse">CSE</option>
@@ -57,8 +57,8 @@
         <div class="ieeemember">
           <label for="#">are you an IEEE member ? </label>
           <br />
-          <input type="radio" name="ieee" id="ieee" value="yes" onclick="mem() " /><span>yes</span>
-          <input type="radio" name="ieee" id="ieee" value="no" onclick="nonmem()" /><span>no</span>
+          <input type="radio" name="ieee" id="yes" value="yes"  onclick="mem()"/><span>yes</span>
+          <input type="radio" name="ieee" id="no" value="no" onclick="nonmem()"/><span>no</span>
           <br />
           <div class="member-id" id="member-id">
             <input type="text" name="memberid" id="memberid" placeholder="evter your member id" />
@@ -66,35 +66,47 @@
         </div>
         <div class="email">
           <label for="#">email:</label>
-          <input type="email" name="email" id="email" placeholder="example@gmail.com" required/>
+          <input type="email" name="email" id="email" placeholder="example@gmail.com" required />
         </div>
 
 
         <div class="farme">
           <fieldset>
             <legend>tech events</legend>
-            <input type="hidden"  name="techval" id="techval" />
+            <input type="hidden" name="techval" id="techval" />
             <input type="checkbox" name="event1" class="tech" id="event1" />WIKIPEDIA SPEEDRUN
             <br />
-            <input type="checkbox" name="event2" id="event2" class="tech" />CODE COMBACKT
+            <input type="checkbox" name="event2" id="event2" class="tech" />CODE EXPRESS
             <br />
             <input type="checkbox" name="event3" id="event3" class="tech" />HACK CRACK
             <br />
-            <input type="checkbox" name="event4" id="event4" class="tech" />EXPRESS ON
+            <input type="checkbox" name="event4" id="event4" class="tech" />DESTINATION JUNCTION
+            <br />
+            <input type="checkbox" name="event5" id="teameventtech" class="tech teambox" />FIND ME IF YOU CAN
             <br />
           </fieldset>
-      </div>
+        </div>
         <fieldset>
           <legend>non-tech events</legend>
           <input type="hidden" name="nontechval" id="nontechval">
-          <input type="checkbox" name="event5" id="nonevent1" class="nontech" />GEOGUESSER <br />
-          <input type="checkbox" name="event6" id="nonevent2"  class="nontech" />LIGHT CAMERA ACTION <br />
-          <input type="checkbox" name="event7" id="nonevent3" class="nontech" />SHIP WRECK<br />
-          <input type="checkbox" name="event8" id="nonevent4"  class="nontech" />60 SECONDS FAME<br />
+          <input type="checkbox" name="event6" id="nonevent1" class="nontech" />GEOGUESSER <br />
+          <input type="checkbox" name="event7" class="nontech teambox" id="teamevent" />LIGHT CAMERA ACTION<br />
+          <input type="checkbox" name="event8" id="nonevent3" class="nontech" />SHIP WRECK<br />
+          <input type="checkbox" name="event9" id="nonevent4" class="nontech" />60 SECONDS FAME<br />
         </fieldset>
-     
+        <fieldset>
+          <legend>team name:</legend>
+          <input type="text" name="teamname2" id="teamname" class="teamname"  />
+          <input type="text" name="teamname1" id="techteam" class="teamname"  />
+        </fieldset>
+        <fieldset>
+          <legend>team members name:</legend>
+          <textarea name="team-members2" id="teammember" class="teammember" cols="20" rows="3"></textarea>
+          <textarea name="team-members1" id="techmember" class="teammember" cols="20" rows="3"></textarea>
+        </fieldset>
+        <fieldset>
 
-      <!-- <div class="events">
+          <!-- <div class="events">
             <label for="#">event:</label>
             <select name="event" id="event">
               <option value="no">select event</option>
@@ -117,11 +129,11 @@
               </textarea>
             </div>
           </div> -->
-      <button type="submit">submit</button>
+          <button type="submit" class="submit">submit</button>
       </form>
     </div>
   </div>
-  <script>
+  <!-- <script>
     const event1 = document.querySelector("#event");
 
     event1.addEventListener("input", function () {
@@ -151,7 +163,7 @@
 
 
 
-  </script>
+  </script> -->
   <script>
     let but = document.getElementById("closu");
     let msgg = document.getElementById("msgg")
@@ -160,6 +172,7 @@
     }
   </script>
   <script src="/static/js/newregister.js"></script>
+  <script src="/static/js/inspect.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 {%endblock%}
 {%block content%}
 <div class="container">
-  <nav>
+  <nav class="main-nav" id="main-nav">
     <div class="menu">
       <ul>
         <!--  -->
@@ -18,12 +18,25 @@
       </ul>
     </div>
   </nav>
+
+  <nav id="timeout-nav">
+    <div class="timeout-menu">
+      <ul>
+        <li>
+          <a href="#home" class="home active">home</a>
+        </li>
+        <li><a href="#event" class="event">events</a></li>
+        <li><a href="#contact" class="contact">contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <section id="home" class="section1">
 
     <marquee class="marquee">Event date time and some other details.</marquee>
     <div class="college-name">
       <div class="logo"><img src="static/images/logo.png" /></div>
-      <h1>panimalar engineerimg college</h1>
+      <h1>panimalar engineering college</h1>
       <h2>An autonomous institution</h2>
       <h3>
         affiliated to anna university, chennai <br />
@@ -32,40 +45,44 @@
     </div>
     <a href="#event" id="next" class="hnext"></a>
   </section>
-  <section id="event" class="section2">
-    <div class="time-container">
-      <div class="dept-name">
-        <h1>department of<span> information technology</span></h1>
-      </div>
-      <div class="launch-name">
-        <h1>w're <span>launching</span> event</h1>
-      </div>
-      <div class="calender">
-        <div class="calender-container">
-          <div class="days">
-            <p id="days">00</p>
-            <span class="span" id="">Days</span>
+<section id="event" class="section2">
+        <div class="time-container" id="eventbeforetime">
+          <div class="dept-name">
+            <h1 id="soon">
+              department of
+              <span>information technology</span>
+            </h1>
           </div>
-          <div class="minutes">
-            <p id="minutes">00</p>
-            <span class="span" id="">Minutes</span>
+          <div class="launch-name">
+            <h1 id="dontmiss">
+              w're
+              <span>launching</span>
+              event
+            </h1>
           </div>
-          <div class="hours">
-            <p id="hours">00</p>
-            <span class="span" id="">Hours</span>
-          </div>
-          <div class="seconds">
-            <p id="seconds">00</p>
-            <span class="span" id="">Seconds</span>
+          <div class="calender">
+            <div class="calender-container">
+              <div class="days">
+                <p id="days">00</p>
+                <span class="span" id="">Days</span>
+              </div>
+              <div class="minutes">
+                <p id="minutes">00</p>
+                <span class="span" id="">Hours</span>
+              </div>
+              <div class="hours">
+                <p id="hours">00</p>
+                <span class="span" id="">minutes</span>
+              </div>
+              <div class="seconds">
+                <p id="seconds">00</p>
+                <span class="span" id="">Seconds</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <a href="#home" id="prev" class="eprev"></a>
-    <a href="#tech" id="next" class="enext"></a>
-    <script src="static/js/event.js"></script>
-  </section>
+        <script src="static/js/event.js"></script>
+      </section>
   <section id="tech" class="section4">
     <div class="techevent-container">
       <div class="eventname-continer">
@@ -86,7 +103,7 @@
 
           </p>
           <div class="button-tech">
-            <a href="#">download</a>
+            <a href="/static/broucher/tech/tech.pdf" download="tech brochure">download</a>
             <a href="{{url_for('views.tech_register')}}">register</a>
           </div>
         </div>
@@ -99,7 +116,7 @@
 
           </p>
           <div class="button-tech">
-            <a href="#">download</a>
+            <a href="/static/broucher/tech/tech.pdf" download="tech brochure">download</a>
             <a href="{{url_for('views.tech_register')}}">register</a>
           </div>
         </div>
@@ -112,7 +129,7 @@
 
           </p>
           <div class="button-tech">
-            <a href="#">download</a>
+            <a href="/static/broucher/tech/tech.pdf" download="tech brochure">download</a>
             <a href="{{url_for('views.tech_register')}}">register</a>
           </div>
         </div>
@@ -125,7 +142,7 @@
 
           </p>
           <div class="button-tech">
-            <a href="#">download</a>
+            <a href="/static/broucher/tech/tech.pdf" download="tech brochure">download</a>
             <a href="{{url_for('views.tech_register')}}">register</a>
           </div>
         </div>

@@ -17,7 +17,7 @@ z-index: 100;
 }
   .register {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -228,4 +228,22 @@ left: 56%;
     background: #00000091;
     color: #f0f8ff;
     border: none;
+}
+
+#teamname{
+  transition: .5s;
+  scale: 0;
+}
+#teammember{
+  transition: .5s;
+  scale: 0;
+}
+
+#techteam{
+  transition: .5s;
+  scale: 0;
+}
+#techmember{
+  transition: .5s;
+  scale: 0;
 }

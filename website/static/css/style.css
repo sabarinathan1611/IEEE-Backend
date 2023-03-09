@@ -7,6 +7,10 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
+#timeout-nav{
+  display: none;
+}
 /*section2*/
 .section2 {
   width: 100%;

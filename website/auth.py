@@ -52,9 +52,17 @@ def registerdb():
         
         
         
-        teamName=request.form.get('teamName')
+        findmeteamname=request.form.get('teamname1')
         
-        team_members=request.form.get('team-members')
+        findmemember=request.form.get('team-members1')
+        
+        ligthname=request.form.get('teamname2')
+        ligthmember=request.form.get('team-members2')
+        
+        
+        
+        
+        
         
         techis=request.form.get('techval')
         nontechis=request.form.get('nontechval')
@@ -67,8 +75,9 @@ def registerdb():
         event6=request.form.get('event6')
         event7=request.form.get('event7')
         event8=request.form.get('event8')
+        event9=request.form.get('event9')
         #print("EVENT5:",event5)
-        print("NONtech type:",event5)
+        # print("NONtech type:",teamName)
         
         a=[]   
            
@@ -83,8 +92,16 @@ def registerdb():
                 a.append('HACK CRACK')
                 
             if event4 == 'on':
-                
-                a.append('EXPRESS ON')     
+                # techcheck = Tech_register.query.order_by(Tech_register.date)
+                # count=0
+                # for i in techcheck:
+                #    if i.teamname != None:
+                #        count+=1
+                #        if count == 20:
+                #            flash("LIST IS FULL")
+                a.append('DESTINATION JUNCTION')     
+            if event5 == 'on':
+                a.append('FIND ME IF YOU CAN')
                     
             roll=Tech_register.query.filter_by(rollno=rollno).first()
 
@@ -92,12 +109,14 @@ def registerdb():
                 my_list = a
                 result = ','.join(my_list)
                 #print("TECH Result::",result)
-
-                
-                new_reg=Tech_register(name=name,rollno=rollno,dept=dept,ieee=ieee,i3emid=i3emid,email=email,event=result,teamname=teamName,team_members=team_members)
+              
+                new_reg=Tech_register(name=name,rollno=rollno,dept=dept,ieee=ieee,i3emid=i3emid,email=email,event=result,teamname=findmeteamname,team_members=findmemember)
                 db.session.add(new_reg)
                 db.session.commit()
                 a.clear()
+                    
+
+
 
                 
             else:
@@ -125,7 +144,7 @@ def registerdb():
                 nontech_result = ','.join(nontech_list)
                 print("NON TECH::",nontech_result)
                 
-                new_reg=Non_register(name=name,rollno=rollno,dept=dept,ieee=ieee,i3emid=i3emid,email=email,event=nontech_result,teamname=teamName,team_members=team_members)
+                new_reg=Non_register(name=name,rollno=rollno,dept=dept,ieee=ieee,i3emid=i3emid,email=email,event=nontech_result,teamname= ligthname,team_members=ligthmember)
                 db.session.add(new_reg)
                 db.session.commit() 
                 a.clear()  
@@ -144,7 +163,7 @@ def registerdb():
 
     Sincerely,
     The IEEE Team""".format(result,nontech_result)
-        send_mail( email= email,body=message)
+        #send_mail( email= email,body=message)
       
       
     return redirect(url_for('views.home'))
