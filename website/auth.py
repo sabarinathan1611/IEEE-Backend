@@ -16,9 +16,9 @@ def create_admin():
                 
 
 def send_mail(email,body):
-    sender_email = "ieee.event2023@gmail.com"
+    sender_email = "ieeeeventit@gmail.com"
     receiver_email = email
-    password = "btugxzcfwugzxuhu"
+    password = "hbsapqyrcvcdjqjl"
     message =body
     print("wefdwefugyuhg")
     
@@ -32,41 +32,43 @@ def send_mail(email,body):
 
 
 auth = Blueprint('auth', __name__)
-#tech register
+
+
+#register
 @auth.route('/registerdb',methods=['GET','POST'])
 def registerdb():
     if request.method=="POST":
         result=' '
         nontech_result=' '
         name =request.form.get('name')
-        
+
         rollno=request.form.get('rollno')
-        
+
         dept=request.form.get('dept')
-        
+
         ieee=request.form.get('ieee')
-        
+
         i3emid=request.form.get('memberid')
-        
+
         email =request.form.get('email')
-        
-        
-        
+
+
+
         findmeteamname=request.form.get('teamname1')
-        
+
         findmemember=request.form.get('team-members1')
-        
+
         ligthname=request.form.get('teamname2')
         ligthmember=request.form.get('team-members2')
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         techis=request.form.get('techval')
         nontechis=request.form.get('nontechval')
-  
+
         event1=request.form.get('event1')
         event2=request.form.get('event2')
         event3=request.form.get('event3')
@@ -78,19 +80,19 @@ def registerdb():
         event9=request.form.get('event9')
         #print("EVENT5:",event5)
         # print("NONtech type:",teamName)
-        
-        a=[]   
-           
+
+        a=[]
+
         if techis== '1':
             if event1 == 'on':
                 a.append('WIKIPEDIA SPEEDRUN')
-                
+
             if event2 == 'on':
                 a.append('CODE COMBACKT')
-                
+
             if event3 == 'on':
                 a.append('HACK CRACK')
-                
+
             if event4 == 'on':
                 # techcheck = Tech_register.query.order_by(Tech_register.date)
                 # count=0
@@ -99,63 +101,65 @@ def registerdb():
                 #        count+=1
                 #        if count == 20:
                 #            flash("LIST IS FULL")
-                a.append('DESTINATION JUNCTION')     
+                a.append('DESTINATION JUNCTION')
             if event5 == 'on':
                 a.append('FIND ME IF YOU CAN')
-                    
+
             roll=Tech_register.query.filter_by(rollno=rollno).first()
 
             if roll is None :
                 my_list = a
                 result = ','.join(my_list)
                 #print("TECH Result::",result)
-              
+
                 new_reg=Tech_register(name=name,rollno=rollno,dept=dept,ieee=ieee,i3emid=i3emid,email=email,event=result,teamname=findmeteamname,team_members=findmemember)
                 db.session.add(new_reg)
                 db.session.commit()
                 a.clear()
-                    
 
 
 
-                
+
+
             else:
                 flash("You already registered for this event")
-                
-        b=[]    
-        if nontechis =='1':            
-            
-            if event5 == 'on':
-                a.append('GEOGUESSER')
-                
+
+        
+        if nontechis =='1':
+
             if event6 == 'on':
-               a.append('LIGHT CAMERA ACTION')
-                
+                a.append('GEOGUESSER')
+
             if event7 == 'on':
-               a.append('SHIP WRECK')
-                
+               a.append('LIGHT CAMERA ACTION')
+
             if event8 == 'on':
-                
-               a.append('60 SECONDS FAME')  
+               a.append('SHIP WRECK')
+
+            if event9 == 'on':
+
+               a.append('60 SECONDS FAME')
+
+
             roll=Non_register.query.filter_by(rollno=rollno).first()
-       
+
             if roll is None:
                 nontech_list = a
                 nontech_result = ','.join(nontech_list)
                 print("NON TECH::",nontech_result)
-                
+
                 new_reg=Non_register(name=name,rollno=rollno,dept=dept,ieee=ieee,i3emid=i3emid,email=email,event=nontech_result,teamname= ligthname,team_members=ligthmember)
                 db.session.add(new_reg)
-                db.session.commit() 
-                a.clear()  
+                db.session.commit()
+                a.clear()
                 print("TECH RESULT:",result,'\n\n','NONTECH',nontech_result)
             else:
                 flash("You already registered for this event")
                 return redirect(url_for('views.tech_register'))
-            
-            
+
+
         message="""Subject:Welcome to the IEEE Event \n\n
-    Welcome and thank you for registering for the IEEE Event {} {}. We're looking forward to an exciting and informative event.
+    Welcome and thank you for registering for the IEEE Event {},{}. We're looking forward to an exciting and informative event.
 
     We hope to provide you with resources and information to further your knowledge and interests in the field of IEEE.
 
@@ -164,9 +168,10 @@ def registerdb():
     Sincerely,
     The IEEE Team""".format(result,nontech_result)
         #send_mail( email= email,body=message)
-      
-      
+
+
     return redirect(url_for('views.home'))
+
 
 
 @auth.route('/login', methods=['GET', 'POST'])

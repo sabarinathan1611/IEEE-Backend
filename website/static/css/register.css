@@ -3,11 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
- 
+
+
   }
   .close {
-    background: transparent;    
+    background: transparent;
     border: none;
     color: #fff;
 }
@@ -245,5 +245,13 @@ left: 56%;
 }
 #techmember{
   transition: .5s;
+  scale: 0;
+}
+
+#teameventbox{
+  scale: 0;
+}
+
+#teammembersbox{
   scale: 0;
 }

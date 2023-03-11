@@ -61,7 +61,7 @@
           <input type="radio" name="ieee" id="no" value="no" onclick="nonmem()"/><span>no</span>
           <br />
           <div class="member-id" id="member-id">
-            <input type="text" name="memberid" id="memberid" placeholder="evter your member id" />
+            <input type="text" name="memberid" id="memberid" placeholder="evter your member id" required/>
           </div>
         </div>
         <div class="email">
@@ -94,12 +94,12 @@
           <input type="checkbox" name="event8" id="nonevent3" class="nontech" />SHIP WRECK<br />
           <input type="checkbox" name="event9" id="nonevent4" class="nontech" />60 SECONDS FAME<br />
         </fieldset>
-        <fieldset>
+        <fieldset id='teameventbox'>
           <legend>team name:</legend>
           <input type="text" name="teamname2" id="teamname" class="teamname"  />
           <input type="text" name="teamname1" id="techteam" class="teamname"  />
         </fieldset>
-        <fieldset>
+        <fieldset id='teammembersbox'>
           <legend>team members name:</legend>
           <textarea name="team-members2" id="teammember" class="teammember" cols="20" rows="3"></textarea>
           <textarea name="team-members1" id="techmember" class="teammember" cols="20" rows="3"></textarea>
@@ -171,8 +171,9 @@
       msgg.style.display = "none";
     }
   </script>
-  <script src="/static/js/newregister.js"></script>
+  <!-- <script src="/static/js/newregister.js"></script> -->
   <script src="/static/js/inspect.js"></script>
+  <script src="/static/js/newregister.js"></script>
 </body>
 
 </html>

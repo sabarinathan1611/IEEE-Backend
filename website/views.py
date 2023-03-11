@@ -21,7 +21,7 @@ def admin():
     if (current_user.admin == True):
         tech = Tech_register.query.order_by(Tech_register.date)
         non_tech = Non_register.query.order_by(Non_register.date)
-        print("wrh")
+        
 
     else:
 
@@ -29,14 +29,10 @@ def admin():
     return render_template("admin.html", tech=tech, non_tech=non_tech)
 
 
-@views.route('/tec-register', methods=['GET', 'POST'])
+@views.route('/register', methods=['GET', 'POST'])
 def tech_register():
     return render_template('register.html')
 
-
-@views.route('/non-tec-register', methods=['GET', 'POST'])
-def nontech_register():
-    return render_template('nontech_register.html')
 
 
 @views.route('/contact', methods=['POST', 'GET'])
@@ -66,7 +62,7 @@ def connect():
 def delete():
     
     if request.method=='POST':
-        print("sdsds")
+      
         password=request.form.get('pass')
         
         deletepassword= Delete_pass.query.filter_by(id=1).first()
@@ -89,6 +85,6 @@ def delete():
             new = Delete_pass()
             db.session.add(new)
             db.session.commit()
-            print("WWWWWWWWWWWWWWWW")
+            
     return redirect(url_for('views.admin'))
 

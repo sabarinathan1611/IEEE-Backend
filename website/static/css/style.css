@@ -1609,12 +1609,12 @@ li a {
         padding: 3px 0px;
     }
     .section1 .marquee {
-        position: absolute;
-        margin-top: 150px;
-        background: #ffbb00;
-        padding: 2px 0px;
-        color: #9b1010;
-    }
+      position: absolute;
+      margin-top: 180px;
+      background: #ffbb00;
+      padding: 2px 0px;
+      color: #9b1010;
+  }
     .logo img {
       width: 49px;
       height: 48px;
@@ -1790,6 +1790,21 @@ h1 {
 	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 10px;
 	font-size: 16px !important;
+}
+.text {
+  position: absolute;
+  left: 70%;
+  width: 18px;
+  height: 80%;
+  /* background: #17c3b2; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: uppercase;
+  align-items: center;
+  color: #f1faee;
+  font-size: 30px;
+  /* transform: rotate(90deg); */
 }
 
 }
