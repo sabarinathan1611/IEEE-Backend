@@ -4,11 +4,20 @@ from werkzeug.security import check_password_hash
 from .auth import send_mail
 from .models import Tech_register, Non_register,Delete_pass
 from . import db
-import pandas as pd
-import sqlite3
-
+from werkzeug.utils import secure_filename  #for secure file
+from random import randint
+import uuid
+import os
+from website import create_app
 views = Blueprint('views', __name__)
+#Allowed Extensions
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'webp','raw','svg'])
 
+app=create_app()
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit(
+        '.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @views.route('/', methods=['GET', 'POST'])
 def home():
@@ -88,3 +97,40 @@ def delete():
             
     return redirect(url_for('views.admin'))
 
+
+@views.route('/upload', methods=['POST','GET'])
+def upload_photo():
+    if request.method=='POST':
+            
+        try:
+            # check if request contains files and image attribute exists
+            if 'image' not in request.files:
+                raise FileNotFoundError('No image uploaded')
+            
+            pic = request.files['image']
+
+            # validate mimetype of uploaded image
+            if not pic.mimetype.startswith('image/'):
+                raise TypeError('Invalid file type')
+
+            # validate if the file has allowed extensions
+            if not allowed_file(pic.filename):
+                raise ValueError("Allowed file extensions: 'png', 'jpg', 'jpeg', 'webp', 'raw', 'svg'")
+            if not os.path.exists(app.config['UPLOAD_FOLDER']):
+                flash("oombu")
+            filename = secure_filename(pic.filename)
+
+            pic_name = str(uuid.uuid1()) + '_' + filename
+            
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], pic_name)
+            
+            pic.save(filepath)
+            
+            flash('File uploaded successfully.')
+            
+            return redirect('/')
+        
+        except (TypeError, ValueError, KeyError, FileNotFoundError) as e:
+            flash(str(e))
+
+    return render_template('upload.html')

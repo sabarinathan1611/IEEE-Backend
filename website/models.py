@@ -6,24 +6,9 @@ class Delete_pass(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     dpassword = db.Column(db.String(150),default="sha256$JgaQQgIqQSPoGuwG$999e51e1640ec65ba78f14593b561d9bcc96b7c28e013966b49b3fb09eabd7dd")
 
-class Tech_register(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name=db.Column(db.String(100))
-    email = db.Column(db.String(150))
-    rollno=db.Column(db.String(100),unique=True)
-    dept=db.Column(db.String(100))
-    
-    ieee=db.Column(db.String(10))
-    i3emid= db.Column(db.String(100))
-    
-    event=db.Column(db.String(100))
-    teamid=db.Column(db.Integer,autoincrement=True)
-    teamname=db.Column(db.String(500))
-    team_members=db.Column(db.String(500))
-    date = db.Column(db.DateTime(timezone=True), default=func.now())
-    
 
-class Non_register (db.Model):
+
+class event1(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name=db.Column(db.String(100))
     email = db.Column(db.String(150))
@@ -34,11 +19,138 @@ class Non_register (db.Model):
     i3emid=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
-    teamid=db.Column(db.Integer)
-    teamname=db.Column(db.String(500))
+
+    teamname=db.Column(db.String(500),unique=True)
     team_members=db.Column(db.String(500))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
 
+class event2(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name=db.Column(db.String(100))
+    email = db.Column(db.String(150))
+    rollno=db.Column(db.String(100),unique=True)
+    dept=db.Column(db.String(100))
+    
+    ieee=db.Column(db.String(10))
+    i3emid=db.Column(db.String(10))
+    
+    event=db.Column(db.String(100))
+
+    teamname=db.Column(db.String(500),unique=True)
+    team_members=db.Column(db.String(500))
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
+
+class event3(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name=db.Column(db.String(100))
+    email = db.Column(db.String(150))
+    rollno=db.Column(db.String(100),unique=True)
+    dept=db.Column(db.String(100))
+    
+    ieee=db.Column(db.String(10))
+    i3emid=db.Column(db.String(10))
+    
+    event=db.Column(db.String(100))
+
+    teamname=db.Column(db.String(500),unique=True)
+    team_members=db.Column(db.String(500))
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
+
+class event4(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name=db.Column(db.String(100))
+    email = db.Column(db.String(150))
+    rollno=db.Column(db.String(100),unique=True)
+    dept=db.Column(db.String(100))
+    
+    ieee=db.Column(db.String(10))
+    i3emid=db.Column(db.String(10))
+    
+    event=db.Column(db.String(100))
+
+    teamname=db.Column(db.String(500),unique=True)
+    team_members=db.Column(db.String(500))
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
+
+class event5(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name=db.Column(db.String(100))
+    email = db.Column(db.String(150))
+    rollno=db.Column(db.String(100),unique=True)
+    dept=db.Column(db.String(100))
+    
+    ieee=db.Column(db.String(10))
+    i3emid=db.Column(db.String(10))
+    
+    event=db.Column(db.String(100))
+
+    teamname=db.Column(db.String(500),unique=True)
+    team_members=db.Column(db.String(500))
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
+
+class event6(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name=db.Column(db.String(100))
+    email = db.Column(db.String(150))
+    rollno=db.Column(db.String(100),unique=True)
+    dept=db.Column(db.String(100))
+    
+    ieee=db.Column(db.String(10))
+    i3emid=db.Column(db.String(10))
+    
+    event=db.Column(db.String(100))
+
+    teamname=db.Column(db.String(500),unique=True)
+    team_members=db.Column(db.String(500))
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
+
+class event7(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name=db.Column(db.String(100))
+    email = db.Column(db.String(150))
+    rollno=db.Column(db.String(100),unique=True)
+    dept=db.Column(db.String(100))
+    
+    ieee=db.Column(db.String(10))
+    i3emid=db.Column(db.String(10))
+    
+    event=db.Column(db.String(100))
+
+    teamname=db.Column(db.String(500),unique=True)
+    team_members=db.Column(db.String(500))
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
+
+class event8(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name=db.Column(db.String(100))
+    email = db.Column(db.String(150))
+    rollno=db.Column(db.String(100),unique=True)
+    dept=db.Column(db.String(100))
+    
+    ieee=db.Column(db.String(10))
+    i3emid=db.Column(db.String(10))
+    
+    event=db.Column(db.String(100))
+
+    teamname=db.Column(db.String(500),unique=True)
+    team_members=db.Column(db.String(500))
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
+
+class event9(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name=db.Column(db.String(100))
+    email = db.Column(db.String(150))
+    rollno=db.Column(db.String(100),unique=True)
+    dept=db.Column(db.String(100))
+    
+    ieee=db.Column(db.String(10))
+    i3emid=db.Column(db.String(10))
+    
+    event=db.Column(db.String(100))
+
+    teamname=db.Column(db.String(500))
+    team_members=db.Column(db.String(500))
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
 
         
 class User(db.Model, UserMixin):

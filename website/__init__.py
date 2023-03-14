@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from os import path
+import os
 from flask_login import LoginManager
 
 
@@ -15,7 +15,9 @@ def create_app():
     app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}'.format(DB_NAME)
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS']= False
-
+    APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+    UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static/uploads')
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
     
     db.init_app(app)
@@ -23,8 +25,7 @@ def create_app():
     app.config['MAIL_SERVER'] = 'smtp.gmail.com'
     app.config['MAIL_PORT'] = 465
     app.config['MAIL_USE_SSL'] = True
-    app.config['MAIL_USERNAME'] = ''
-    app.config['MAIL_PASSWORD'] = ''
+
 
     from .views import views
     from .auth import auth
@@ -32,7 +33,7 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
     
-    from .models import User, Tech_register,Non_register,Delete_pass
+    from .models import User, event1,event2,event3,event4,event5,event6,event7,event8,event9
     
     
     with app.app_context():

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="msgg" class="msg">
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %} {% if category ==
+        'error' %}
+        <div class="alert alert-danger alter-dismissable fade show" role="alert">
+          {{ message }}
+          <button type="button" id="closu" onclick="off()" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% else %}
+        <div class="alert alert-success alter-dismissable fade show" role="alert">
+          {{ message }}
+          <button type="button" id="closu" onclick="off()" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endif %} {% endfor %} {% endif %} {% endwith %}
+      </div>
+    <form action="{{url_for('views.upload_photo')}}"  enctype="multipart/form-data" method="post">
+        <label for="">UPLOAD</label>
+        <input type="file" name="image" id="">
+        <button type="submit">UPLOAD</button>
+    </form>
+    <div class="">image;</div>
+  <img src="/static/uploads/1508c498-c1a7-11ed-aa71-23af93f58c91_WhatsApp_Image_2023-03-07_at_7.15.54_AM.jpeg" alt="">
+</body>
+</html>

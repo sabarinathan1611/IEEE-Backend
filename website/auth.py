@@ -60,7 +60,10 @@ def registerdb():
 
         ligthname=request.form.get('teamname2')
         ligthmember=request.form.get('team-members2')
-
+        
+        if dept == 'no':
+            flash("ADD DEPT")
+            return redirect(url_for('views.tech_register'))
 
 
 
@@ -94,6 +97,7 @@ def registerdb():
                 a.append('HACK CRACK')
 
             if event4 == 'on':
+                #new logic for team event limit
                 # techcheck = Tech_register.query.order_by(Tech_register.date)
                 # count=0
                 # for i in techcheck:
@@ -102,6 +106,7 @@ def registerdb():
                 #        if count == 20:
                 #            flash("LIST IS FULL")
                 a.append('DESTINATION JUNCTION')
+                
             if event5 == 'on':
                 a.append('FIND ME IF YOU CAN')
 
@@ -116,11 +121,6 @@ def registerdb():
                 db.session.add(new_reg)
                 db.session.commit()
                 a.clear()
-
-
-
-
-
             else:
                 flash("You already registered for this event")
 
