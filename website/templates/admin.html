@@ -28,7 +28,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 
 
 <div class="table table-dark table-striped">
-    <h1>Tech Event</h1>
+    <h1>Event Name 1</h1>
     <table>
       <tr>
         <th>Id</th>
@@ -45,60 +45,321 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
       </tr>
       </thead>
       <tbody>
-        {% for tech in tech %}
+        {% for event1 in event1 %}
         <tr>
-          <td>{{tech.id}}</td>
-          <td>{{tech.name}}</td>
-          <td>{{tech.email}}</td>
-          <td>{{tech.rollno}}</td>
-          <td>{{tech.dept}}</td>
-          <td>{{tech.event}}</td>
-          <td>{{tech.ieee}}</td>
-          <td>{{tech.i3emid}}</td>
-          <td>{{tech.teamname}}</td>
-          <td>{{tech.team_members}}</td>
-          <td>{{tech.date}}</td> 
+          <td>{{event1.id}}</td>
+          <td>{{event1.name}}</td>
+          <td>{{event1.email}}</td>
+          <td>{{event1.rollno}}</td>
+          <td>{{event1.dept}}</td>
+          <td>{{event1.event}}</td>
+          <td>{{event1.ieee}}</td>
+          <td>{{event1.i3emid}}</td>
+          <td>{{event1.teamname}}</td>
+          <td>{{event1.team_members}}</td>
+          <td>{{event1.date}}</td> 
         </tr>
         {%endfor%}
       </tbody>
     </table>
 </div> 
+
+
 <div class="table table-dark table-striped">
-    <h1>NON-Tech Event</h1>
-    <table>
+  <h1>Event Name 2</h1>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Rollno</th>
+      <th>Department</th>
+      <th>Event</th>
+      <th>IEEE</th>
+      <th>IEEE member ID</th>
+      <th>Teamname</th>
+      <th>Team Members</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+      {% for event2 in event2 %}
       <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Rollno</th>
-        <th>Department</th>
-        <th>Event</th>
-        <th>IEEE</th>
-        <th>IEEE member ID</th>
-        <th>Teamname</th>
-        <th>Team Members</th>
-        <th>Date</th>
+        <td>{{event2.id}}</td>
+        <td>{{event2.name}}</td>
+        <td>{{event2.email}}</td>
+        <td>{{event2.rollno}}</td>
+        <td>{{event2.dept}}</td>
+        <td>{{event2.event}}</td>
+        <td>{{event2.ieee}}</td>
+        <td>{{event2.i3emid}}</td>
+        <td>{{event2.teamname}}</td>
+        <td>{{event2.team_members}}</td>
+        <td>{{event2.date}}</td> 
       </tr>
-      </thead>
-      <tbody>
-        {% for non_tech in non_tech %}
-        <tr>
-          <td>{{non_tech.id}}</td>
-          <td>{{non_tech.name}}</td>
-          <td>{{non_tech.email}}</td>
-          <td>{{non_tech.rollno}}</td>
-          <td>{{non_tech.dept}}</td>
-          <td>{{non_tech.event}}</td>
-          <td>{{non_tech.ieee}}</td>
-          <td>{{non_tech.i3emid}}</td>
-          <td>{{non_tech.teamname}}</td>
-          <td>{{non_tech.team_members}}</td>
-          <td>{{non_tech.date}}</td> 
-        </tr>
-        {%endfor%}
-      </tbody>
-    </table>
-</div>
+      {%endfor%}
+    </tbody>
+  </table>
+</div> 
+
+<div class="table table-dark table-striped">
+  <h1>Event Name 3</h1>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Rollno</th>
+      <th>Department</th>
+      <th>Event</th>
+      <th>IEEE</th>
+      <th>IEEE member ID</th>
+      <th>Teamname</th>
+      <th>Team Members</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+      {% for event3 in event3 %}
+      <tr>
+        <td>{{event3.id}}</td>
+        <td>{{event3.name}}</td>
+        <td>{{event3.email}}</td>
+        <td>{{event3.rollno}}</td>
+        <td>{{event3.dept}}</td>
+        <td>{{event3.event}}</td>
+        <td>{{event3.ieee}}</td>
+        <td>{{event3.i3emid}}</td>
+        <td>{{event3.teamname}}</td>
+        <td>{{event3.team_members}}</td>
+        <td>{{event3.date}}</td> 
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div> 
+
+<div class="table table-dark table-striped">
+  <h1>Event Name 4</h1>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Rollno</th>
+      <th>Department</th>
+      <th>Event</th>
+      <th>IEEE</th>
+      <th>IEEE member ID</th>
+      <th>Teamname</th>
+      <th>Team Members</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+      {% for event4 in event4 %}
+      <tr>
+        <td>{{event4.id}}</td>
+        <td>{{event4.name}}</td>
+        <td>{{event4.email}}</td>
+        <td>{{event4.rollno}}</td>
+        <td>{{event4.dept}}</td>
+        <td>{{event4.event}}</td>
+        <td>{{event4.ieee}}</td>
+        <td>{{event4.i3emid}}</td>
+        <td>{{event4.teamname}}</td>
+        <td>{{event4.team_members}}</td>
+        <td>{{event4.date}}</td> 
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div> 
+
+<div class="table table-dark table-striped">
+  <h1>Event Name 5</h1>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Rollno</th>
+      <th>Department</th>
+      <th>Event</th>
+      <th>IEEE</th>
+      <th>IEEE member ID</th>
+      <th>Teamname</th>
+      <th>Team Members</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+      {% for event5 in event5 %}
+      <tr>
+        <td>{{event5.id}}</td>
+        <td>{{event5.name}}</td>
+        <td>{{event5.email}}</td>
+        <td>{{event5.rollno}}</td>
+        <td>{{event5.dept}}</td>
+        <td>{{event5.event}}</td>
+        <td>{{event5.ieee}}</td>
+        <td>{{event5.i3emid}}</td>
+        <td>{{event5.teamname}}</td>
+        <td>{{event5.team_members}}</td>
+        <td>{{event5.date}}</td> 
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div> 
+
+<div class="table table-dark table-striped">
+  <h1>Event Name 6</h1>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Rollno</th>
+      <th>Department</th>
+      <th>Event</th>
+      <th>IEEE</th>
+      <th>IEEE member ID</th>
+      <th>Teamname</th>
+      <th>Team Members</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+      {% for event6 in event6 %}
+      <tr>
+        <td>{{event6.id}}</td>
+        <td>{{event6.name}}</td>
+        <td>{{event6.email}}</td>
+        <td>{{event6.rollno}}</td>
+        <td>{{event6.dept}}</td>
+        <td>{{event6.event}}</td>
+        <td>{{event6.ieee}}</td>
+        <td>{{event6.i3emid}}</td>
+        <td>{{event6.teamname}}</td>
+        <td>{{event6.team_members}}</td>
+        <td>{{event6.date}}</td> 
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div> 
+
+<div class="table table-dark table-striped">
+  <h1>Event Name 7</h1>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Rollno</th>
+      <th>Department</th>
+      <th>Event</th>
+      <th>IEEE</th>
+      <th>IEEE member ID</th>
+      <th>Teamname</th>
+      <th>Team Members</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+      {% for event7 in event7 %}
+      <tr>
+        <td>{{event7.id}}</td>
+        <td>{{event7.name}}</td>
+        <td>{{event7.email}}</td>
+        <td>{{event7.rollno}}</td>
+        <td>{{event7.dept}}</td>
+        <td>{{event7.event}}</td>
+        <td>{{event7.ieee}}</td>
+        <td>{{event7.i3emid}}</td>
+        <td>{{event7.teamname}}</td>
+        <td>{{event7.team_members}}</td>
+        <td>{{event7.date}}</td> 
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div> 
+
+<div class="table table-dark table-striped">
+  <h1>Event Name 8</h1>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Rollno</th>
+      <th>Department</th>
+      <th>Event</th>
+      <th>IEEE</th>
+      <th>IEEE member ID</th>
+      <th>Teamname</th>
+      <th>Team Members</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+      {% for event8 in event8 %}
+      <tr>
+        <td>{{event8.id}}</td>
+        <td>{{event8.name}}</td>
+        <td>{{event8.email}}</td>
+        <td>{{event8.rollno}}</td>
+        <td>{{event8.dept}}</td>
+        <td>{{event8.event}}</td>
+        <td>{{event8.ieee}}</td>
+        <td>{{event8.i3emid}}</td>
+        <td>{{event8.teamname}}</td>
+        <td>{{event8.team_members}}</td>
+        <td>{{event8.date}}</td> 
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div> 
+
+<div class="table table-dark table-striped">
+  <h1>Event Name 9</h1>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Rollno</th>
+      <th>Department</th>
+      <th>Event</th>
+      <th>IEEE</th>
+      <th>IEEE member ID</th>
+      <th>Teamname</th>
+      <th>Team Members</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+      {% for event9 in event9 %}
+      <tr>
+        <td>{{event9.id}}</td>
+        <td>{{event9.name}}</td>
+        <td>{{event9.email}}</td>
+        <td>{{event9.rollno}}</td>
+        <td>{{event9.dept}}</td>
+        <td>{{event9.event}}</td>
+        <td>{{event9.ieee}}</td>
+        <td>{{event9.i3emid}}</td>
+        <td>{{event9.teamname}}</td>
+        <td>{{event9.team_members}}</td>
+        <td>{{event9.date}}</td> 
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div> 
 
 
 

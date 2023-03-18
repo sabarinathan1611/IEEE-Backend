@@ -27,13 +27,13 @@ def create_app():
     app.config['MAIL_USE_SSL'] = True
 
 
-    from .views import views
     from .auth import auth
+    from .views import views
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
     
-    from .models import User, event1,event2,event3,event4,event5,event6,event7,event8,event9
+    from .models import User, Event1,Event2,Event3,Event4,Event5,Event6,Event7,Event8,Event9
     
     
     with app.app_context():
@@ -58,5 +58,3 @@ def create_database(app):
     if not path.exists('website/' + DB_NAME):
         db.create_all(app=app)
         print('Created Database!')
-
-    

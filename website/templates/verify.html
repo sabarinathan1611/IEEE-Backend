@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>verify page</title>
-    <link rel="stylesheet" href="/verify.css">
+    <link rel="stylesheet" href="/static/css/verify.css">
 </head>
 
 <body>
@@ -24,22 +24,29 @@
         </div>
     </div> -->
 
-
+    {% for photo in photos %}
 
     <div class="posts">
 
         <div class="post-title">
             <div class="username">
-                <p class="name">Name: Harish </p>
-                <p class="name">Rollno:2021pecit001 </p>
+                <button onclick="deleteImg({{photo.id}})">Delete</button>
+                <p class="name">Name: {{photo.name}}</p>
+                <p class="name">Rollno:{{photo.rollnum}} </p>
+                <p class="name">Tech Event:{{photo.techevent}} </p>
+                <p class="name">NONTech Event:{{photo.nontechevent}} </p>
             </div>
         </div>
+
         <div class="post-content">
 
-            <img src="/wallpaperflare.com_wallpaper(3).jpg" height="400" width="600" alt="post">
+            <img src="{{url_for('static', filename='uploads/'+photo.img_name)}}" height="400" width="600" alt="post">
 
         </div>
     </div>
 
+    {% endfor %}
+    <script src="/static/js/del.js"></script>
+</body>
 
 </html>

@@ -7,8 +7,8 @@
     <title>{% block title %} {% endblock %}</title>
     {%block link%}{%endblock%}
 </head>
-<body>
-    {%block content%}{%endblock%}
+<body onload = "countVisitor()">
+    {%block content%} {%endblock%}
     <script src="/static/js/inspect.js"></script>
 </body>
 </html>

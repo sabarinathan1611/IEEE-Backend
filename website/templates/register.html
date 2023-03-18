@@ -34,7 +34,7 @@
       <div class="event-heading">
         <strong>REGISTER</strong>
       </div>
-      <form method="post" action="{{url_for('auth.registerdb')}}">
+      <form enctype="multipart/form-data" method="post" action="{{url_for('auth.registerdb')}}">
         <div class="name">
           <label for="#">name:</label>
           <input type="text" id="name" name="name" placeholder="enter name..!" />
@@ -61,6 +61,7 @@
           <input type="radio" name="ieee" id="no" value="no" onclick="nonmem()"/><span>no</span>
           <br />
           <div class="member-id" id="member-id">
+            <input type="file" name="image" id="">
             <input type="text" name="memberid" id="memberid" placeholder="evter your member id" required/>
           </div>
         </div>
