@@ -16,7 +16,7 @@ class Event1(db.Model):
     dept=db.Column(db.String(100))
     
     ieee=db.Column(db.String(10))
-    i3emid=db.Column(db.String(10))
+    # i3emid=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -32,7 +32,7 @@ class Event2(db.Model):
     dept=db.Column(db.String(100))
     
     ieee=db.Column(db.String(10))
-    i3emid=db.Column(db.String(10))
+    # i3emid=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -48,7 +48,7 @@ class Event3(db.Model):
     dept=db.Column(db.String(100))
     
     ieee=db.Column(db.String(10))
-    i3emid=db.Column(db.String(10))
+    # i3emid=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -64,7 +64,7 @@ class Event4(db.Model):
     dept=db.Column(db.String(100))
     
     ieee=db.Column(db.String(10))
-    i3emid=db.Column(db.String(10))
+    # i3emid=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -80,7 +80,7 @@ class Event5(db.Model):
     dept=db.Column(db.String(100))
     
     ieee=db.Column(db.String(10))
-    i3emid=db.Column(db.String(10))
+    # i3emid=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -96,7 +96,7 @@ class Event6(db.Model):
     dept=db.Column(db.String(100))
     
     ieee=db.Column(db.String(10))
-    i3emid=db.Column(db.String(10))
+    # i3emid=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -112,7 +112,7 @@ class Event7(db.Model):
     dept=db.Column(db.String(100))
     
     ieee=db.Column(db.String(10))
-    i3emid=db.Column(db.String(10))
+    # i3emid=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -128,7 +128,7 @@ class Event8(db.Model):
     dept=db.Column(db.String(100))
     
     ieee=db.Column(db.String(10))
-    i3emid=db.Column(db.String(10))
+    # i3emid=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -144,7 +144,7 @@ class Event9(db.Model):
     dept=db.Column(db.String(100))
     
     ieee=db.Column(db.String(10))
-    i3emid=db.Column(db.String(10))
+    # i3emid=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 

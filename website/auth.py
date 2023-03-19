@@ -104,7 +104,7 @@ def registerdb():
 
         ieee = request.form.get('ieee')
 
-        i3emid = request.form.get('memberid')
+        #i3emid = request.form.get('memberid')
 
         email = request.form.get('email')
 
@@ -135,9 +135,9 @@ def registerdb():
         # print("EVENT5:",event5)
         # print("NONtech type:",teamName)
 
-        result = techget(name=name, dept=dept, ieee=ieee, i3emid=i3emid, email=email, tech_teamname=tech_teamname, tech_memember=tech_memember,
+        result = techget(name=name, dept=dept, ieee=ieee,  email=email, tech_teamname=tech_teamname, tech_memember=tech_memember,
                          techis=techis, event1=event1, event2=event2, event3=event3, event4=event4, event5=event5, rollno=rollno)
-        nontech_result = nontechget(name=name, dept=dept, ieee=ieee, i3emid=i3emid, email=email, nontech_teamname=nontech_teamname,
+        nontech_result = nontechget(name=name, dept=dept, ieee=ieee,  email=email, nontech_teamname=nontech_teamname,
                                     nontech_memember=nontech_memember, nontechis=nontechis, event6=event6, event7=event7, event8=event8, event9=event9, rollno=rollno)
         final= """"
         Tech Event: {} \n\n

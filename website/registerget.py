@@ -5,7 +5,7 @@ from . import db
 
 
 
-def techget(name, dept, ieee, i3emid, email, tech_teamname, tech_memember, techis, event1, event2, event3, event4, event5, rollno):
+def techget(name, dept, ieee, email, tech_teamname, tech_memember, techis, event1, event2, event3, event4, event5, rollno):
 
     result = ' '
 
@@ -18,7 +18,7 @@ def techget(name, dept, ieee, i3emid, email, tech_teamname, tech_memember, techi
                 my_list = a
                 result = ','.join(my_list)
                 # print("TECH Result::",result)
-                new_reg = Event1(name=name, rollno=rollno, dept=dept, ieee=ieee, i3emid=i3emid,
+                new_reg = Event1(name=name, rollno=rollno, dept=dept, ieee=ieee, 
                                  email=email, event=result, teamname=tech_teamname, team_members=tech_memember)
                 db.session.add(new_reg)
                 db.session.commit()
@@ -31,7 +31,7 @@ def techget(name, dept, ieee, i3emid, email, tech_teamname, tech_memember, techi
                 my_list = a
                 result = ','.join(my_list)
                 # print("TECH Result::",result)
-                new_reg = Event2(name=name, rollno=rollno, dept=dept, ieee=ieee, i3emid=i3emid,
+                new_reg = Event2(name=name, rollno=rollno, dept=dept, ieee=ieee, 
                                  email=email, event=result, teamname=tech_teamname, team_members=tech_memember)
                 db.session.add(new_reg)
                 db.session.commit()
@@ -44,7 +44,7 @@ def techget(name, dept, ieee, i3emid, email, tech_teamname, tech_memember, techi
                 my_list = a
                 result = ','.join(my_list)
                 # print("TECH Result::",result)
-                new_reg = Event3(name=name, rollno=rollno, dept=dept, ieee=ieee, i3emid=i3emid,
+                new_reg = Event3(name=name, rollno=rollno, dept=dept, ieee=ieee, 
                                  email=email, event=result, teamname=tech_teamname, team_members=tech_memember)
                 db.session.add(new_reg)
                 db.session.commit()
@@ -57,7 +57,7 @@ def techget(name, dept, ieee, i3emid, email, tech_teamname, tech_memember, techi
                 my_list = a
                 result = ','.join(my_list)
                 # print("TECH Result::",result)
-                new_reg = Event4(name=name, rollno=rollno, dept=dept, ieee=ieee, i3emid=i3emid,
+                new_reg = Event4(name=name, rollno=rollno, dept=dept, ieee=ieee, 
                                  email=email, event=result, teamname=tech_teamname, team_members=tech_memember)
                 db.session.add(new_reg)
                 db.session.commit()
@@ -71,7 +71,7 @@ def techget(name, dept, ieee, i3emid, email, tech_teamname, tech_memember, techi
                 my_list = a
                 result = ','.join(my_list)
                 # print("TECH Result::",result)
-                new_reg = Event5(name=name, rollno=rollno, dept=dept, ieee=ieee, i3emid=i3emid,
+                new_reg = Event5(name=name, rollno=rollno, dept=dept, ieee=ieee, 
                                  email=email, event=result, teamname=tech_teamname, team_members=tech_memember)
                 db.session.add(new_reg)
                 db.session.commit()
@@ -84,7 +84,7 @@ def techget(name, dept, ieee, i3emid, email, tech_teamname, tech_memember, techi
     return result
 
 
-def nontechget(name, dept, ieee, i3emid, email, nontech_teamname, nontech_memember, nontechis, event6, event7, event8, event9, rollno):
+def nontechget(name, dept, ieee,  email, nontech_teamname, nontech_memember, nontechis, event6, event7, event8, event9, rollno):
     nontech_result = ' '
     a = []
     if nontechis == '1':
@@ -96,7 +96,7 @@ def nontechget(name, dept, ieee, i3emid, email, nontech_teamname, nontech_mememb
                 nontech_list = a
                 nontech_result = ','.join(nontech_list)
                 # print("TECH Result::",result)
-                new_reg = Event6(name=name, rollno=rollno, dept=dept, ieee=ieee, i3emid=i3emid, email=email,
+                new_reg = Event6(name=name, rollno=rollno, dept=dept, ieee=ieee,  email=email,
                                  event=nontech_result, teamname=nontech_teamname, team_members=nontech_memember)
                 db.session.add(new_reg)
                 db.session.commit()
@@ -109,7 +109,7 @@ def nontechget(name, dept, ieee, i3emid, email, nontech_teamname, nontech_mememb
                 nontech_list = a
                 nontech_result = ','.join(nontech_list)
                 # print("TECH Result::",result)
-                new_reg = Event7(name=name, rollno=rollno, dept=dept, ieee=ieee, i3emid=i3emid, email=email,
+                new_reg = Event7(name=name, rollno=rollno, dept=dept, ieee=ieee,  email=email,
                                  event=nontech_result, teamname=nontech_teamname, team_members=nontech_memember)
                 db.session.add(new_reg)
                 db.session.commit()
@@ -122,7 +122,7 @@ def nontechget(name, dept, ieee, i3emid, email, nontech_teamname, nontech_mememb
                 nontech_list = a
                 nontech_result = ','.join(nontech_list)
                 # print("TECH Result::",result)
-                new_reg = Event1(name=name, rollno=rollno, dept=dept, ieee=ieee, i3emid=i3emid, email=email,
+                new_reg = Event1(name=name, rollno=rollno, dept=dept, ieee=ieee,  email=email,
                                  event=nontech_result, teamname=nontech_teamname, team_members=nontech_memember)
                 db.session.add(new_reg)
                 db.session.commit()
@@ -136,7 +136,7 @@ def nontechget(name, dept, ieee, i3emid, email, nontech_teamname, nontech_mememb
                 nontech_list = a
                 nontech_result = ','.join(nontech_list)
                 # print("TECH Result::",result)
-                new_reg = Event9(name=name, rollno=rollno, dept=dept, ieee=ieee, i3emid=i3emid, email=email,
+                new_reg = Event9(name=name, rollno=rollno, dept=dept, ieee=ieee,  email=email,
                                  event=nontech_result, teamname=nontech_teamname, team_members=nontech_memember)
                 db.session.add(new_reg)
                 db.session.commit()
