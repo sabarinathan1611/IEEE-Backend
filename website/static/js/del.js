@@ -1,3 +1,4 @@
+console.log("work");
 function deleteImg(imageID) {
    
     fetch("/delete-photo", {
@@ -8,3 +9,14 @@ function deleteImg(imageID) {
       
     });
   }
+
+
+//   const delbtn = document.querySelector('.delbtn');
+//   console.log(delbtn);
+
+// delbtn.addEventListener('click',function () {
+//   console.log('called');
+//  var imageID = document.getElementById('id').value;
+//  console.log(imageID);
+//   deleteImg(imageID);
+// });

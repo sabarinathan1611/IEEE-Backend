@@ -158,6 +158,7 @@ class Screeenshot(db.Model):
     nontechevent=db.Column(db.String(100))
     name=db.Column(db.String(100))
     rollnum=db.Column(db.String(100),unique=True)
+    mimetype = db.Column(db.Text, nullable=True)
     img_name = db.Column(db.String(1000), unique=True)
     
     

@@ -10,7 +10,7 @@ import os
 from werkzeug.utils import secure_filename  # for secure file
 import uuid
 
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'webp', 'raw', 'svg'])
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'webp', 'raw', 'svg','pdf'])
 
 app = 'create_app()'
 
@@ -58,8 +58,8 @@ def photoupload(pic, techevent,nontechevent, name, rollno):
                             raise FileNotFoundError('No image uploaded')
 
                         # validate mimetype of uploaded image
-                        if not pic.mimetype.startswith('image/'):
-                            raise TypeError('Invalid file type')
+                        # if not pic.mimetype.startswith('image/'):
+                        #     raise TypeError('Invalid file type')
 
                         # validate if the file has allowed extensions
                         if not allowed_file(pic.filename):
@@ -74,9 +74,9 @@ def photoupload(pic, techevent,nontechevent, name, rollno):
                         filepath = os.path.join(
                             app.config['UPLOAD_FOLDER'], pic_name)
 
-                        
+                        mimetype=pic.mimetype
 
-                        upload = Screeenshot(techevent=techevent,nontechevent=nontechevent, name=name, rollnum=rollno, img_name=pic_name)
+                        upload = Screeenshot(techevent=techevent,nontechevent=nontechevent, name=name, rollnum=rollno, img_name=pic_name,mimetype=mimetype)
                         db.session.add(upload)
                         db.session.commit()
                         pic.save(filepath)

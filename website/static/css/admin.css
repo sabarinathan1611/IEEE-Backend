@@ -74,3 +74,31 @@ table {
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+.bottom{
+  top:0px;
+  left: 500px;
+  position: relative;
+
+}
+.logout{
+  width: 100px;
+  background-color: #e1ff01;
+  padding: 25px;
+  border: 0px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #000000;
+
+}
+  .verify{
+   
+    width: 100px;
+    background-color: #eb6c0b;
+    padding: 25px;
+    border: 0px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    
+
+  }
