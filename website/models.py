@@ -17,6 +17,7 @@ class Event1(db.Model):
     
     ieee=db.Column(db.String(10))
     # i3emid=db.Column(db.String(10))
+    year=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -33,6 +34,7 @@ class Event2(db.Model):
     
     ieee=db.Column(db.String(10))
     # i3emid=db.Column(db.String(10))
+    year=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -49,6 +51,7 @@ class Event3(db.Model):
     
     ieee=db.Column(db.String(10))
     # i3emid=db.Column(db.String(10))
+    year=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -65,6 +68,7 @@ class Event4(db.Model):
     
     ieee=db.Column(db.String(10))
     # i3emid=db.Column(db.String(10))
+    year=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -81,6 +85,7 @@ class Event5(db.Model):
     
     ieee=db.Column(db.String(10))
     # i3emid=db.Column(db.String(10))
+    year=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -97,6 +102,7 @@ class Event6(db.Model):
     
     ieee=db.Column(db.String(10))
     # i3emid=db.Column(db.String(10))
+    year=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -113,6 +119,7 @@ class Event7(db.Model):
     
     ieee=db.Column(db.String(10))
     # i3emid=db.Column(db.String(10))
+    year=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -129,6 +136,7 @@ class Event8(db.Model):
     
     ieee=db.Column(db.String(10))
     # i3emid=db.Column(db.String(10))
+    year=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -145,6 +153,7 @@ class Event9(db.Model):
     
     ieee=db.Column(db.String(10))
     # i3emid=db.Column(db.String(10))
+    year=db.Column(db.String(10))
     
     event=db.Column(db.String(100))
 
@@ -157,7 +166,7 @@ class Screeenshot(db.Model):
     techevent=db.Column(db.String(100))
     nontechevent=db.Column(db.String(100))
     name=db.Column(db.String(100))
-    rollnum=db.Column(db.String(100),unique=True)
+    rollnum=db.Column(db.String(100))
     mimetype = db.Column(db.Text, nullable=True)
     img_name = db.Column(db.String(1000), unique=True)
     

@@ -1,85 +1,129 @@
-const filterInput = document.querySelector(".filter-input");
-      const tableRows = document.querySelectorAll("table tbody tr");
+const filter = document.querySelector('#filter');
 
-      filterInput.addEventListener("keyup", function () {
-        const filterValue = filterInput.value.toLowerCase();
-        for (let i = 0; i < tableRows.length; i++) {
-          const name = tableRows[i]
-            .querySelector("td:nth-child(1)")
-            .textContent.toLowerCase();
-          const rollno = tableRows[i]
-            .querySelector("td:nth-child(2)")
-            .textContent.toLowerCase();
-          const department = tableRows[i]
-            .querySelector("td:nth-child(3)")
-            .textContent.toLowerCase();
-          const ieee_member = tableRows[i]
-            .querySelector("td:nth-child(4)")
-            .textContent.toLowerCase();
-          const member_id = tableRows[i]
-            .querySelector("td:nth-child(5)")
-            .textContent.toLowerCase();
-          const email = tableRows[i]
-            .querySelector("td:nth-child(6)")
-            .textContent.toLowerCase();
-          const event_name = tableRows[i]
-            .querySelector("td:nth-child(7)")
-            .textContent.toLowerCase();
-          const team_name = tableRows[i]
-            .querySelector("td:nth-child(8)")
-            .textContent.toLowerCase();
-          const team_members = tableRows[i]
-            .querySelector("td:nth-child(9)")
-            .textContent.toLowerCase();
-          if (
-            name.includes(filterValue) ||
-            rollno.includes(filterValue) ||
-            department.includes(filterValue) ||
-            ieee_member.includes(filterValue) ||
-            member_id.includes(filterValue) ||
-            email.includes(filterValue) ||
-            event_name.includes(filterValue) ||
-            team_name.includes(filterValue) ||
-            team_members.includes(filterValue)
-          ) {
-            tableRows[i].style.display = "";
-          } else {
-            tableRows[i].style.display = "none";
-          }
-        }
-      });
-      const event1 = document.querySelector("#filter-input");
-      event1.addEventListener("input", function () {
-        const event2 = document.getElementById("filter-input").value;
-        event2.toLowerCase();
-        for (let i = 0; i < tableRows.length; i++) {
-          const event_name = tableRows[i]
-            .querySelector("td:nth-child(7)")
-            .textContent.toLowerCase();
+const event1 = document.querySelector('.event1');
+const event2 = document.querySelector('.event2');
+const event3 = document.querySelector('.event3');
+const event4 = document.querySelector('.event4');
+const event5 = document.querySelector('.event5');
+const event6 = document.querySelector('.event6');
+const event7 = document.querySelector('.event7');
+const event8 = document.querySelector('.event8');
+const event9 = document.querySelector('.event9');
 
-          if (event_name.includes(event2)) {
-            tableRows[i].style.display = "";
-          } else {
-            tableRows[i].style.display = "none";
-          }
-        }
-      });
+filter.addEventListener('change',function(){
+var filterVal = document.getElementById('filter').value;
+  if (filterVal === 'event1') {
+    event1.style.display = 'block';
 
-      const ieee = document.querySelector(".ieee");
+    event2.style.display = 'none';
+    event3.style.display = 'none';
+    event4.style.display = 'none';
+    event5.style.display = 'none';
+    event6.style.display = 'none';
+    event7.style.display = 'none';
+    event8.style.display = 'none';
+    event9.style.display = 'none';
+  }else  if (filterVal === 'event2') {
+    event2.style.display = 'block';
 
-      ieee.addEventListener("input", function () {
-        var ieee_mem = document.getElementById("ieee").value;
-        console.log(ieee_mem);
+    event1.style.display = 'none';
+    event3.style.display = 'none';
+    event4.style.display = 'none';
+    event5.style.display = 'none';
+    event6.style.display = 'none';
+    event7.style.display = 'none';
+    event8.style.display = 'none';
+    event9.style.display = 'none';
+  }else  if (filterVal === 'event3') {
+    event3.style.display = 'block';
 
-        ieee_mem.toLowerCase();
-        for (let i = 0; i < tableRows.length; i++) {
-          const ieee_member = tableRows[i]
-            .querySelector("td:nth-child(4)")
-            .textContent.toLowerCase();
-          if (ieee_member.includes(ieee_mem)) {
-            tableRows[i].style.display = "";
-          } else {
-            tableRows[i].style.display = "none";
-          }
-        }
-      });
+    event2.style.display = 'none';
+    event1.style.display = 'none';
+    event4.style.display = 'none';
+    event5.style.display = 'none';
+    event6.style.display = 'none';
+    event7.style.display = 'none';
+    event8.style.display = 'none';
+    event9.style.display = 'none';
+  }else  if (filterVal === 'event4') {
+    event4.style.display = 'block';
+
+    event2.style.display = 'none';
+    event3.style.display = 'none';
+    event1.style.display = 'none';
+    event5.style.display = 'none';
+    event6.style.display = 'none';
+    event7.style.display = 'none';
+    event8.style.display = 'none';
+    event9.style.display = 'none';
+  }else  if (filterVal === 'event5') {
+    event5.style.display = 'block';
+
+    event2.style.display = 'none';
+    event3.style.display = 'none';
+    event4.style.display = 'none';
+    event1.style.display = 'none';
+    event6.style.display = 'none';
+    event7.style.display = 'none';
+    event8.style.display = 'none';
+    event9.style.display = 'none';
+  }else  if (filterVal === 'event6') {
+    event6.style.display = 'block';
+
+    event2.style.display = 'none';
+    event3.style.display = 'none';
+    event4.style.display = 'none';
+    event5.style.display = 'none';
+    event1.style.display = 'none';
+    event7.style.display = 'none';
+    event8.style.display = 'none';
+    event9.style.display = 'none';
+  }else  if (filterVal === 'event7') {
+    event7.style.display = 'block';
+
+    event2.style.display = 'none';
+    event3.style.display = 'none';
+    event4.style.display = 'none';
+    event5.style.display = 'none';
+    event6.style.display = 'none';
+    event1.style.display = 'none';
+    event8.style.display = 'none';
+    event9.style.display = 'none';
+  }else  if (filterVal === 'event8') {
+    event8.style.display = 'block';
+
+    event2.style.display = 'none';
+    event3.style.display = 'none';
+    event4.style.display = 'none';
+    event5.style.display = 'none';
+    event6.style.display = 'none';
+    event7.style.display = 'none';
+    event1.style.display = 'none';
+    event9.style.display = 'none';
+  }else  if (filterVal === 'event9') {
+    event9.style.display = 'block';
+
+    event2.style.display = 'none';
+    event3.style.display = 'none';
+    event4.style.display = 'none';
+    event5.style.display = 'none';
+    event6.style.display = 'none';
+    event7.style.display = 'none';
+    event8.style.display = 'none';
+    event1.style.display = 'none';
+  }else if (filterVal === 'all') {
+    event9.style.display = 'block';
+
+    event2.style.display = 'block';
+    event3.style.display = 'block';
+    event4.style.display = 'block';
+    event5.style.display = 'block';
+    event6.style.display = 'block';
+    event7.style.display = 'block';
+    event8.style.display = 'block';
+    event1.style.display = 'block';
+  }else{
+    alert('select any option to filter !' );
+  }
+
+});

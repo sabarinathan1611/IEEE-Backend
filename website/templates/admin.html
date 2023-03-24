@@ -23,11 +23,24 @@
   </div>
 
   <div class="bottom">
-    <a class=" g" href="{{url_for('auth.logout')}}">Logout</a>
+    <a class="logout" href="{{url_for('auth.logout')}}">Logout</a>
     <a class="verify" href="{{url_for('views.upload_photo')}}">Verify Page</a>
+    <select name="filter" id="filter">
+      <option value="0">select event</option>
+      <option value="all">all events</option>
+      <option value="event1">event1</option>
+      <option value="event2">event2</option>
+      <option value="event3">event3</option>
+      <option value="event4">event4</option>
+      <option value="event5">event5</option>
+      <option value="event6">event6</option>
+      <option value="event7">event7</option>
+      <option value="event8">event8</option>
+      <option value="event9">event9</option>
+    </select>
   </div>
 
-  <div class="table table-dark table-striped">
+  <div class="event1 table table-dark table-striped">
     <h1>Event Name 1</h1>
     <table>
       <tr>
@@ -35,6 +48,7 @@
         <th>Name</th>
         <th>Email</th>
         <th>Rollno</th>
+        <th>Year</th>
         <th>Department</th>
         <th>Event</th>
         <th>IEEE</th>
@@ -51,6 +65,7 @@
           <td>{{event1.name}}</td>
           <td>{{event1.email}}</td>
           <td>{{event1.rollno}}</td>
+          <td>{{event1.year}}</td>
           <td>{{event1.dept}}</td>
           <td>{{event1.event}}</td>
           <td>{{event1.ieee}}</td>
@@ -64,8 +79,7 @@
     </table>
   </div>
 
-
-  <div class="table table-dark table-striped">
+  <div class="event2 table table-dark table-striped">
     <h1>Event Name 2</h1>
     <table>
       <tr>
@@ -73,6 +87,7 @@
         <th>Name</th>
         <th>Email</th>
         <th>Rollno</th>
+        <th>Year</th>
         <th>Department</th>
         <th>Event</th>
         <th>IEEE</th>
@@ -89,6 +104,7 @@
           <td>{{event2.name}}</td>
           <td>{{event2.email}}</td>
           <td>{{event2.rollno}}</td>
+          <td>{{event2.year}}</td>
           <td>{{event2.dept}}</td>
           <td>{{event2.event}}</td>
           <td>{{event2.ieee}}</td>
@@ -102,7 +118,7 @@
     </table>
   </div>
 
-  <div class="table table-dark table-striped">
+  <div class="event3 table table-dark table-striped">
     <h1>Event Name 3</h1>
     <table>
       <tr>
@@ -110,6 +126,7 @@
         <th>Name</th>
         <th>Email</th>
         <th>Rollno</th>
+        <th>Year</th>
         <th>Department</th>
         <th>Event</th>
         <th>IEEE</th>
@@ -126,6 +143,7 @@
           <td>{{event3.name}}</td>
           <td>{{event3.email}}</td>
           <td>{{event3.rollno}}</td>
+          <td>{{event3.year}}</td>
           <td>{{event3.dept}}</td>
           <td>{{event3.event}}</td>
           <td>{{event3.ieee}}</td>
@@ -139,7 +157,7 @@
     </table>
   </div>
 
-  <div class="table table-dark table-striped">
+  <div class="event4 table table-dark table-striped">
     <h1>Event Name 4</h1>
     <table>
       <tr>
@@ -147,6 +165,7 @@
         <th>Name</th>
         <th>Email</th>
         <th>Rollno</th>
+        <th>Year</th>
         <th>Department</th>
         <th>Event</th>
         <th>IEEE</th>
@@ -163,6 +182,7 @@
           <td>{{event4.name}}</td>
           <td>{{event4.email}}</td>
           <td>{{event4.rollno}}</td>
+          <td>{{event4.year}}</td>
           <td>{{event4.dept}}</td>
           <td>{{event4.event}}</td>
           <td>{{event4.ieee}}</td>
@@ -176,7 +196,7 @@
     </table>
   </div>
 
-  <div class="table table-dark table-striped">
+  <div class="event5 table table-dark table-striped">
     <h1>Event Name 5</h1>
     <table>
       <tr>
@@ -184,6 +204,7 @@
         <th>Name</th>
         <th>Email</th>
         <th>Rollno</th>
+        <th>Year</th>
         <th>Department</th>
         <th>Event</th>
         <th>IEEE</th>
@@ -200,6 +221,7 @@
           <td>{{event5.name}}</td>
           <td>{{event5.email}}</td>
           <td>{{event5.rollno}}</td>
+          <td>{{event5.year}}</td>
           <td>{{event5.dept}}</td>
           <td>{{event5.event}}</td>
           <td>{{event5.ieee}}</td>
@@ -213,7 +235,7 @@
     </table>
   </div>
 
-  <div class="table table-dark table-striped">
+  <div class="event6 table table-dark table-striped">
     <h1>Event Name 6</h1>
     <table>
       <tr>
@@ -221,6 +243,7 @@
         <th>Name</th>
         <th>Email</th>
         <th>Rollno</th>
+        <th>Year</th>
         <th>Department</th>
         <th>Event</th>
         <th>IEEE</th>
@@ -237,6 +260,7 @@
           <td>{{event6.name}}</td>
           <td>{{event6.email}}</td>
           <td>{{event6.rollno}}</td>
+          <td>{{event6.year}}</td>
           <td>{{event6.dept}}</td>
           <td>{{event6.event}}</td>
           <td>{{event6.ieee}}</td>
@@ -250,7 +274,7 @@
     </table>
   </div>
 
-  <div class="table table-dark table-striped">
+  <div class="event7 table table-dark table-striped">
     <h1>Event Name 7</h1>
     <table>
       <tr>
@@ -258,6 +282,7 @@
         <th>Name</th>
         <th>Email</th>
         <th>Rollno</th>
+        <th>Year</th>
         <th>Department</th>
         <th>Event</th>
         <th>IEEE</th>
@@ -274,6 +299,7 @@
           <td>{{event7.name}}</td>
           <td>{{event7.email}}</td>
           <td>{{event7.rollno}}</td>
+          <td>{{event7.year}}</td>
           <td>{{event7.dept}}</td>
           <td>{{event7.event}}</td>
           <td>{{event7.ieee}}</td>
@@ -287,7 +313,7 @@
     </table>
   </div>
 
-  <div class="table table-dark table-striped">
+  <div class="event8 table table-dark table-striped">
     <h1>Event Name 8</h1>
     <table>
       <tr>
@@ -295,6 +321,7 @@
         <th>Name</th>
         <th>Email</th>
         <th>Rollno</th>
+        <th>Year</th>
         <th>Department</th>
         <th>Event</th>
         <th>IEEE</th>
@@ -311,6 +338,7 @@
           <td>{{event8.name}}</td>
           <td>{{event8.email}}</td>
           <td>{{event8.rollno}}</td>
+          <td>{{event8.year}}</td>
           <td>{{event8.dept}}</td>
           <td>{{event8.event}}</td>
           <td>{{event8.ieee}}</td>
@@ -324,7 +352,7 @@
     </table>
   </div>
 
-  <div class="table table-dark table-striped">
+  <div class="event9 table table-dark table-striped">
     <h1>Event Name 9</h1>
     <table>
       <tr>
@@ -332,6 +360,7 @@
         <th>Name</th>
         <th>Email</th>
         <th>Rollno</th>
+        <th>Year</th>
         <th>Department</th>
         <th>Event</th>
         <th>IEEE</th>
@@ -348,6 +377,7 @@
           <td>{{event9.name}}</td>
           <td>{{event9.email}}</td>
           <td>{{event9.rollno}}</td>
+          <td>{{event9.year}}</td>
           <td>{{event9.dept}}</td>
           <td>{{event9.event}}</td>
           <td>{{event9.ieee}}</td>

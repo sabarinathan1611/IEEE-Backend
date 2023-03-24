@@ -1,0 +1,564 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container12{
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background: #2a2038f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.clock-container{
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.clock{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #f8c5c5;
+    box-shadow:0px 0px 25px  #ef5a5a;
+}
+
+.center{
+    width: 10px;
+    position: relative;
+    height: 10px;
+    border-radius: 50%;
+    background: #3fb4fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.line1{
+    position: absolute;
+    width: 100px ;
+    height: 100px;
+    border-radius: 50%;
+    /* background: #223333aa; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%,-50%); */
+    transform: rotate(0deg);
+}
+
+.line1 #seconds_line{
+    position:absolute;
+    width: 2px;
+    height: 50px;
+    background: #fff;
+    left: 50px;
+}
+
+.line2{
+    position: absolute;
+    width: 100px ;
+    height: 100px;
+    border-radius: 50%;
+    /* background: #223333aa; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%,-50%); */
+    transform: rotate(0deg);
+}
+
+.line2 #mins_line{
+    position:absolute;
+    width: 2px;
+    height: 50px;
+    background: #ef5a5a;
+    left: 50px;
+}
+
+
+.line3{
+    position: absolute;
+    width: 100px ;
+    height: 100px;
+    border-radius: 50%;
+    /* background: #fbffffaa; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%,-50%); */
+    transform: rotate(0deg);
+}
+
+.sec_dot{
+    position: absolute;
+    width: 220px ;
+    height: 220px;
+    border-radius: 50%;
+    border: 2px solid #cecece23;
+    /* background: #fbffffaa; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%,-50%); */
+    transform: rotate(0deg);
+    display: flex;
+    justify-content: center;
+}
+
+.sec_dot .dot{
+    position:absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.min_dot{
+    position: absolute;
+    width: 190px ;
+    height: 190px;
+    border-radius: 50%;
+    border: 2px solid #fbaeae23;
+    /* background: #fbffffaa; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%,-50%); */
+    transform: rotate(0deg);
+    display: flex;
+    justify-content: center;
+}
+
+.min_dot .dot{
+    position:absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ef5a5a;
+}
+
+.hrs_dot{
+    position: absolute;
+    width: 160px ;
+    height: 160px;
+    border-radius: 50%;
+    border: 2px solid #efff0823;
+    /* background: #fbffffaa; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%,-50%); */
+    transform: rotate(0deg);
+    display: flex;
+    justify-content: center;
+}
+
+.hrs_dot .dot{
+    position:absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #efff08;
+}
+
+
+
+.line3 #hrs_line{
+    position:absolute;
+    width: 2px;
+    height: 50px;
+    background: #efff08;
+    left: 50px;
+}
+
+.numbers {
+    position: absolute;
+    color: #fff;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* display: none; */
+}
+
+#one{
+    position: absolute;
+    color: #fff;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    transform: rotate(30deg);
+}
+
+#two{
+    position: absolute;
+    color: #fff;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    transform: rotate(60deg);
+}
+
+#three{
+    position: absolute;
+    color: #fff;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    transform: rotate(90deg);
+}
+
+#four{
+    position: absolute;
+    color: #fff;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    transform: rotate(120deg);
+}
+
+#five{
+    position: absolute;
+    color: #fff;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    transform: rotate(150deg);
+}
+
+#six{
+    position: absolute;
+    color: #fff;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    transform: rotate(180deg);
+}
+
+#seven{
+    position: absolute;
+    color: #fff;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    transform: rotate(210deg);
+}
+
+#eight{
+    position: absolute;
+    color: #fff;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    transform: rotate(240deg);
+}
+
+#nine{
+    position: absolute;
+    color: #fff;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    transform: rotate(270deg);
+}
+
+#ten{
+    position: absolute;
+    color: #fff;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    transform: rotate(300deg);
+}
+
+#eleven{
+    position: absolute;
+    color: #fff;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    transform: rotate(330deg);
+}
+
+#twelve{
+    position: absolute;
+    color: #fff;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    transform: rotate(360deg);
+}
+
+.digital_display {
+    width: 420px;
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 100px;
+}
+
+.days-dis{
+    border: 2px solid #fff;
+    width: 85px;
+    height: 100%;
+    background: #070707;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: #68ca1e;
+    border-radius: 3px;
+}
+
+#days-dis{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.hrs-dis{
+    border: 2px solid #fff;
+    width: 85px;
+    height: 100%;
+    background: #070707;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: #efff08;
+    border-radius: 3px;
+}
+
+#hrs-dis{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.mins-dis{
+    border: 2px solid #fff;
+    width: 85px;
+    height: 100%;
+    background: #151515;
+    color: #ef5a5a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 3px;
+}
+
+#mins-dis{
+    width: 100%;
+    height: 70px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secs-dis{
+    border: 2px solid #fff;
+    width: 85px;
+    height: 100%;
+    background: #0f1010;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 3px;
+}
+
+#secs-dis{
+    width: 100%;
+    height: 70px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.digital_display span{
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    background: #013a5e;
+    text-transform: capitalize;
+    border-radius: 3px;
+}
+
+.am_pm{
+    width: 85px;
+    height: 100px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 3px;
+    text-transform: uppercase;
+    position: absolute;
+}
+
+/* event_dept_name */
+
+.event_dept_name{
+position: absolute;
+width: 100%;
+height: 50px;
+/* background: #013a5e; */
+top: 80px;
+display: flex;
+align-items: center;
+font-size: 18px;
+}
+
+.deptof{
+    text-transform: capitalize;
+    margin-left: 50px;
+    color:#fff;
+}
+
+.infortech{
+    color: #ffa62b;
+}
+
+.launch_event{
+    position: absolute;
+    top: 140px;
+    width: 100%;
+    height: 25px;
+    /* background: #013a5e; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.launching {
+    color: #82c0cc;
+}
+.dateofevent{
+  position: absolute;
+    top: 210px;
+    width: 100%;
+    height: 25px;
+    /* background: #013a5e; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 20px;
+    margin-right: 550px;
+    text-transform: capitalize;
+   
+}
+
+.exactdate {
+    color: #e41a1a;
+}
+h1.were {
+    color: #80c0cc;
+}
+h1.ondate {
+    color: #b0a5a4;
+}
+
+@media(max-width:425px){
+    .digital_display {
+        width: 320px;
+        height: 100px;
+        /* background: #111111; */
+        color: #000;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        gap: 5px;
+        bottom: 85px;
+    }
+
+    .event_dept_name {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    /* background: #013a5e; */
+    top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-size: 9px;
+}
+
+.dateofevent{
+    position: absolute;
+      top: 157px;
+      width: 100%;
+      /* height: 25px; */
+      /* background: #013a5e; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      margin-right: 0px;
+      text-transform: capitalize;
+     
+  }
+
+.launch_event{
+    top: 100px;
+    font-size: 13px;
+}
+}

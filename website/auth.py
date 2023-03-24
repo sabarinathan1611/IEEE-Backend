@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for
 from .models import User, Event1, Event2, Event3, Event4, Event5, Event6, Event7, Event8, Event9, Screeenshot
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db  # means from __init__.py import db
-from .registerget import nontechget, techget
+
 import smtplib
 from flask_login import login_user, login_required, logout_user, current_user
 from website import create_app
@@ -10,7 +10,7 @@ import os
 from werkzeug.utils import secure_filename  # for secure file
 import uuid
 
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'webp', 'raw', 'svg','pdf'])
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'webp', 'raw', 'svg', 'pdf'])
 
 app = 'create_app()'
 
@@ -35,7 +35,6 @@ def send_mail(email, body):
     receiver_email = email
     password = "hbsapqyrcvcdjqjl"
     message = body
-    print("wefdwefugyuhg")
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
@@ -50,121 +49,266 @@ auth = Blueprint('auth', __name__)
 app = create_app()
 
 
-def photoupload(pic, techevent,nontechevent, name, rollno):
+def photoupload(pic, techevent, nontechevent, name, rollno):
 
-                    try:
-                        # check if request contains files and image attribute exists
-                        if 'image' not in request.files:
-                            raise FileNotFoundError('No image uploaded')
+    try:
+        # check if request contains files and image attribute exists
+        if 'image' not in request.files:
+            raise FileNotFoundError('No image uploaded')
 
-                        # validate mimetype of uploaded image
-                        # if not pic.mimetype.startswith('image/'):
-                        #     raise TypeError('Invalid file type')
+        # validate mimetype of uploaded image
+        # if not pic.mimetype.startswith('image/'):
+        #     raise TypeError('Invalid file type')
 
-                        # validate if the file has allowed extensions
-                        if not allowed_file(pic.filename):
-                            raise ValueError(
-                                "Allowed file extensions: 'png', 'jpg', 'jpeg', 'webp', 'raw', 'svg'")
-                        if not os.path.exists(app.config['UPLOAD_FOLDER']):
-                            flash("oombu")
-                        filename = secure_filename(pic.filename)
+        # validate if the file has allowed extensions
+        if not allowed_file(pic.filename):
+            raise ValueError(
+                "Allowed file extensions: 'png', 'jpg', 'jpeg', 'webp', 'raw', 'svg'")
 
-                        pic_name = str(uuid.uuid1()) + '_' + filename
+        if not os.path.exists(app.config['UPLOAD_FOLDER']):
+            flash("Path Not Found")
 
-                        filepath = os.path.join(
-                            app.config['UPLOAD_FOLDER'], pic_name)
+        filename = secure_filename(pic.filename)
 
-                        mimetype=pic.mimetype
+        pic_name = str(uuid.uuid1()) + '_' + filename
 
-                        upload = Screeenshot(techevent=techevent,nontechevent=nontechevent, name=name, rollnum=rollno, img_name=pic_name,mimetype=mimetype)
-                        db.session.add(upload)
-                        db.session.commit()
-                        pic.save(filepath)
+        filepath = os.path.join(
+            app.config['UPLOAD_FOLDER'], pic_name)
 
-                        flash('File uploaded successfully.')
+        mimetype = pic.mimetype
 
-                        return redirect('/')
+        upload = Screeenshot(techevent=techevent, nontechevent=nontechevent,
+                             name=name, rollnum=rollno, img_name=pic_name, mimetype=mimetype)
+        db.session.add(upload)
+        db.session.commit()
+        pic.save(filepath)
 
-                    except (TypeError, ValueError, KeyError, FileNotFoundError) as e:
-                            print("Error varuthu ")
-                            flash(str(e))
+        return True
+
+    except (TypeError, ValueError, KeyError, FileNotFoundError) as e:
+        print("Error varuthu ")
+        flash(str(e))
+        return redirect(url_for('views.register'))
 
 # register
 
 
 @auth.route('/registerdb', methods=['GET', 'POST'])
 def registerdb():
+    error = 0
+
     if request.method == "POST":
-        name = request.form.get('name')
-        pic = request.files['image']
+                nontech_result = ' '
+                result = ' '
 
-        rollno = request.form.get('rollno')
+                name = request.form.get('name')
+                pic = request.files['image']
 
-        dept = request.form.get('dept')
+                rollno = request.form.get('rollno')
 
-        ieee = request.form.get('ieee')
+                dept = request.form.get('dept')
 
-        #i3emid = request.form.get('memberid')
+                ieee = request.form.get('ieee')
 
-        email = request.form.get('email')
+                year = request.form.get('year')
 
-        tech_teamname = request.form.get('teamname1')
+                email = request.form.get('email')
 
-        tech_memember = request.form.get('team-members1')
+                teamname = request.form.get('teammember')
 
-        nontech_teamname = request.form.get('teamname2')
-        nontech_memember = request.form.get('team-members2')
+                memember = request.form.get('teammember')
 
-        if dept == 'no':
-            flash("ADD DEPT")
-            return redirect(url_for('views.tech_register'))
-
-        techis = request.form.get('techval')
-        print(techis)
-        nontechis = request.form.get('nontechval')
-
-        event1 = request.form.get('event1')
-        event2 = request.form.get('event2')
-        event3 = request.form.get('event3')
-        event4 = request.form.get('event4')
-        event5 = request.form.get('event5')
-        event6 = request.form.get('event6')
-        event7 = request.form.get('event7')
-        event8 = request.form.get('event8')
-        event9 = request.form.get('event9')
-        # print("EVENT5:",event5)
-        # print("NONtech type:",teamName)
-
-        result = techget(name=name, dept=dept, ieee=ieee,  email=email, tech_teamname=tech_teamname, tech_memember=tech_memember,
-                         techis=techis, event1=event1, event2=event2, event3=event3, event4=event4, event5=event5, rollno=rollno)
-        nontech_result = nontechget(name=name, dept=dept, ieee=ieee,  email=email, nontech_teamname=nontech_teamname,
-                                    nontech_memember=nontech_memember, nontechis=nontechis, event6=event6, event7=event7, event8=event8, event9=event9, rollno=rollno)
-        final= """"
-        Tech Event: {} \n\n
-        NonTech EVent: {}
-                """.format(result,nontech_result)
-       
-        if ieee == 'yes':
-                    photoupload(pic=pic,techevent=result,nontechevent=nontech_result , name=name, rollno=rollno)
-
-                    
-
-              
-      
-
-        message = """Subject:Welcome to the IEEE Event \n\n
-                    Welcome and thank you for registering for the IEEE Event {},{}. We're looking forward to an exciting and informative event.
+                techis = request.form.get('techval')
                 
-                    We hope to provide you with resources and information to further your knowledge and interests in the field of IEEE.
-                
-                    Do not hesitate to reach out to us if you have any questions along the way!
-                
-                    Sincerely,
-                    The IEEE Team""".format(result, nontech_result)
-        # send_mail( email= email,body=message)
-        print("Message: ", message)
+                nontechis = request.form.get('nontechval')
 
-    return redirect(url_for('views.home'))
+                event1 = request.form.get('event1')
+                event2 = request.form.get('event2')
+                event3 = request.form.get('event3')
+                event4 = request.form.get('event4')
+                event5 = request.form.get('event5')
+                event6 = request.form.get('event6')
+                event7 = request.form.get('event7')
+                event8 = request.form.get('event8')
+                event9 = request.form.get('event9')
+
+                print("Name:", name, "\n", "Pic:", pic, "\n", "Rollno:", rollno, "\n",
+                    "Dept:", dept, "\n", "Year:", year, "\n", "Email:", email, "\n","EVENRT8:",nontechis)
+
+                roll1 = Event1.query.filter_by(rollno=rollno).first()
+                roll2 = Event2.query.filter_by(rollno=rollno).first()
+                roll3 = Event3.query.filter_by(rollno=rollno).first()
+                roll4 = Event4.query.filter_by(rollno=rollno).first()
+                roll5 = Event5.query.filter_by(rollno=rollno).first()
+                roll6 = Event6.query.filter_by(rollno=rollno).first()
+                roll7 = Event7.query.filter_by(rollno=rollno).first()
+                roll8 = Event1.query.filter_by(rollno=rollno).first()
+                roll9 = Event9.query.filter_by(rollno=rollno).first()
+
+                a = []
+                if techis == '1':
+                    if event1 == 'on':
+                        if roll1:
+                            flash("You already register for this event")
+                            return render_template('register.html')
+                        elif roll1 is None:
+                            a.append('Event 1')
+                            my_list = a
+                            result = ','.join(my_list)
+                            # print("TECH Result::",result)
+                            new_reg = Event1(name=name, rollno=rollno, dept=dept, ieee=ieee, event='event1', year=year,
+                                            email=email, teamname=teamname, team_members=teamname)
+                            db.session.add(new_reg)
+                            db.session.commit()
+
+                    if event2 == 'on':
+                        if roll2:
+                            flash("You already register for this event")
+                            return render_template('register.html')
+                        elif roll2 is None:
+                            a.append('Event 2')
+                            my_list = a
+                            result = ','.join(my_list)
+                            # print("TECH Result::",result)
+                            new_reg = Event2(name=name, rollno=rollno, dept=dept, ieee=ieee, event='event2', year=year,
+                                            email=email, teamname=teamname, team_members=memember)
+                            db.session.add(new_reg)
+                            db.session.commit()
+
+                    if event3 == 'on':
+                        if roll3:
+                            flash("You already register for this event")
+                            return render_template('register.html')
+                        elif roll3 is None:
+                            a.append('Event 3')
+                            my_list = a
+                            result = ','.join(my_list)
+                            # print("TECH Result::",result)
+                            new_reg = Event3(name=name, rollno=rollno, dept=dept, ieee=ieee, event='event3', year=year,
+                                            email=email, teamname=teamname, team_members=memember)
+                            db.session.add(new_reg)
+                            db.session.commit()
+
+                    if event4 == 'on':
+                        if roll4:
+                            flash("You already register for this event")
+                            return render_template('register.html')
+                        elif roll4 is None:
+                            a.append('Event 4')
+                            my_list = a
+                            result = ','.join(my_list)
+                            # print("TECH Result::",result)
+                            new_reg = Event4(name=name, rollno=rollno, dept=dept, ieee=ieee, event='event4', year=year,
+                                            email=email, teamname=teamname, team_members=memember)
+                            db.session.add(new_reg)
+                            db.session.commit()
+
+                        a.append('DESTINATION JUNCTION')
+                    if event5 == 'on':
+                        if roll5:
+                            flash("You already register for this event")
+                            return render_template('register.html')
+                        a.append('Event 5')
+
+                        limit = Event5.query.filter_by(id=20).first()
+                        if limit:
+                            flash("Team event is full")
+                        if roll5 is None:
+                            my_list = a
+                            result = ','.join(my_list)
+                            # print("TECH Result::",result)
+                            new_reg = Event5(name=name, rollno=rollno, dept=dept, ieee=ieee, event='event5', year=year,
+                                            email=email, teamname=teamname, team_members=memember)
+                            db.session.add(new_reg)
+                            db.session.commit()
+
+                    a.clear()
+
+                    a = []
+                    if nontechis == '1':
+
+                        if event6 == 'on':
+                            if roll6:
+                                flash("You already register for this event")
+                                return render_template('register.html')
+                            elif roll6 is None:
+                                a.append('Event 6')
+                                nontech_list = a
+                                nontech_result = ','.join(nontech_list)
+                                # print("TECH Result::",result)
+                                new_reg = Event6(name=name, rollno=rollno, dept=dept, ieee=ieee,  email=email, event='event6', year=year,
+                                                teamname=teamname, team_members=memember)
+                                db.session.add(new_reg)
+                                db.session.commit()
+
+                        if event7 == 'on':
+                            if roll7:
+                                flash("You already register for this event")
+                                return render_template('register.html')
+                            elif roll7 is None:
+                                a.append('Event 7')
+                                nontech_list = a
+                                nontech_result = ','.join(nontech_list)
+                                # print("TECH Result::",result)
+                                new_reg = Event7(name=name, rollno=rollno, dept=dept, ieee=ieee,  email=email, event='event7', year=year,
+                                                teamname=teamname, team_members=memember)
+                                db.session.add(new_reg)
+                                db.session.commit()
+
+                        if event8 == 'on':
+                            if roll8:
+                                flash("You already register for this event")
+                                return render_template('register.html')
+                            if roll8 is None:
+                                a.append('Event 8')
+                                print("\n","Event8::",a)
+                                nontech_list = a
+                                nontech_result = ','.join(nontech_list)
+                                # print("TECH Result::",result)
+                                new_reg = Event8(name=name, rollno=rollno, dept=dept, ieee=ieee,  email=email, event='event8', year=year,
+                                                teamname=teamname, team_members=memember)
+                                db.session.add(new_reg)
+                                db.session.commit()
+
+                        if event9 == 'on':
+                            if roll9:
+                                flash("You already register for this event")
+                                return render_template('register.html')
+                            a.append('Event 9')
+
+                            limit = Event9.query.filter_by(id=20).first()
+                            if limit:
+                                flash("Team event is full")
+                            if roll9 is None:
+                                nontech_list = a
+                                nontech_result = ','.join(nontech_list)
+                                # print("TECH Result::",result)
+                                new_reg = Event9(name=name, rollno=rollno, dept=dept, ieee=ieee,  email=email, event='event9', year=year,
+                                                teamname=teamname, team_members=memember)
+                                db.session.add(new_reg)
+                                db.session.commit()
+
+                        a.clear()
+
+    
+
+                if ieee == 'yes':
+                    photoupload(pic=pic, techevent=result,
+                                nontechevent=nontech_result, name=name, rollno=rollno)
+
+                message = """Subject:Welcome to the IEEE Event \n\n
+                            Welcome and thank you for registering for the IEEE Event {},{}. We're looking forward to an exciting and informative event.
+                        
+                            We hope to provide you with resources and information to further your knowledge and interests in the field of IEEE.
+                        
+                            Do not hesitate to reach out to us if you have any questions along the way!
+                        
+                            Sincerely,
+                            The IEEE Team""".format(result, nontech_result)
+                print(message)
+                # send_mail(email= email,body=message)
+
+                return render_template('response.html')
 
 
 @auth.route('/login', methods=['GET', 'POST'])
@@ -175,18 +319,16 @@ def login():
         password = request.form.get('pass')
 
         user = User.query.filter_by(id=1).first()
-        print(user.username)
 
         if user.username == userName:
 
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
                 login_user(user, remember=True)
-                print("111")
 
                 return redirect(url_for('views.admin'))
             else:
-                flash('Incorrect password, try again.', category='error')
+                flash('Incorrect  password, try again.', category='error')
         else:
             # passs="admin"
             # new_user = User(username="admin",password=generate_password_hash(passs, method='sha256'),admin=True)
@@ -207,5 +349,6 @@ def logout():
 
 @auth.route('/create-admin', methods=['GET', 'POST'])
 def newadmin():
+
     create_admin()
     return redirect(url_for('auth.login'))

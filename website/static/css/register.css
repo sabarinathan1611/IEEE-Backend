@@ -1,257 +1,375 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-
-  }
-  .close {
-    background: transparent;
-    border: none;
-    color: #fff;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-div#msgg {
+
+.main-container{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: #333;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.left_half {
+  width: 130%;
+  height: 100vh;
+  position: absolute;
+  background: #000000;
+  transform: rotate(-33deg);
+  left: -457px;
+  top: -322px;
+}
+
+.right_half {
+  width: 130%;
+  height: 100vh;
+  position: absolute;
+  background: #5387af;
+  transform: rotate(-33deg);
+  right: -361px;
+  bottom: -389px;
+}
+
+.form-container {
+  z-index: 1;
+  width: 955px;
+  padding: 10px 20px;
+  height: 590px;
+  background: #5e73b3de;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #fff,
+              inset 0px 0px 25px #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: absolute;
+}
+
+.buttons{
+  z-index: 1;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+  position: absolute;
+  bottom: 15px;
+}
+
+.buttons button {
+	padding: 5px 10px;
+	border: none;
+	border-radius: 3px;
+	background: #000000;
+	color: #a2d4fa;
+	text-transform: capitalize;
+	font-size: 16px;
+	cursor: pointer;
+	box-shadow: 0px 0px 10px #3ff03f;
+}
+
+.next{
+  display: block;
+}
+
+.prev{
+  display: none;
+}
+
+.submit{
+  display: none;
+}
+
+#teamname_field{
+  display: none;
+}
+#teammember_field{
+  display: none;
+}
+
+.form{
+  width: 90%;
+  height: 90%;
+  background-color: #ffffff00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front_form {
+  width: 913px;
+  height: 545px;
+  position: absolute;
+  background: #23394a77;
+  flex-direction: column;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  left: 20px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  transition: .8s;
+  box-shadow: 0px 0px 90px #000,inset 0px 0px 15px;
+  padding: 10px;
+}
+
+.back_form {
+  width: 913px;
+  height: 545px;
+  position: absolute;
+  background: #23394a77;
+  flex-direction: column;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  left: 1000px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  transition: .8s;
+  box-shadow: 0px 0px 90px #000,inset 0px 0px 15px;
+}
+.back_form fieldset{
+  width: 90%;
+  padding: 15px;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.front_form fieldset{
+  width: 90%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input{
+  width: 90%;
+  padding: 5px;
+  outline: none;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 4px;
   color: #fff;
-z-index: 100;
-}
-  .register {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(296deg, #dabe84, #000149);
 }
 
-  .register .form-container {
-    width: 300px;
-    /* height: 100vh; */
-    /* background: #847171; */
-    background: #1c2726b0;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    border-radius: 10px;
-  }
-
-  .register .form-container form {
-    width: 280px;
-    margin: 0px 10px;
-    /* height: 90vh; */
-    color: #f0f8ff;
-    display: flex;
-    flex-direction: column;
-    text-transform: capitalize;
-    font-family: 'Kanit', sans-serif;
-    gap: 5px;
-  }
-
-  /* span {
-position: relative;
-left: 56%;
-/* margin-top: -29px; */
-  /* top: -16px;
-} */
-
-  .member-id {
-    transition: 0.4s;
-    scale: 0;
-  }
-
-  .team {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    transition: 0.4s;
-    scale: 0;
-  }
-
-  .member-id input[type="text"] {
-    margin-left: 50px;
-    color:#fff;
-  }
-
-  button[type="submit"] {
-    margin: 10px;
-  }
-  strong {
-    color: #ffff;
+select{
+  width: 90%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 4px;
+  color: #fff;
 }
-  H1 {
-    font-size: 20px;
+option{
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #00000079;
+}
+
+textarea{
+  background: transparent;
+  border: 1px solid #000;
+  color: #fff;
+  outline: none;
+}
+
+.error_box{
+  top: 10px;
+  width: 245px;
+  padding: 5px 10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  transition: .5s;
+  z-index: 10;
+  scale: 0;
+  border-radius: 3px;
+}
+
+.close_btn{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-image: url(/static/css/images.png);
+  background-repeat: no-repeat;
+  background-position: cover;
+  background-size: 16px;
+  margin-right: -220px;
+  cursor: pointer;
+}
+
+#error_msg{
+  text-transform: capitalize;
+  color: rgb(253, 3, 3);
+}
+
+.tech_field{
+  display: inline-flex;
+
+}
+
+.nontech_field{
+  display: inline-flex;
+ 
+}
+
+#upload{
+  display: none;
+}
+
+
+
+/* media query.....! */
+
+@media (max-width:425px){
+  
+      .form-container {
+          z-index: 1;
+          width: 90%;
+          height: 680px;
+          background: #5e73b3de;
+          border: 2px solid #fff;
+          border-radius: 5px;
+          box-shadow: 0px 0px 5px #fff,
+              inset 0px 0px 25px #000000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          position: absolute;
+      }
+
+  .form {
+      width: 98%;
+      height: 98%;
+      background-color: #ffffff00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .front_form {
+  width: 280px;
+  height: 620px;
+  position: absolute;
+  background: #23394a77;
+  flex-direction: column;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  left: 20px;
+  /* left: -400px; */
+  border-radius: 5px;
+  border: 1px solid #fff;
+  transition: .8s;
+  box-shadow: 0px 0px 90px #000,inset 0px 0px 15px;
+  padding: 10px;
+}
+
+
+
+  .back_form {
+      width: 280px;
+      height: 620px;
+      position: absolute;
+      background: #23394a77;
+      flex-direction: column;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      
+      left: 400px;
+      /* left: 20px; */
+      border-radius: 5px;
+      border: 1px solid #fff;
+      transition: .8s;
+      box-shadow: 0px 0px 90px #000,inset 0px 0px 15px;
+  }
+
+  .back_form fieldset {
+      width: 90%;
+      padding: 9px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+  }
+  
+  textarea {
+      max-width: 212px;
+  }
+
+  input[type='checkbox']{
+      position: initial;
+      caret-color: #ff4500;
+      cursor: pointer;
+      /* left: -100px; */
+      margin-left: -140px;
+      /* margin: 10px; */
+  }
+
+  #events {
+      position: initial;
+      margin-top: -38px;
+      margin-left: 12px;
+  }
+
+  .left_half {
+      width: 190%;
+      height: 100vh;
+      position: absolute;
+      background: #000000;
+      transform: rotate(-45deg);
+      left: -349px;
+      top: -327px;
+      filter: blur(15px);
+  }
+
+  .right_half {
+    width: 130%;
+    height: 100vh;
     position: absolute;
-    color: #f0f8ff;
-    padding: 0px 0px;
-    /* background: #f0f8ff; */
-    width: 0px;
-    font-family: cursive;
-    /* text-align: center; */
-    /* border-bottom: 2px solid #f90101; */
-    animation: write 5s linear infinite;
-    margin-left: -50px;
-    margin-top: 10px;
-    overflow: hidden;
-    border-right: 1px solid #f48787;
+    background: #2e4b61;
+    transform: rotate(-33deg);
+    right: -361px;
+    bottom: -389px;
   }
 
-  @keyframes write {
-    0% {
-      width: 0px;
-    }
-    50% {
-      width: 129px;
-    }
-  }
-
-  .name {
-    /* background: #40e0d0; */
-    /* height: 30px; */
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-  }
-
-  .name input[type="text"] {
-    padding: 5px;
-    border-radius: 3px;
-    border: none;
-    outline: none;
-    background: transparent;
-    border-bottom: 1px solid #f0f8ff;
-    text-align: center;
-    color: #fff;
-    /* background: #000; */
-  }
-
-  .rollno {
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .rollno input[type="text"] {
-    padding: 5px;
-    border-radius: 3px;
-    border: none;
-    outline: none;
-    background: transparent;
-    border-bottom: 1px solid #f0f8ff;
-    color: #fff;
-    text-align: center;
-  }
-
-  .department {
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .department select {
-    background: transparent;
-    color: #f0f8ff;
-    padding: 5px;
-    text-align: center;
-  }
-
-  .department select option {
-    background: #1a1818;
-    text-transform: capitalize;
-  }
-
-  .ieeemember {
-    padding: 5px;
-  }
-
-  .ieeemember input[type="radio"] {
-    margin: 15px;
-
-  }
-
-  .ieeemember .member-id {
-    padding: 10px 0px;
-  }
-
-  .ieeemember .member-id input[type="text"] {
-    width: 100%;
-    padding: 5px;
-    margin-left: 0px;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #f0f8ff;
-    text-align: center;
-    outline: none;
-  }
-
-  .email {
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .email input[type="email"] {
-    padding: 5px;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #f0f8ff;
-    text-align: center;
-    outline: none;
-    color: #fff;
-  }
-
-  .events {
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .events select {
-    background: transparent;
-    padding: 5px;
-    color: #f0f8ff;
-    text-align: center;
-  }
-
-  .events select option {
-    background: #1a1818;
-    text-transform: capitalize;
-  }
-
-  button[type="submit"] {
-    padding: 9px;
-    border-radius: 25px;
-    background: #00000091;
-    color: #f0f8ff;
-    border: none;
-}
-
-#teamname{
-  transition: .5s;
-  scale: 0;
-}
-#teammember{
-  transition: .5s;
-  scale: 0;
-}
-
-#techteam{
-  transition: .5s;
-  scale: 0;
-}
-#techmember{
-  transition: .5s;
-  scale: 0;
-}
-
-#teameventbox{
-  scale: 0;
-}
-
-#teammembersbox{
-  scale: 0;
+  .buttons {
+  z-index: 1;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  position: absolute;
+  top: 630px;
+} 
 }

@@ -121,6 +121,13 @@ body {
     border-radius: 5px;
     padding: 5px;
 }
+.delbtn{
+  width: 50px;
+  border: none;
+  height: 25px;
+  border-radius: 15px;
+  background-color: #ff0000;
+}
 @media(max-width:600px){
     .posts .post-content img {
         width: 100%;

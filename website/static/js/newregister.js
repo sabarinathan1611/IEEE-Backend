@@ -1,102 +1,139 @@
-// const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+console.log('form js working...!');
 
-// checkboxes.forEach((checkbox) => {
-//   checkbox.addEventListener("change", () => {
-//     const numChecked = Array.from(checkboxes).reduce(
-//       (acc, checkbox) => acc + (checkbox.checked ? 1 : 0),
-//       0
-//     );
-//     if (numChecked > 2) {
-//       checkbox.checked = false;
-//       alert("You can only check up to 2 checkboxes.");
-//     }
-//   });
-// });
-
-// const techboxes = document.querySelectorAll(".tech");
-// console.log(techboxes);
-// let count = 0;
-// techval = document.getElementById("techval");
-// techboxes.forEach((tech) => {
-//   tech.addEventListener("change", () => {
-//     const numChecked = Array.from(techboxes).reduce(
-//       (acc, tech) => acc + (tech.checked ? 1 : 0),
-//       0
-//     );
-//     if (numChecked >= 1) {
-//      techval.value =  1
-//     }else{
-//       techval.value =  0
-//     }
-//     console.log("tech Count: ", techval.value);
-//   });
-// });
-
-// const nontechboxes = document.querySelectorAll(".nontech");
-// console.log(nontechboxes);
-// let noncount = 0;
-// nontechval = document.getElementById("nontechval");
-// nontechboxes.forEach((nontech) => {
-//   nontech.addEventListener("change", () => {
-//     const numChecked = Array.from(nontechboxes).reduce(
-//       (acc, nontech) => acc + (nontech.checked ? 1 : 0),
-//       0
-//     );
-//     if (numChecked >= 1) {
-//      nontechval.value =  1
-//     }else{
-//       nontechval.value =  0
-//     }
-//     console.log("non Count: ", nontechval.value);
-//   });
-// });
-
-const front_form = document.querySelector(".front-form");
-const back_form = document.querySelector(".back-form");
+const next = document.querySelector('.next');
+const next2 = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+const front = document.querySelector('.front_form');
+const back = document.querySelector('.back_form');
+const front_form = document.querySelector('.front-form');
+const back_form = document.querySelector('.back-form');
+const mem_check = document.querySelector('#member');
+const username = document.querySelector('#name');
+const rollno = document.querySelector('#rollno');
+const dept = document.querySelector('#dept');
+const year = document.querySelector('#year');
+const member = document.querySelector('#member');
 
 
+mem_check.addEventListener('change', function () {
 
-const submit = document.querySelector(".submit");
+  var yes = document.getElementById('member').value;
 
-submit.addEventListener("click", function () {
+  if (yes === 'yes') {
+    document.getElementById('upload').style.display = 'block';
+  } else if (yes === 'no') {
+    document.getElementById('upload').style.display = 'none';
+    error_box.style.scale = '0';
+    error_msg.innerHTML = '';
+  } else {
+    alert('select the option');
+  }
 
 });
 
-// const yes = document.getElementById('yes');
-// console.log(yes);
-// const no = document.getElementById('no');
-// var memberid = document.getElementById('memberid');
-// console.log(no);
+next.addEventListener('click', function () {
+  var yes = document.getElementById('member').value;
+  if (username.value === '') {
+    var msg = 'fill the name field';
+    error(msg);
+    console.log('name checked..!');
+  } else if (rollno.value === '') {
+    var msg = 'fill the rollno field';
+    error(msg);
+    console.log('rollno checked..!');
+  } else if (dept.value === '') {
+    var msg = 'select the department ';
+    error(msg);
+    console.log('department checked..!');
+  } else if (year.value === '') {
+    var msg = 'select the year';
+    error(msg);
+    console.log('year checked..!');
+  } else if (member.value === '') {
+    var msg = 'select the ieee member';
+    error(msg);
+    console.log('ieee  checked..!');
+  } else if (yes === 'yes') {
+    document.getElementById('upload').style.display = 'block';
+    if (document.getElementById('uploaded').value.length === 0) {
+      var msg = 'upload the file';
+      error(msg);
+    } else {
+      front.style.left = '-1000px';
+      back.style.left = '20px';
+      submit.style.display = 'block';
+      prev.style.display = 'block';
+      next.style.display = 'none';
+    }
+  } else {
+    front.style.left = '-1000px';
+    back.style.left = '20px';
+    submit.style.display = 'block';
+    prev.style.display = 'block';
+    next.style.display = 'none';
+  }
+});
+prev.addEventListener('click', function () {
+  front.style.left = '20px';
+  back.style.left = '1000px';
+  next.style.display = 'block';
+  prev.style.display = 'none';
+  submit.style.display = 'none';
+});
 
-// yes.addEventListener('click',function () {
-//    alert('you have to bring your member id with you');
-//    memberid.style.scale = 1;
-// });
 
-// no.addEventListener('click',function(){
-//     memberid.style.scale = 0;
-//     memberid.value = 'no';
-// });
 
-function mem() {
-  document.getElementById("member-id").style.scale = 1;
-  document.getElementById("memberid").value = '';
-  console.log("member");
-  alert("you should bring your member id copy with you for the event");
+const teamcheck = document.getElementById('teamcheck');
+const techteamcheck = document.getElementById('techteamcheck');
+
+
+teamcheck.addEventListener('click', function () {
+  if (teamcheck.checked === true) {
+    var msg = 'each and every team members should register seperately with same team name !';
+    error(msg);
+  } else {
+    error_box.style.scale = '0';
+    error_msg.innerHTML = '';
+  }
+});
+
+
+techteamcheck.addEventListener('click', function () {
+  if (techteamcheck.checked === true) {
+    var msg = 'each and every team members should register seperately with same team name !';
+    error(msg);
+  } else {
+    error_box.style.scale = '0';
+    error_msg.innerHTML = '';
+  }
+});
+
+
+
+
+
+const error_box = document.querySelector('.error_box');
+const error_msg = document.querySelector('#error_msg');
+const close_btn = document.querySelector('.close_btn');
+
+function error(msg) {
+  error_box.style.scale = '1';
+  error_msg.innerHTML = msg;
 }
-
-function nonmem() {
-  document.getElementById("member-id").style.scale = 0;
-  document.getElementById("memberid").value = 'no';
-  console.log("non-member");
-}
+close_btn.addEventListener('click', function () {
+  error_box.style.scale = '0';
+  error_msg.innerHTML = '';
+})
 
 
+// check box //
 
-
-// checkbox function//
+var checkarr = [];
 
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+
+
 
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", () => {
@@ -105,12 +142,10 @@ checkboxes.forEach((checkbox) => {
       0
 
     );
-
     if (numChecked > 2) {
       checkbox.checked = false;
-      alert("You can only check up to 2 checkboxes.");
-      noncheckboxcheck();
-      checkboxcheck();
+      var msg = "You can register only two events .";
+      error(msg);
     }
   });
 });
@@ -154,73 +189,10 @@ nontechboxes.forEach((nontech) => {
 });
 
 
-const techteamevent = document.querySelector('#teameventtech');
-var techteameventval = document.getElementById('teameventtech');
+// only one team participate //
 
-techteamevent.addEventListener('input', function () {
-  if (techteameventval.checked == true) {
-    document.getElementById('techteam').style.scale = 1;
-    document.getElementById('techmember').style.scale = 1;
-    document.getElementById('teameventbox').style.scale = 1;
-    document.getElementById('teammembersbox').style.scale = 1;
-    checkboxcheck();
-  } else {
-    document.getElementById('techteam').style.scale = 0;
-    document.getElementById('techmember').style.scale = 0;
-    document.getElementById('teameventbox').style.scale = 0;
-    document.getElementById('teammembersbox').style.scale = 0;
-    checkboxcheck();
-  }
-});
-
-const nontechteamevent = document.querySelector('#teamevent');
-var nontechteameventval = document.getElementById('teamevent');
-
-nontechteamevent.addEventListener('input', function () {
-  if (nontechteameventval.checked == true) {
-    document.getElementById('teamname').style.scale = 1;
-    document.getElementById('teammember').style.scale = 1;
-    document.getElementById('teameventbox').style.scale = 1;
-    document.getElementById('teammembersbox').style.scale = 1;
-    checkboxcheck();
-  } else {
-    document.getElementById('teamname').style.scale = 0;
-    document.getElementById('teammember').style.scale = 0;
-    document.getElementById('teameventbox').style.scale = 0;
-    document.getElementById('teammembersbox').style.scale = 0;
-    checkboxcheck();
-  }
-});
-
-function checkboxcheck() {
-  if (techteameventval.checked == true) {
-    document.getElementById('techteam').style.scale = 1;
-    document.getElementById('techmember').style.scale = 1;
-    noncheckboxcheck();
-  } else {
-    document.getElementById('techteam').style.scale = 0;
-    document.getElementById('techmember').style.scale = 0;
-    noncheckboxcheck();
-  }
-
-}
-
-function noncheckboxcheck() {
-  if (nontechteameventval.checked == true) {
-    document.getElementById('teamname').style.scale = 1;
-    document.getElementById('teammember').style.scale = 1;
-    checkboxcheck();
-  } else {
-    document.getElementById('teamname').style.scale = 0;
-    document.getElementById('teammember').style.scale = 0;
-    checkboxcheck();
-  }
-}
-
-//  only two team events contraints
-
-const oneteam = document.querySelectorAll('.teambox');
-console.log(oneteam);
+const oneteam = document.querySelectorAll('.team_events');
+console.log('oneteam ' + oneteam);
 
 oneteam.forEach((checkbox) => {
   checkbox.addEventListener("change", () => {
@@ -230,8 +202,86 @@ oneteam.forEach((checkbox) => {
     );
     if (numChecked > 1) {
       checkbox.checked = false;
-      checkboxcheck();
-      alert("You can only participate on one team event only !");
+      //   checkboxcheck();
+      var msg = "You can only participate on one team event only !";
+      error(msg);
+    }
+
+    if (numChecked >= 1) {
+      document.getElementById('teamname_field').style.display = 'block';
+      document.getElementById('teammember_field').style.display = 'block';
+    } else {
+      document.getElementById('teamname_field').style.display = 'none';
+      document.getElementById('teammember_field').style.display = 'none';
     }
   });
 });
+
+
+const submit = document.querySelector('.submit');
+const techteam = document.querySelector('.techteam');
+const nontechteam = document.querySelector('.nontechteam');
+console.log(techteam);
+console.log(nontechteam);
+console.log(nontechteam.checked);
+
+submit.addEventListener('click', function () {
+
+
+
+  if (techteam.checked === true || nontechteam.checked === true) {
+    var teamname = document.getElementById('teamname').value;
+    var teammembers = document.getElementById('teammember').value;
+
+
+
+    if (teamname === '') {
+      submit.type = 'button';
+      var msg = 'fillout the team name....!'
+      error(msg);
+    } else if (teammembers === '') {
+      submit.type = 'button';
+      var msg = 'fillout the team members....!'
+      error(msg);
+    } else {
+      submit.type = 'submit';
+    }
+  } else {
+  
+    checking();
+  }
+
+});
+
+
+
+
+var ch = [];
+function checking() {
+  checkboxes.forEach((checkbox) => {
+
+    const numChecked = Array.from(checkboxes).reduce(
+      (acc, checkbox) => acc + (checkbox.checked ? 1 : 0),
+      0
+
+    );
+
+    if (checkbox.checked === true) {
+      ch.push('1');
+      console.log(ch);
+
+    }
+
+
+    if (ch.length === 0) {
+      console.log(ch.length);
+      var msg = 'register atleast in one event...'
+      error(msg);
+      submit.type = 'button';
+    } else {
+      submit.type = 'submit';
+    }
+
+
+  });
+}

@@ -1,6 +1,7 @@
 {% extends "base.html" %} {% block title %} HOME {% endblock %}
 {%block link%}
 <link rel="stylesheet" href="static/css/style.css" />
+<link rel="stylesheet" href="static/css/clock.css" />
 {%endblock%}
 {%block content%}
 <div class="container">
@@ -46,42 +47,92 @@
     <a href="#event" id="next" class="hnext"></a>
   </section>
 <section id="event" class="section2">
-        <div class="time-container" id="eventbeforetime">
-          <div class="dept-name">
-            <h1 id="soon">
-              department of
-              <span>information technology</span>
-            </h1>
-          </div>
-          <div class="launch-name">
-            <h1 id="dontmiss">
-              w're
-              <span>launching</span>
-              event
-            </h1>
-          </div>
-          <div class="calender">
-            <div class="calender-container">
-              <div class="days">
-                <p id="days">00</p>
-                <span class="span" id="">Days</span>
-              </div>
-              <div class="minutes">
-                <p id="minutes">00</p>
-                <span class="span" id="">Hours</span>
-              </div>
-              <div class="hours">
-                <p id="hours">00</p>
-                <span class="span" id="">minutes</span>
-              </div>
-              <div class="seconds">
-                <p id="seconds">00</p>
-                <span class="span" id="">Seconds</span>
-              </div>
-            </div>
-          </div>
+  <div class="container12">
+    <div class="event_dept_name">
+        <h1 class="deptof">department of 
+            <span class="infortech">information technoloy</span></h1>
+    </div>
+    <div class="launch_event">
+        <h1 class="were">
+            we're 
+            <span class="launching">launching
+
+            </span> event...
+        </h1>
+    </div>
+    <div class="dateofevent">
+        <h1 class="ondate">on [
+            <span class="exactdate"> 31-03-2023 </span> ]
+        </h1>
+    </div>
+    <div class="clock-container">
+        <div class="numbers">
+            <span id="one"><h3>1</h3></span>
+            <span id="two"><h3>2</h3></span>
+            <span id="three"><h3>3</h3></span>
+            <span id="four"><h3>4</h3>
+            </span>
+            <span id="five"><h3>5</h3></span>
+            <span id="six"><h3>9</h3></span>
+            <span id="seven"><h3>7</h3></span>
+            <span id="eight"><h3>8</h3></span>
+            <span id="nine"><h3>9</h3></span>
+            <span id="ten"><h3>10</h3></span>
+            <span id="eleven"><h3>11</h3></span>
+            <span id="twelve"><h3>12</h3></span>
         </div>
-        <script src="static/js/event.js"></script>
+        <div class="clock">
+            <div class="center">
+                <div class="line1">
+                    <span id="seconds_line"></span>
+                </div>
+                <div class="line2">
+                    <span id="mins_line"></span>
+                </div>
+                <div class="line3">
+                    <span id="hrs_line"></span>
+                </div>
+                <div class="sec_dot">
+                    <span class="dot"></span>
+                </div>
+                <div class="min_dot">
+                    <span class="dot"></span>
+                </div>
+                <div class="hrs_dot">
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="am_pm">
+        <p id="am">
+            AM
+        </p>
+        <p id="pm">
+            PM
+        </p>
+    </div>
+    <div class="digital_display">
+        <div class="days-dis">
+            <p id="days-dis">20</p>
+            <span>days</span>
+        </div>
+        <div class="hrs-dis">
+            <p id="hrs-dis">00</p>
+            <span>hour</span>
+        </div>
+        <div class="mins-dis">
+            <p id="mins-dis">00</p>
+            <span>minute</span>
+        </div>
+        <div class="secs-dis">
+            <p id="secs-dis">00</p>
+            <span>second</span>
+        </div>
+        
+    </div>
+</div>
+        <script src="static/js/clock.js"></script>
       </section>
   <section id="tech" class="section4">
     <div class="techevent-container">
@@ -104,7 +155,7 @@
           </p>
           <div class="button-tech">
             <a href="/static/broucher/tech/tech.pdf" download="tech brochure">download</a>
-            <a href="{{url_for('views.tech_register')}}">register</a>
+            <a href="{{url_for('views.register')}}">register</a>
           </div>
         </div>
         <div class="event2-description">
@@ -118,7 +169,7 @@
           </p>
           <div class="button-tech">
             <a href="/static/broucher/tech/tech.pdf" download="tech brochure">download</a>
-            <a href="{{url_for('views.tech_register')}}">register</a>
+            <a href="{{url_for('views.register')}}">register</a>
           </div>
         </div>
         <div class="event3-description">
@@ -132,7 +183,7 @@
           </p>
           <div class="button-tech">
             <a href="/static/broucher/tech/tech.pdf" download="tech brochure">download</a>
-            <a href="{{url_for('views.tech_register')}}">register</a>
+            <a href="{{url_for('views.register')}}">register</a>
           </div>
         </div>
         <div class="event4-description">
@@ -145,7 +196,7 @@
           </p>
           <div class="button-tech">
             <a href="/static/broucher/tech/tech.pdf" download="tech brochure">download</a>
-            <a href="{{url_for('views.tech_register')}}">register</a>
+            <a href="{{url_for('views.register')}}">register</a>
           </div>
         </div>
       </div>
@@ -170,7 +221,7 @@
           </p>
 
           <a href="/static/broucher/nontech/nontech.pdf" class="down"download="nontech brochure">download</a>
-          <a class="reg" href="{{url_for('views.tech_register')}}">register</a>
+          <a class="reg" href="{{url_for('views.register')}}">register</a>
 
         </div>
       </div>
@@ -190,7 +241,7 @@
 
 
           <a href="/static/broucher/nontech/nontech.pdf" class="down"download="nontech brochure">download</a>
-          <a class="reg" href="{{url_for('views.tech_register')}}">register</a>
+          <a class="reg" href="{{url_for('views.register')}}">register</a>
 
         </div>
       </div>
@@ -209,7 +260,7 @@
 
 
           <a href="/static/broucher/nontech/nontech.pdf" class="down" download="nontech brochure">download</a>
-          <a class="reg" href="{{url_for('views.tech_register')}}">register</a>
+          <a class="reg" href="{{url_for('views.register')}}">register</a>
 
         </div>
       </div>
@@ -225,7 +276,7 @@
           </p>
 
           <a href="/static/broucher/nontech/nontech.pdf" class="down" download="nontech brochure">download</a>
-          <a class="reg" href="{{url_for('views.tech_register')}}">register</a>
+          <a class="reg" href="{{url_for('views.register')}}">register</a>
 
         </div>
       </div>
@@ -347,7 +398,7 @@
                 <a
                   href="https://github.com/sabarinathan1611/"
                   title="visit github"
-                  >sabarinathan</a
+                  >Harish</a
                 >
               </h2>
             </li>

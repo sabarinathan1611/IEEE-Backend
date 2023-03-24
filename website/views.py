@@ -49,7 +49,7 @@ def admin():
 
 
 @views.route('/register', methods=['GET', 'POST'])
-def tech_register():
+def register():
     return render_template('register.html')
 
 
@@ -86,17 +86,63 @@ def delete():
         deletepassword = Delete_pass.query.filter_by(id=1).first()
         print(deletepassword, password)
         if deletepassword:
-            if check_password_hash(deletepassword.dpassword, password):
-                tech = Tech_register.query.order_by(Tech_register.date)
-                non_tech = Non_register.query.order_by(Non_register.date)
-                for t in tech:
-                    tech_data = Tech_register.query.get(t.id)
-                    db.session.delete(tech_data)
+            if check_password_hash(deletepassword.dpassword, password):        
+                event1 = Event1.query.order_by(Event1.date)
+                event2 = Event2.query.order_by(Event2.date)
+                event3 = Event3.query.order_by(Event3.date)
+                event4 = Event4.query.order_by(Event4.date)
+                event5 = Event5.query.order_by(Event5.date)
+                event6 = Event6.query.order_by(Event6.date)
+                event7 = Event7.query.order_by(Event7.date)
+                event8 = Event8.query.order_by(Event8.date)
+                event9 = Event9.query.order_by(Event9.date)
+                #Table 1
+                for e1 in event1 :
+                    event1_data = Event1.query.get(e1.id)
+                    db.session.delete(event1_data)
                     db.session.commit()
-                for n in non_tech:
-                    nontech_data = Non_register.query.get(n.id)
-                    db.session.delete(nontech_data)
+                 #Table 2
+                for e2 in event2 :
+                    event2_data = Event2.query.get(e2.id)
+                    db.session.delete(event2_data)
                     db.session.commit()
+                 #Table 3 
+                for e3 in event3 :
+                    event3_data = Event3.query.get(e3.id)
+                    db.session.delete(event3_data)
+                    db.session.commit()
+                 #Table 4
+                 
+                for e4 in event4 :
+                    event4_data = Event4.query.get(e4.id)
+                    db.session.delete(event4_data)
+                    db.session.commit()
+                 #Table 5
+                for e5 in event5 :
+                    event5_data = Event5.query.get(e5.id)
+                    db.session.delete(event5_data)
+                    db.session.commit()
+                 #Table 6
+                for e6 in event6 :
+                    event6_data = Event6.query.get(e6.id)
+                    db.session.delete(event6_data)
+                    db.session.commit()
+                 #Table 7
+                for e7 in event7 :
+                    event7_data = Event7.query.get(e7.id)
+                    db.session.delete(event7_data)
+                    db.session.commit()
+                #Table 8
+                for e8 in event8 :
+                    event8_data = Event8.query.get(e8.id)
+                    db.session.delete(event8_data)
+                    db.session.commit()
+                #Table 9
+                for e9 in event9 :
+                    event9_data = Event9.query.get(e9.id)
+                    db.session.delete(event9_data)
+                    db.session.commit()
+                
             else:
                 flash("Wrong Password")
         else:
@@ -121,6 +167,7 @@ def delet_photo():
     return redirect(url_for('views.upload_photo'))
 
 @views.route('/pic-verify', methods=['POST', 'GET'])
+@login_required
 def upload_photo():
     photos = Screeenshot.query.order_by(Screeenshot.id)
     return render_template('verify.html', photos=photos)

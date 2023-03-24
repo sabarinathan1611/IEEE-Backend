@@ -2,179 +2,123 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>register-form</title>
-  <link rel="stylesheet" href="/static/css/register.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new form</title>
+    <link rel="stylesheet" href="static/css/register.css">
 </head>
 
 <body>
-  <div class="register">
-    <div class="form-container">
-      <div id="msgg" class="msg">
-        {% with messages = get_flashed_messages(with_categories=true) %} {% if
-        messages %} {% for category, message in messages %} {% if category ==
-        'error' %}
-        <div class="alert alert-danger alter-dismissable fade show" role="alert">
-          {{ message }}
-          <button type="button" id="closu" onclick="off()" class="close" data-dismiss="alert">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        {% else %}
-        <div class="alert alert-success alter-dismissable fade show" role="alert">
-          {{ message }}
-          <button type="button" id="closu" onclick="off()" class="close" data-dismiss="alert">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        {% endif %} {% endfor %} {% endif %} {% endwith %}
-      </div>
-      <div class="event-heading">
-        <strong>REGISTER</strong>
-      </div>
-      <form enctype="multipart/form-data" method="post" action="{{url_for('auth.registerdb')}}">
-        <div class="name">
-          <label for="#">name:</label>
-          <input type="text" id="name" name="name" placeholder="enter name..!" />
-        </div>
-        <div class="rollno">
-          <label for="#">rollno:</label>
-          <input type="text" id="rollno" name="rollno" placeholder="2021pecit001" required />
-        </div>
-        <div class="department">
-          <label for="dept">department:</label>
-          <select name="dept" id="dept" class="dept">
-            <option value="no">select dept</option>
-            <option value="it">IT</option>
-            <option value="cse">CSE</option>
-            <option value="cce">CCE</option>
-            <option value="ai&ds">AI&DS</option>
-          </select>
-        </div>
-        <br />
-        <div class="ieeemember">
-          <label for="#">are you an IEEE member ? </label>
-          <br />
-          <input type="radio" name="ieee" id="yes" value="yes"  onclick="mem()"/><span>yes</span>
-          <input type="radio" name="ieee" id="no" value="no" onclick="nonmem()"/><span>no</span>
-          <br />
-          <div class="member-id" id="member-id">
-            <input type="file" name="image" id="">
-            <!-- <input type="text" name="memberid" id="memberid" placeholder="evter your member id" required/> -->
-          </div>
-        </div>
-        <div class="email">
-          <label for="#">email:</label>
-          <input type="email" name="email" id="email" placeholder="example@gmail.com" required />
-        </div>
-
-
-        <div class="farme">
-          <fieldset>
-            <legend>tech events</legend>
-            <input type="hidden" name="techval" id="techval" />
-            <input type="checkbox" name="event1" class="tech" id="event1" />WIKIPEDIA SPEEDRUN
-            <br />
-            <input type="checkbox" name="event2" id="event2" class="tech" />CODE EXPRESS
-            <br />
-            <input type="checkbox" name="event3" id="event3" class="tech" />HACK CRACK
-            <br />
-            <input type="checkbox" name="event4" id="event4" class="tech" />DESTINATION JUNCTION
-            <br />
-            <input type="checkbox" name="event5" id="teameventtech" class="tech teambox" />FIND ME IF YOU CAN
-            <br />
-          </fieldset>
-        </div>
-        <fieldset>
-          <legend>non-tech events</legend>
-          <input type="hidden" name="nontechval" id="nontechval">
-          <input type="checkbox" name="event6" id="nonevent1" class="nontech" />GEOGUESSER <br />
-          <input type="checkbox" name="event7" class="nontech teambox" id="teamevent" />LIGHT CAMERA ACTION<br />
-          <input type="checkbox" name="event8" id="nonevent3" class="nontech" />SHIP WRECK<br />
-          <input type="checkbox" name="event9" id="nonevent4" class="nontech" />60 SECONDS FAME<br />
-        </fieldset>
-        <fieldset id='teameventbox'>
-          <legend>team name:</legend>
-          <input type="text" name="teamname2" id="teamname" class="teamname"  />
-          <input type="text" name="teamname1" id="techteam" class="teamname"  />
-        </fieldset>
-        <fieldset id='teammembersbox'>
-          <legend>team members name:</legend>
-          <textarea name="team-members2" id="teammember" class="teammember" cols="20" rows="3"></textarea>
-          <textarea name="team-members1" id="techmember" class="teammember" cols="20" rows="3"></textarea>
-        </fieldset>
-        <fieldset>
-
-          <!-- <div class="events">
-            <label for="#">event:</label>
-            <select name="event" id="event">
-              <option value="no">select event</option>
-              <option value="wikipedia speedrun">WIKIPEDIA SPEEDRUN</option>
-              <option value="code-combact">CODE COMBACKT</option>
-              <option value="hack-crack">HACK CRACK</option>
-              <option value="express-on">EXPRESS ON</option>
-            </select>
-            <div class="team" id="team">
-              <label for="#">team name:</label>
-              <input type="text" name="teamName" id="team-name" />
-              <br />
-              <label for="#">team members name:</label>
-              <textarea
-                name="team-members"
-                id="team-members"
-                cols="30"
-                rows="7"
-              >
-              </textarea>
+    <section class="main-container">
+        <div class="form-container">
+            <div class="error_box">
+                <div class="close_btn"></div>
+                <p id="error_msg"></p>
             </div>
-          </div> -->
-          <button type="submit" class="submit">submit</button>
-      </form>
-    </div>
-  </div>
-  <!-- <script>
-    const event1 = document.querySelector("#event");
 
-    event1.addEventListener("input", function () {
-      var op = document.getElementById("event").value;
-
-      if (op === "express-on") {
-        document.getElementById("team").style.scale = 1;
-        document.getElementById("team-name").value = "";
-      } else {
-        document.getElementById("team").style.scale = 0;
-      }
-    });
-
-    function mem() {
-      document.getElementById("member-id").style.scale = 1;
-      console.log("member");
-      confirm("you should bring your member id copy with you for the event");
-    }
-
-    function nonmem() {
-      document.getElementById("member-id").style.scale = 0;
-      console.log("non-member");
-    }
-
-    const submit = document.querySelector("button");
-    console.log(submit);
+            <div class="error_box">
+                {% with messages = get_flashed_messages(with_categories=true) %} {% if
+                messages %} {% for category, message in messages %} {% if category ==
+                'error' %}
+                <div class="close_btn"></div>
+                <p id="error_msg"> {{ message }}</p>
+                {% endif %} {% endfor %} {% endif %} {% endwith %}
+            </div>
+            <form enctype="multipart/form-data" action="{{url_for('auth.registerdb')}}" method="post" class="form">
+                <div class="front_form">
 
 
+                    <fieldset>
+                        <legend> name :</legend>
+                        <input type="text" name="name" id="name">
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>rollno :</legend>
+                        <input type="text" name="rollno" id="rollno">
+                    </fieldset>
+                    <fieldset>
+                        <legend>department :</legend>
+                        <select name="dept" id="dept">
+                            <option value="">select dept</option>
+                            <option value="it">IT</option>
+                            <option value="cse">CSE</option>
+                            <option value="ai/ds">AI/DS</option>
+                            <option value="cce">CCE</option>
+                            <option value="csbs">CSBS</option>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <legend>year :</legend>
+                        <select name="year" id="year">
+                            <option value="">select year</option>
+                            <option value="II">II</option>
+                            <option value="III">III</option>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <legend>IEEE member :</legend>
+                        <select name="ieee" id="member">
+                            <option value="">select option</option>
+                            <option value="yes">YES</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </fieldset>
+                    <fieldset id="upload">
+                        <legend>member id :</legend>
+                        <input type="file" name="image" id="uploaded">
+                    </fieldset>
 
-  </script> -->
-  <script>
-    let but = document.getElementById("closu");
-    let msgg = document.getElementById("msgg")
-    function off() {
-      msgg.style.display = "none";
-    }
-  </script>
-  <!-- <script src="/static/js/newregister.js"></script> -->
-  <script src="/static/js/inspect.js"></script>
-  <script src="/static/js/newregister.js"></script>
+                </div>
+                <div class="back_form">
+                    <fieldset>
+                        <legend> email:</legend>
+                        <input type="email" name="email" id="name">
+                    </fieldset>
+                    <fieldset class="tech_field">
+                        <legend>tech events :</legend>
+                        <input type="hidden" name="techval" id="techval" />
+                        <input class="tech" type="checkbox" name="event1" id=""> <span id="events">event1event</span>
+                        <input class="tech" type="checkbox" name="event2" id=""> <span id="events">event2event</span>
+                        <input class="tech" type="checkbox" name="event3" id=""> <span id="events">event3event</span>
+                        <input class="tech" type="checkbox" name="event4" id=""> <span id="events">event4event</span>
+                        <input type="checkbox" name="event5" id="techteamcheck" class="tech team_events techteam"><span
+                            id="events">event5 [team]</span>
+                    </fieldset>
+                    <fieldset class="nontech_field">
+                        <legend>non tech events :</legend>
+                        <input class="nontech" type="hidden" name="nontechval" id="nontechval">
+                        <input class="nontech" type="checkbox" name="event6" id=""><span id="events">event6</span>
+                        <input class="nontech" type="checkbox" name="event7" id=""><span id="events">event7</span>
+                        <input class="nontech" type="checkbox" name="event8" id=""><span id="events">event8</span>
+                        <input type="checkbox" name="event9" id="teamcheck"
+                            class="nontech team_events nontechteam"><span id="events">event9 [team]</span>
+                    </fieldset>
+                    <fieldset id="teamname_field">
+                        <legend>team name:</legend>
+                        <input type="text" name="teamname" id="teamname"
+                            placeholder="Only requiered if you participate in team event">
+                    </fieldset>
+                    <fieldset id="teammember_field">
+                        <legend>team members name:</legend>
+                        <textarea name="teammember" id="teammember" cols="80" rows="3"
+                            placeholder="Only requiered if you participate in team event"></textarea>
+                    </fieldset>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="prev">prev</button>
+                    <button type="button" class="next">next</button>
+                    <button type="button" class="submit">submit</button>
+                </div>
+            </form>
+
+        </div>
+        <div class="left_half"></div>
+        <div class="right_half"></div>
+
+    </section>
+    <script src="/static/js/newregister.js"></script>
+    <script src="/static/js/filesize.js"></script>
 </body>
-
 </html>
