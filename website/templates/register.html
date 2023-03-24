@@ -28,7 +28,7 @@
             <form enctype="multipart/form-data" action="{{url_for('auth.registerdb')}}" method="post" class="form">
                 <div class="front_form">
 
-
+                    <input type="hidden" name="techval" id="techval" />
                     <fieldset>
                         <legend> name :</legend>
                         <input type="text" name="name" id="name">
@@ -86,6 +86,7 @@
                         <input type="checkbox" name="event5" id="techteamcheck" class="tech team_events techteam"><span
                             id="events">event5 [team]</span>
                     </fieldset>
+                    <input type="hidden" name="nontechval" id="nontechval">
                     <fieldset class="nontech_field">
                         <legend>non tech events :</legend>
                         <input class="nontech" type="hidden" name="nontechval" id="nontechval">

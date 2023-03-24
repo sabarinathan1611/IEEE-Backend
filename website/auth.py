@@ -142,7 +142,7 @@ def registerdb():
                 roll5 = Event5.query.filter_by(rollno=rollno).first()
                 roll6 = Event6.query.filter_by(rollno=rollno).first()
                 roll7 = Event7.query.filter_by(rollno=rollno).first()
-                roll8 = Event1.query.filter_by(rollno=rollno).first()
+                roll8 = Event8.query.filter_by(rollno=rollno).first()
                 roll9 = Event9.query.filter_by(rollno=rollno).first()
 
                 a = []
@@ -224,9 +224,9 @@ def registerdb():
 
                     a.clear()
 
-                    a = []
-                    if nontechis == '1':
-
+                a = []
+                if nontechis == '1':
+                       
                         if event6 == 'on':
                             if roll6:
                                 flash("You already register for this event")
@@ -242,10 +242,14 @@ def registerdb():
                                 db.session.commit()
 
                         if event7 == 'on':
+                            print("Work3")
                             if roll7:
+                                print("Work1")
                                 flash("You already register for this event")
                                 return render_template('register.html')
+                            
                             elif roll7 is None:
+                                print("Work2")
                                 a.append('Event 7')
                                 nontech_list = a
                                 nontech_result = ','.join(nontech_list)
@@ -257,6 +261,7 @@ def registerdb():
 
                         if event8 == 'on':
                             if roll8:
+                                print("\nWork aghanum......\n\n ")
                                 flash("You already register for this event")
                                 return render_template('register.html')
                             if roll8 is None:
