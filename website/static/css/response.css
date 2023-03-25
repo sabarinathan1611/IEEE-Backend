@@ -40,3 +40,22 @@ h6 {
 .error{
   color: #ff0000;
 }
+
+a{
+  padding: 15px 20px;
+  background: #645c5c;
+  color: #fff;
+  cursor: pointer;
+  transition: .5s;
+  text-decoration: none;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 150px;
+  border-radius: 5px;
+}
+
+a:hover{
+  scale: 1.5;
+  background: #2f2e2e;
+}

@@ -114,7 +114,7 @@ def registerdb():
 
                 email = request.form.get('email')
 
-                teamname = request.form.get('teammember')
+                teamname = request.form.get('teamname')
 
                 memember = request.form.get('teammember')
 
@@ -155,9 +155,10 @@ def registerdb():
                             a.append('Event 1')
                             my_list = a
                             result = ','.join(my_list)
+                            
                             # print("TECH Result::",result)
                             new_reg = Event1(name=name, rollno=rollno, dept=dept, ieee=ieee, event='event1', year=year,
-                                            email=email, teamname=teamname, team_members=teamname)
+                                            email=email, teamname=' ', team_members=' ')
                             db.session.add(new_reg)
                             db.session.commit()
 
@@ -169,9 +170,10 @@ def registerdb():
                             a.append('Event 2')
                             my_list = a
                             result = ','.join(my_list)
+                            
                             # print("TECH Result::",result)
                             new_reg = Event2(name=name, rollno=rollno, dept=dept, ieee=ieee, event='event2', year=year,
-                                            email=email, teamname=teamname, team_members=memember)
+                                            email=email, teamname=' ', team_members=' ')
                             db.session.add(new_reg)
                             db.session.commit()
 
@@ -183,9 +185,10 @@ def registerdb():
                             a.append('Event 3')
                             my_list = a
                             result = ','.join(my_list)
+                            
                             # print("TECH Result::",result)
                             new_reg = Event3(name=name, rollno=rollno, dept=dept, ieee=ieee, event='event3', year=year,
-                                            email=email, teamname=teamname, team_members=memember)
+                                            email=email, teamname=' ', team_members=' ')
                             db.session.add(new_reg)
                             db.session.commit()
 
@@ -197,9 +200,10 @@ def registerdb():
                             a.append('Event 4')
                             my_list = a
                             result = ','.join(my_list)
+                            
                             # print("TECH Result::",result)
                             new_reg = Event4(name=name, rollno=rollno, dept=dept, ieee=ieee, event='event4', year=year,
-                                            email=email, teamname=teamname, team_members=memember)
+                                            email=email, teamname=' ', team_members=' ')
                             db.session.add(new_reg)
                             db.session.commit()
 
@@ -216,6 +220,7 @@ def registerdb():
                         if roll5 is None:
                             my_list = a
                             result = ','.join(my_list)
+              
                             # print("TECH Result::",result)
                             new_reg = Event5(name=name, rollno=rollno, dept=dept, ieee=ieee, event='event5', year=year,
                                             email=email, teamname=teamname, team_members=memember)
@@ -235,9 +240,10 @@ def registerdb():
                                 a.append('Event 6')
                                 nontech_list = a
                                 nontech_result = ','.join(nontech_list)
+                                
                                 # print("TECH Result::",result)
                                 new_reg = Event6(name=name, rollno=rollno, dept=dept, ieee=ieee,  email=email, event='event6', year=year,
-                                                teamname=teamname, team_members=memember)
+                                                teamname=' ', team_members=' ')
                                 db.session.add(new_reg)
                                 db.session.commit()
 
@@ -253,9 +259,10 @@ def registerdb():
                                 a.append('Event 7')
                                 nontech_list = a
                                 nontech_result = ','.join(nontech_list)
+                                
                                 # print("TECH Result::",result)
                                 new_reg = Event7(name=name, rollno=rollno, dept=dept, ieee=ieee,  email=email, event='event7', year=year,
-                                                teamname=teamname, team_members=memember)
+                                                teamname=' ', team_members=' ')
                                 db.session.add(new_reg)
                                 db.session.commit()
 
@@ -269,9 +276,10 @@ def registerdb():
                                 print("\n","Event8::",a)
                                 nontech_list = a
                                 nontech_result = ','.join(nontech_list)
+                                
                                 # print("TECH Result::",result)
                                 new_reg = Event8(name=name, rollno=rollno, dept=dept, ieee=ieee,  email=email, event='event8', year=year,
-                                                teamname=teamname, team_members=memember)
+                                                teamname=' ', team_members=' ')
                                 db.session.add(new_reg)
                                 db.session.commit()
 
@@ -313,7 +321,7 @@ def registerdb():
                 print(message)
                 # send_mail(email= email,body=message)
 
-                return render_template('response.html')
+    return render_template('response.html')
 
 
 @auth.route('/login', methods=['GET', 'POST'])

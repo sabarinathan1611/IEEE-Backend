@@ -17,6 +17,8 @@
     gap: 20px;
 }
 
+
+
 .clock-container{
     width: 300px;
     height: 300px;
@@ -53,8 +55,8 @@
 
 .line1{
     position: absolute;
-    width: 100px ;
-    height: 100px;
+    width: 150px ;
+    height: 150px;
     border-radius: 50%;
     /* background: #223333aa; */
     /* top: 50%; */
@@ -66,15 +68,15 @@
 .line1 #seconds_line{
     position:absolute;
     width: 2px;
-    height: 50px;
+    height: 75px;
     background: #fff;
-    left: 50px;
+    left: 75px;
 }
 
 .line2{
     position: absolute;
-    width: 100px ;
-    height: 100px;
+    width: 120px ;
+    height: 120px;
     border-radius: 50%;
     /* background: #223333aa; */
     /* top: 50%; */
@@ -83,19 +85,19 @@
     transform: rotate(0deg);
 }
 
-.line2 #mins_line{
-    position:absolute;
+.line2 #mins_line {
+    position: absolute;
     width: 2px;
-    height: 50px;
+    height: 60px;
     background: #ef5a5a;
-    left: 50px;
+    left: 60px;
 }
 
 
 .line3{
     position: absolute;
-    width: 100px ;
-    height: 100px;
+    width: 80px ;
+    height: 80px;
     border-radius: 50%;
     /* background: #fbffffaa; */
     /* top: 50%; */
@@ -165,6 +167,15 @@
     justify-content: center;
 }
 
+
+.line3 #hrs_line {
+    position: absolute;
+    width: 2px;
+    height: 40px;
+    background: #efff08;
+    left: 40px;
+}
+
 .hrs_dot .dot{
     position:absolute;
     width: 4px;
@@ -175,13 +186,6 @@
 
 
 
-.line3 #hrs_line{
-    position:absolute;
-    width: 2px;
-    height: 50px;
-    background: #efff08;
-    left: 50px;
-}
 
 .numbers {
     position: absolute;
@@ -350,7 +354,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    color: #68ca1e;
+    color: #b61f86;
     border-radius: 3px;
 }
 
@@ -451,69 +455,69 @@
     position: absolute;
 }
 
-/* event_dept_name */
 
 .event_dept_name{
-position: absolute;
-width: 100%;
-height: 50px;
-/* background: #013a5e; */
-top: 80px;
-display: flex;
-align-items: center;
-font-size: 18px;
-}
-
-.deptof{
-    text-transform: capitalize;
-    margin-left: 50px;
-    color:#fff;
-}
-
-.infortech{
-    color: #ffa62b;
-}
-
-.launch_event{
     position: absolute;
-    top: 140px;
     width: 100%;
-    height: 25px;
+    height: 50px;
     /* background: #013a5e; */
+    top: 80px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    text-transform: capitalize;
-}
+    font-size: 18px;
+    }
+    
+    .deptof{
+        text-transform: capitalize;
+        margin-left: 50px;
+        color:#fff;
+    }
+    
+    .infortech{
+        color: #ffa62b;
+    }
+    
+    .launch_event{
+        position: absolute;
+        top: 140px;
+        width: 100%;
+        height: 25px;
+        /* background: #013a5e; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        text-transform: capitalize;
+    }
+    
+    .launching {
+        color: #82c0cc;
+    }
+    .dateofevent{
+      position: absolute;
+        top: 210px;
+        width: 100%;
+        height: 25px;
+        /* background: #013a5e; */
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 20px;
+        margin-right: 550px;
+        text-transform: capitalize;
+       
+    }
+    
+    .exactdate {
+        color: #e41a1a;
+    }
+    h1.were {
+        color: #80c0cc;
+    }
+    h1.ondate {
+        color: #b0a5a4;
+    }
 
-.launching {
-    color: #82c0cc;
-}
-.dateofevent{
-  position: absolute;
-    top: 210px;
-    width: 100%;
-    height: 25px;
-    /* background: #013a5e; */
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-size: 20px;
-    margin-right: 550px;
-    text-transform: capitalize;
-   
-}
-
-.exactdate {
-    color: #e41a1a;
-}
-h1.were {
-    color: #80c0cc;
-}
-h1.ondate {
-    color: #b0a5a4;
-}
 
 @media(max-width:425px){
     .digital_display {
