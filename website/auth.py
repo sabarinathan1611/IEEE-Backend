@@ -14,6 +14,10 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'webp', 'raw', 'svg', 'pdf'])
 
 app = 'create_app()'
 
+def test(b):
+    if len(b) == 2:
+        print("LEN OF B:::::::",len(b))
+        return True 
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit(
@@ -90,6 +94,7 @@ def photoupload(pic, techevent, nontechevent, name, rollno):
         flash(str(e))
         return redirect(url_for('views.register'))
 
+    
 # register
 
 
@@ -144,11 +149,83 @@ def registerdb():
                 roll7 = Event7.query.filter_by(rollno=rollno).first()
                 roll8 = Event8.query.filter_by(rollno=rollno).first()
                 roll9 = Event9.query.filter_by(rollno=rollno).first()
-
+                
+                
+           
+               
+                b=[]
+                print("BEFORE TEST FUNCATION:::",test(b))
+                while True:
+                    print("while")
+                    if roll1:
+                        print("\n\n\nTEST1\n\n\n\n\n")                       
+                        b.append(1)
+                        if test(b) == True:
+                            flash("You alredy register")
+                            break
+                        
+                    if roll2:
+                        print("\n\n\nTEST2\n\n\n\n\n")                       
+                        b.append(1)
+                        if test(b) == True:
+                            flash("You alredy register")
+                            break
+                    
+                    if roll3:
+                        print("\n\n\nTEST3\n\n\n\n\n")                       
+                        b.append(1)
+                        if test(b) == True:
+                            flash("You alredy register")
+                            break
+                    
+                    if roll4:
+                        print("\n\n\nTEST4\n\n\n\n\n")                       
+                        b.append(1)
+                        if test(b) == True:
+                            flash("You alredy register")
+                            break
+                    
+                    if roll5:
+                        print("\n\n\nTEST5\n\n\n\n\n")                       
+                        b.append(1)
+                        if test(b) == True:
+                            flash("You alredy register")
+                            break
+                    if roll6:
+                        print("\n\n\nTEST6\n\n\n\n\n")                       
+                        b.append(1)
+                        if test(b) == True:
+                            flash("You alredy register")
+                            break
+                    if roll7:
+                        print("\n\n\nTEST7\n\n\n\n\n")                       
+                        b.append(1)
+                        if test(b) == True:
+                            flash("You alredy register")
+                            break
+                    if roll8:
+                        print("\n\n\nTEST8\n\n\n\n\n")                       
+                        b.append(1)
+                        if test(b) == True:
+                            flash("You alredy register")
+                            break
+                    if roll9:
+                        print("\n\n\nTEST9\n\n\n\n\n")                       
+                        b.append(1)
+                        if test(b) == True:
+                            flash("You alredy register")
+                            break
+                    break
+                if test(b)==True:
+                        flash(" You 2-3-5934")
+                        return redirect(url_for('views.register'))
+                    
+                        
                 a = []
                 if techis == '1':
                     if event1 == 'on':
                         if roll1:
+                            print("\n\n\nWork1212122\n\n\n\n\n")
                             flash("You already register for this event")
                             return render_template('register.html')
                         elif roll1 is None:
@@ -308,6 +385,7 @@ def registerdb():
                 if ieee == 'yes':
                     photoupload(pic=pic, techevent=result,
                                 nontechevent=nontech_result, name=name, rollno=rollno)
+                
 
                 message = """Subject:Welcome to the IEEE Event \n\n
                             Welcome and thank you for registering for the IEEE Event {},{}. We're looking forward to an exciting and informative event.
