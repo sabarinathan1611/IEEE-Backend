@@ -16,7 +16,7 @@ app = 'create_app()'
 
 def test(b):
     if len(b) == 2:
-        print("LEN OF B:::::::",len(b))
+        
         return True 
 
 def allowed_file(filename):
