@@ -34,30 +34,31 @@ nav{
     z-index: 100;
 }
 
-ul{
+.main-nav .ulu{
     display: flex;
     justify-content: space-evenly;
 }
 
-ul li{
+.main-nav  li{
     list-style: none;
 }
 
-li a{
+.main-nav li a{
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     padding: 7px 0px;
-    /* border-bottom: 1px solid #fff; */
+    
 }
 
-li a:hover{
+.main-nav li a:hover{
     border-bottom: 1px solid #fff;
 }
 
-li a.active{
+.main-nav li a.active{
     border-bottom: 1px solid #f74780;
 }
+
 /*Next buttons*/
 /* 
 #next {

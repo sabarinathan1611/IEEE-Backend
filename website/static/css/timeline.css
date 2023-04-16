@@ -1,0 +1,504 @@
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+.timing_event{
+width: 100%;
+min-height: 100vh;
+padding: 20px;
+background: #2f363e;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 40px;
+}
+
+/*................................. dept_desc css starts................... */
+
+.dept_desc{
+position: relative;
+width: 100vw;
+height: 50vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 30px;
+}
+
+.h3_element{
+color: #fff;
+font-size: 3rem;
+letter-spacing: .1rem;
+}
+
+.h3_element .of{
+font-size: 3.3rem;
+color: #ff0000;
+}
+
+.IT{
+font-size: 2.6rem;
+text-transform: capitalize;
+color: #fff;
+}
+
+.it{
+color: #ff0000;
+font-size: 2.9rem;
+}
+
+.presents{
+display: flex;
+gap: 20px;
+color: #fff;
+font-size: 2.2rem;
+}
+
+.p{
+color: #ff0000;
+font-size: 2.9rem;
+}
+
+.on_date{
+display: flex;
+gap: 10px;
+color: #fff;
+font-size: 1.3rem;
+}
+.o{
+font-size: 2rem;
+color: #ff0000;
+}
+
+/*................................. dept_desc css ends................... */
+
+/*.................................. time css starts .....................*/
+
+.countDown_box {
+margin-top: 75px;
+}
+
+.time{
+display: flex;
+gap: 30px;
+}
+
+.time .circle{
+position: relative;
+width: 110px;
+height: 110px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.time .circle svg{
+position: relative;
+width: 110px;
+height: 110px;
+transform: rotate(275deg);
+}
+
+.time .circle svg circle{
+width: 100%;
+height: 100%;
+fill: transparent;
+stroke-width: 8;
+stroke-linecap: round;
+stroke: #282828;
+transform: translate(5px ,5px);
+}
+
+.time .circle svg circle:nth-child(2) {
+stroke: var(--clr);
+stroke-dasharray: 305;
+stroke-dashoffset: 305;
+}
+
+.time .dhms{
+position: absolute;
+text-align: center;
+font-weight: 500;
+color: #fff;
+font-size: 1.5em;
+}
+
+.time .dhms .dhms_n{
+position: absolute;
+transform: translateX(-50%) translateY(-10%);
+font-size: 0.4em;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+}
+
+.time .dots{
+position: absolute;
+width: 100%;
+height: 100%;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+z-index: 1000;
+}
+
+.time .dots::before {
+content: '';
+position: absolute;
+top: -3px;
+width: 17px;
+height: 17px;
+background: var(--clr);
+border-radius: 50%;
+box-shadow: 0 0 20px var(--clr);
+}
+/*.................................. time css ends .......................*/
+
+
+/*.................................. query css starts .....................*/
+
+@media screen and (max-width:426px) {
+.countDown_box {
+margin-top: 115px;
+}
+.dept_desc {
+position: relative;
+width: 100vw;
+height: 0vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+}
+
+.timing_event {
+width: 100%;
+min-height: 100vh;
+padding: 20px;
+background: #2f363e;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 0px;
+}
+
+
+.h3_element {
+color: #fff;
+font-size: 1.5rem;
+letter-spacing: .1rem;
+}
+
+.h3_element .of {
+font-size: 2rem;
+color: #ff0000;
+}
+
+.IT {
+font-size: 1.4rem;
+text-transform: capitalize;
+color: #fff;
+}
+
+.it {
+color: #ff0000;
+font-size: 2rem;
+}
+
+.presents {
+display: flex;
+gap: 10px;
+color: #fff;
+font-size: 1.2rem;
+}
+
+.p {
+color: #ff0000;
+font-size: 2rem;
+}
+
+.on_date {
+display: flex;
+gap: 10px;
+color: #fff;
+font-size: .7rem;
+}
+
+.o {
+font-size: 1.5rem;
+color: #ff0000;
+}
+
+.time {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+}
+
+/*.................................. query css ends ......................*/
+
+@media screen and (max-width:769px){
+.timing_event {
+width: 100%;
+min-height: 100vh;
+padding: 20px;
+background: #2f363e;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 85px;
+}
+}
+
+
+@media screen and (max-width:1025px){
+.timing_event {
+width: 100%;
+min-height: 100vh;
+padding: 20px;
+background: #2f363e;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 110px;
+}
+}
+
+/* timeline */
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+font: normal 16px/1.5 'Halvetica neue';
+background: #2f363e;
+color: #fff;
+overflow-x: hidden;
+padding-bottom: 5px;
+}
+
+.timeline {
+box-shadow: 0 25px 45px #0000001a;
+backdrop-filter: blur(20px);
+padding: 50px 0px;
+margin: 2rem auto;
+border-radius: 10px;
+position: relative;
+height: 100vh;
+}
+
+@keyframes zoomInOut{
+0%,100%{
+transform: scale(0.5);
+}
+50%{
+transform: scale(1.2);
+}
+}
+
+.timeline .timeline_ul .timeline_li{
+list-style: none;
+position: relative;
+width: 6px;
+padding-top: 50px;
+background-color: #ffffff17;
+border: 2px solid #ffffff1a;
+box-shadow: 0 25px 45px #0000001a;
+backdrop-filter: blur(20px);
+border-radius: 10px;
+}
+
+.timeline .timeline_ul .timeline_li::after{
+content: '';
+position: absolute;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+width: 30px;
+height: 30px;
+border-radius: 50%;
+background: inherit;
+z-index: 1;
+}
+
+.timeline .timeline_ul .timeline_li .content{
+position: relative;
+bottom: 0;
+width: 400px;
+padding: 2em;
+background: #fdc927;
+box-shadow: 0px 0px 0px 6px #ffffff66;
+backdrop-filter: blur(5px);
+border-radius: 10px;
+color: #000;
+margin: 1rem 0;
+}
+
+.timeline .timeline_ul .timeline_li .content::before{
+content: '';
+position: absolute;
+bottom: 7px;
+width: 0;
+height: 0;
+border-style: solid;
+}
+
+.timeline .timeline_ul .timeline_li .content::after{
+content: '';
+position: absolute;
+bottom: 20px;
+width: 100%;
+height: 100%;
+left: 20%;
+animation: zomInOut 8s linear infinite;
+}
+
+.timeline .timeline_ul .timeline_li:nth-child(odd) .content{
+left: 45px;
+}
+
+.timeline .timeline_ul .timeline_li:nth-child(odd) .content::before{
+left: -25px;
+border-width: 10px 20px 10px 0px;
+border-color: transparent #c62929 transparent transparent;
+}
+
+.timeline .timeline_ul .timeline_li:nth-child(even) .content{
+left: -429px;
+}
+
+.timeline .timeline_ul .timeline_li:nth-child(even) .content::before {
+right: -25px;
+border-width: 10px 0px 10px 20px;
+border-color: transparent  transparent transparent #20e3bc;
+}
+
+.timeline .timeline_ul .timeline_li .content .img{
+width: 100px;
+height: 100px;
+border-radius: 50px;
+padding: 10px;
+background: #fdc927;
+box-shadow: 0px 0px 0px 6px #ffffff66;
+margin-top: -10rem;
+max-width: 100px;
+max-height: 100px;
+}
+
+.event_title{
+display: block;
+font-size: 1.2rem;
+margin-top: -1rem;
+float: right;
+text-transform: uppercase;
+}
+
+.timeline .timeline_ul .timeline_li::after{
+transition: background 0.5s ease-in-out;
+}
+
+
+.timeline .timeline_ul .timeline_li.in_view::after {
+background-color: #cabc1b;
+}
+
+
+.timeline .timeline_ul .timeline_li .content{
+visibility: hidden;
+opacity: 0;
+transition: all 0.5s ease-in-out;
+}
+
+.timeline .timeline_ul .timeline_li:nth-child(odd) .content{
+transform: translate3d(-200px, 0,0);
+}
+
+.timeline .timeline_ul .timeline_li:nth-child(even) .content{
+transform: translate3d(-200px, 0,0);
+}
+
+.timeline .timeline_ul .timeline_li.in_view .content{
+transform: none;
+visibility: visible;
+opacity: 1;
+}
+
+.timeline_ul{
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+}
+
+/* ....................media query......................... */
+
+@media screen and (max-width:900px) {
+.timeline .timeline_ul .timeline_li .content{
+width: 250px;
+}
+
+.timeline .timeline_ul .timeline_li:nth-child(even) .content{
+left: -290px;
+}
+}
+
+@media screen and (max-width:600px) {
+.timeline .timeline_ul .timeline_li {
+left: 20px;
+}
+
+.timeline .timeline_ul .timeline_li .content{
+width: calc(100vw - 91px);
+}
+
+.timeline .timeline_ul .timeline_li:nth-child(even) .content{
+left: 45px;
+border-width: 10px 20px 10px 0px;
+border-color: transparent #20e3bc transparent transparent;
+}
+
+.timeline .timeline_ul .timeline_li:nth-child(even) .content::before{
+left: -25px;
+border-width: 10px 20px 10px 0px;
+ border-color: transparent #20e3bc transparent transparent;
+}
+
+@media screen and (max-width:430px) {
+.timeline_ul {
+position: absolute;
+left: 10px;
+}
+.timeline .timeline_ul .timeline_li {
+  left: 20px;
+}
+
+.timeline .timeline_ul .timeline_li .content{
+    width: calc(100vw - 91px);
+}
+
+.timeline .timeline_ul .timeline_li:nth-child(even) .content{
+    left: 45px;
+    border-width: 10px 20px 10px 0px;
+    border-color: transparent #20e3bc transparent transparent;
+}
+
+.timeline .timeline_ul .timeline_li:nth-child(even) .content::before {
+    left: -25px;
+    border-width: 10px 20px 10px 0px;
+    border-color: transparent #20e3bc transparent transparent;
+}
+
+}
+}
+

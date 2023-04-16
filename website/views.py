@@ -97,51 +97,35 @@ def delete():
                 event8 = Event8.query.order_by(Event8.date)
                 event9 = Event9.query.order_by(Event9.date)
                 #Table 1
-                for e1 in event1 :
-                    event1_data = Event1.query.get(e1.id)
-                    db.session.delete(event1_data)
-                    db.session.commit()
+                db.session.query(Event1).delete()
+                db.session.commit()
+                
                  #Table 2
-                for e2 in event2 :
-                    event2_data = Event2.query.get(e2.id)
-                    db.session.delete(event2_data)
-                    db.session.commit()
+                db.session.query(Event2).delete()
+                db.session.commit()
+                
                  #Table 3 
-                for e3 in event3 :
-                    event3_data = Event3.query.get(e3.id)
-                    db.session.delete(event3_data)
-                    db.session.commit()
+                db.session.query(Event3).delete()
+                db.session.commit()
+                
                  #Table 4
-                 
-                for e4 in event4 :
-                    event4_data = Event4.query.get(e4.id)
-                    db.session.delete(event4_data)
-                    db.session.commit()
+                db.session.query(Event4).delete()
+                db.session.commit()
                  #Table 5
-                for e5 in event5 :
-                    event5_data = Event5.query.get(e5.id)
-                    db.session.delete(event5_data)
-                    db.session.commit()
+                db.session.query(Event5).delete()
+                db.session.commit()
                  #Table 6
-                for e6 in event6 :
-                    event6_data = Event6.query.get(e6.id)
-                    db.session.delete(event6_data)
-                    db.session.commit()
+                db.session.query(Event6).delete()
+                db.session.commit()
                  #Table 7
-                for e7 in event7 :
-                    event7_data = Event7.query.get(e7.id)
-                    db.session.delete(event7_data)
-                    db.session.commit()
+                db.session.query(Event7).delete()
+                db.session.commit()
                 #Table 8
-                for e8 in event8 :
-                    event8_data = Event8.query.get(e8.id)
-                    db.session.delete(event8_data)
-                    db.session.commit()
+                db.session.query(Event8).delete()
+                db.session.commit()
                 #Table 9
-                for e9 in event9 :
-                    event9_data = Event9.query.get(e9.id)
-                    db.session.delete(event9_data)
-                    db.session.commit()
+                db.session.query(Event9).delete()
+                db.session.commit()
                 
             else:
                 flash("Wrong Password")
@@ -161,9 +145,10 @@ def delet_photo():
         img_id = photo['imageID']
         image=Screeenshot.query.get(img_id)
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], image.img_name)
+        os.remove(filepath)  
         db.session.delete(image)
         db.session.commit()
-        os.remove(filepath)      
+            
     return redirect(url_for('views.upload_photo'))
 
 @views.route('/pic-verify', methods=['POST', 'GET'])
