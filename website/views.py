@@ -63,8 +63,7 @@ def connect():
         subject = request.form.get('subject')
         message = request.form.get('message')
 
-        email = ['2021pecit233@gmail.com',
-                 'sabarinathan.project@gmail.com']
+        email = ['Email']
         body = """Subject:Querry:{} \n\n 
         Name:{},
         Number:{},

@@ -35,9 +35,9 @@ def create_admin():
 
 
 def send_mail(email, body):
-    sender_email = "ieeeeventit@gmail.com"
+    sender_email = ""
     receiver_email = email
-    password = "hbsapqyrcvcdjqjl"
+    password = ""
     message = body
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
