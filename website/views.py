@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, flash, jsonify, redirect,
 from flask_login import login_required, current_user
 from werkzeug.security import check_password_hash
 from .auth import send_mail
+from .createXL import createXL
 from .models import Event1, Event2, Event3, Event4, Event5, Event6, Event7, Event8, Event9, Delete_pass, Screeenshot
 from . import db
 from werkzeug.utils import secure_filename  # for secure file
@@ -155,3 +156,19 @@ def delet_photo():
 def upload_photo():
     photos = Screeenshot.query.order_by(Screeenshot.id)
     return render_template('verify.html', photos=photos)
+
+
+@views.route('/createXL',methods=['GET','POST'])
+@login_required
+def createFile():
+    createXL()
+    return redirect(url_for('views.downloadXL'))
+
+
+@views.route('/downloadXL',methods=['GET','POST'])
+@login_required
+def downloadXL():
+    APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+    saveFolder = os.path.join(APP_ROOT, 'static/XLfile')
+    
+    return render_template('Xldownload.html')

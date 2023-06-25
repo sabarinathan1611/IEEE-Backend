@@ -2,17 +2,23 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for
 from .models import User, Event1, Event2, Event3, Event4, Event5, Event6, Event7, Event8, Event9, Screeenshot
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db  # means from __init__.py import db
-
+import pandas as pd
+import sqlite3
 import smtplib
 from flask_login import login_user, login_required, logout_user, current_user
 from website import create_app
 import os
 from werkzeug.utils import secure_filename  # for secure file
 import uuid
+import os
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'webp', 'raw', 'svg', 'pdf'])
 
 app = 'create_app()'
+
+
+
+    
 
 def test(b):
     if len(b) == 2:
@@ -443,3 +449,4 @@ def newadmin():
 
     create_admin()
     return redirect(url_for('auth.login'))
+

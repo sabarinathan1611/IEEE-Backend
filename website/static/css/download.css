@@ -1,0 +1,109 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    text-decoration-line: none;
+}
+
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+.box {
+    background-color: #acaa12;
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    justify-content: space-evenly;
+    overflow: scroll;
+}
+.box::-webkit-scrollbar {
+    display: none;
+  }
+
+h6 {
+    font-size: 25px;
+    color: #fff;
+}
+a {
+    color: #0b0b0b;
+}
+
+.even1 {
+    padding: 25px;
+    margin: 5px;
+    background-color: #3128d4;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+
+.even2 {
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 5px;
+    background-color: #23d709;
+    border-radius: 10px;
+}
+.even3 {
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 5px;
+    background-color: #673AB7;
+    border-radius: 10px;
+}
+.even4 {
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.even5 {
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 5px;
+    background-color: #cf0808;
+    border-radius: 10px;
+}
+.even6 {
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 5px;
+    background-color: #ff8a00;
+    border-radius: 10px;
+}
+.even7 {
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 5px;
+    background-color: #f604be;
+    border-radius: 10px;
+}
+.even8 {
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 5px;
+    background-color: #00fbd1;
+    border-radius: 10px;
+}
+.even9 {
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 5px;
+    background-color: #d11847;
+    border-radius: 10px;
+}
+
+
+
